@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: url('iceland.jpg');
+  background-image: linear-gradient(50deg, #f6dffb, #d4e3ff,#e7e9fe);
   font-family: "Vollkorn", sans-serif;
   color: #2b2862;
 }
