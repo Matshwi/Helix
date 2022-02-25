@@ -7,7 +7,7 @@
 }
 
 body {
-  background-image: linear-gradient(50deg, #f6dffb, #d4e3ff,#e7e9fe);
+  background-image: linear-gradient(50deg, #f6dffb, #d4e3ff, #FFFFFF,#e7e9fe);
   font-family: "Vollkorn", sans-serif;
   color: #2b2862;
 }
@@ -95,6 +95,13 @@ body {
 .footer .footer__item {
   background: rgba(255, 255, 255, -4);
   padding: 1.2rem 1.5rem;
+}
+
+.footer__item:hover {
+  background-color: white;
+  transform: scale(1.1);
+  margin-left: 15px;
+  cursor: pointer;
 }
 .footer .footer__item h3 {
   margin-bottom: 12px;
