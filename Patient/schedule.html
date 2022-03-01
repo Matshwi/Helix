@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+</head>
+<style type="text/css">
+  
+  .profileimg{
+    width: 35px;
+    border-radius: 50%;
+    margin-left: 8%;
+  }
+
+  .fa-book{
+    font-size: 30px;
+    background: transparent;
+  }
+  .order{
+    height: 40px;
+    width: 15rem;
+    background: white;
+    border-top-left-radius: 38px;
+    border-top-right-radius: 38px;
+    border-bottom-left-radius: 38px;
+    border-bottom-right-radius: 38px;
+    text-align: center;
+    padding-top: 8px;
+  }
+
+  .imgtelegram {
+    margin-right: -20px;
+    width: 37px;
+    border: 2px solid grey;
+    border-radius: 50%;
+    padding: 5px 8px 5px 5px;
+    margin-top: 5px;
+  }
+
+  .fa-shopping-cart{
+    background: whitesmoke;
+    font-size: 20px;
+    border-radius: 50%;
+    padding: 5px 8px 5px 5px;
+    cursor: pointer;
+  }
+
+  .clock{
+    float: left;
+    margin-left: 8px;
+  }
+
+  .ordertext{
+    margin-top: 3px;
+  }
+
+  .telespan{
+    border-radius: 50%;
+    z-index: 5;
+    position: absolute;
+    margin-top: -38px;
+    background-color: red;
+    width: 7px;
+    display: block;
+    height: 7px;
+    margin-left: 27px;
+  }
+
+  .cartspan{
+    text-align: center;
+    color: white;
+    border-radius: 50%;
+    z-index: 5;
+    position: absolute;
+    margin-top: -38px;
+    background-color: rgb(187, 149, 247);
+    width: 15px;
+    display: block;
+    height: 15px;
+    margin-left: 20px;
+    font-size: 12px;
+  }
+
+
+  .input {
+    display: none;
+    margin-left: -10%;
+    margin-top: -5px;
+    height: 40px;
+    font-size: 20px;
+    border-bottom-color: black;
+    border-top: none;
+    background-color: transparent;
+    border-left: none;
+    border-right: none;
+    width: 350px;
+    transition-duration: 5s;
+    transition-delay: 2s;
+  }
+
+  #popup {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.75);
+    display: none;
+  }
+
+  #popup .popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    padding: 10px 20px;
+    background: #eee;
+    margin-right: 90%;
+    border-radius: 2rem;
+    line-height: 90px;
+    background-image: linear-gradient(50deg, #f6dffb, #d4e3ff, #FFFFFF,#e7e9fe);
+  }
+
+  #popup a.close-popup {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  #popup:target {
+    display: block;
+  }
+
+  .setlink{
+    color: black;
+  }
+
+  button {
+    margin-left: 35px;
+    box-shadow: 10px 3px 10px rgb(0 0 0 / 0.2) !important;
+  }
+
+  button.btnonline {
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  button.btnphysical {
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  button.btnphysical:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+  button.btnonline:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+
+  #popup .popup-content1 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    padding: 10px 20px;
+    background: #eee;
+    margin-right: 90%;
+    border-radius: 2rem;
+    line-height: 90px;
+    background-image: linear-gradient(50deg, #f6dffb, #d4e3ff, #FFFFFF,#e7e9fe);
+  }
+
+  #popup a.close-popup1 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  #popup .popup-content2 {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 450px;
+    padding: 10px 20px;
+    background: #eee;
+    margin-right: 90%;
+    border-radius: 2rem;
+    line-height: 90px;
+    background-image: linear-gradient(50deg, #f6dffb, #d4e3ff, #FFFFFF,#e7e9fe);
+  }
+
+  #popup a.close-popup2 {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  button {
+    margin-left: 35px;
+    box-shadow: 10px 3px 10px rgb(0 0 0 / 0.2) !important;
+  }
+
+  button.btnonline1 {
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  button.btnphysical1 {
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  button.btnonline1:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+  button.btnphysical1:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+  button.active {
+    background-color: white;
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    border: none;
+  }
+
+  .fa-arrow-right:hover{
+    margin-left: 40px;
+    cursor: pointer;
+    transform: translateX(10px);
+  }
+
+  .profile{
+    margin-top: -50px;
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+    margin-left: 35%;
+    border-radius: 50%;
+    box-shadow: 0px 5px 50px 0px rgb(108, 68, 252), 0px 0px 0px 7px rgba(107, 74, 255, 0.5);
+    border-image: linear-gradient(50deg, #f6dffb, #d4e3ff, #FFFFFF,#e7e9fe);
+  }
+
+  .profiletext{
+    margin-left: 30%;
+    font-size: 25px;
+    margin-top: -30px;
+  }
+
+  .specialisation{
+    margin-left: 25%;
+    margin-top: -50px;
+  }
+
+  .address{
+    margin-left: 20%;
+    margin-top: -50px;
+  }
+
+  .message{
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  .close{
+    height: 8vh;
+    border-radius: 1rem;
+    padding: 0px 5px;
+    font-size: 15px;
+    background: transparent;
+    border: none;
+  }
+
+  button.message:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+  button.close:hover {
+    background-color: white;
+    transform: scale(1.2);
+    opacity: 0.6;
+    margin-left: 50px;
+  }
+
+  
+
+</style>
+<body>
+<!-- partial:index.partial.html -->
+<main class="main">
+  <nav class="nav">
+    <div class="logo">
+      <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"width="32" height="32"viewBox="0 0 172 172" class="searcher" style=" fill:#FFFFFF; width: 30px;cursor: pointer;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#ffffff"><path d="M68.08333,136.16667c15.27933,0 29.74883,-5.03817 41.60967,-14.24017l49.02,49.02c0.70233,0.70233 1.61967,1.0535 2.537,1.0535c0.91733,0 1.83467,-0.35117 2.537,-1.04633c1.3975,-1.3975 1.3975,-3.66933 0,-5.06683l-48.64017,-48.64017c0.35833,-0.344 0.74533,-0.645 1.10367,-0.99617c12.84267,-12.857 19.91617,-29.95667 19.91617,-48.16717c0,-37.539 -30.54433,-68.08333 -68.08333,-68.08333c-37.539,0 -68.08333,30.54433 -68.08333,68.08333c0,37.539 30.54433,68.08333 68.08333,68.08333zM68.08333,7.16667c33.59017,0 60.91667,27.3265 60.91667,60.91667c0,16.28983 -6.32817,31.59783 -17.8235,43.09317c-11.49533,11.49533 -26.80333,17.8235 -43.09317,17.8235c-33.59017,0 -60.91667,-27.3265 -60.91667,-60.91667c0,-33.59017 27.3265,-60.91667 60.91667,-60.91667z"></path></g>
+</g>
+</svg>
+    </div><input type="text" name="" class="input">
+    <ul class="nav-list" style="padding-right: 20px;">
+      <li><div class="order"><svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
+width="24" height="24"viewBox="0 0 172 172"style=" fill:#000000; float: left;margin-left: 8px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#bb95f7"><path d="M86,14.33333c-39.5815,0 -71.66667,32.08517 -71.66667,71.66667c0,39.5815 32.08517,71.66667 71.66667,71.66667c39.5815,0 71.66667,-32.08517 71.66667,-71.66667c0,-39.5815 -32.08517,-71.66667 -71.66667,-71.66667zM104.533,114.66667l-23.59983,-23.59983c-1.34733,-1.34733 -2.09983,-3.16767 -2.09983,-5.06683v-35.83333c0,-3.956 3.21067,-7.16667 7.16667,-7.16667v0c3.956,0 7.16667,3.21067 7.16667,7.16667v32.86633l21.5,21.5c2.795,2.795 2.795,7.33867 0,10.13367v0c-2.795,2.795 -7.33867,2.795 -10.13367,0z"></path></g></g></svg><p class="ordertext">order is arriving in 10 minutes</p></div></li>
+      <li><a href="#popup" class="setlink"><i class="fa fa-shopping-cart"></i><span class="cartspan">3</span></a></li>
+      <li><img src="https://img.icons8.com/fluency-systems-filled/48/000000/telegram-app.png" class="imgtelegram"/><span class="telespan"></span></li>
+      <img src="5c3eb9093ed2b.png" class="profileimg">
+    </ul>
+  </nav>
+
+  <section class="content" style="width: 80%;">
+    <h3>what can I do for you?...</h3>
+    <p style="float: right;margin-top: -30px;">Press and hold <span style="border: 2px solid grey;text-align: center;padding-right: 5px;padding-left: 5px;border-radius: 6px;">S</span> to speak <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"width="24" height="24"viewBox="0 0 172 172"style=" fill:#000000; float: right;background: white;margin-left: 20px;border-radius: 40%;padding: 5px 5px 5px 5px;width: 30px;height: 30px;margin-top: -5px;"><g fill="none" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal"><path d="M0,172v-172h172v172z" fill="none"></path><g fill="#95a5a6"><path d="M86,14.33333c-11.87517,0 -21.5,9.62483 -21.5,21.5v43c0,11.87517 9.62483,21.5 21.5,21.5c11.87517,0 21.5,-9.62483 21.5,-21.5v-43c0,-11.87517 -9.62483,-21.5 -21.5,-21.5zM35.83333,78.83333c0,25.26462 18.70044,46.10479 43,49.59277v22.07389h14.33333v-22.07389c24.29956,-3.48799 43,-24.32815 43,-49.59277h-14.33333c0,19.78717 -16.04617,35.83333 -35.83333,35.83333c-19.78717,0 -35.83333,-16.04617 -35.83333,-35.83333z"></path></g></g></svg></p>
+  </section>
+
+ <div class="container my-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <span class="text-uppercase" style="color: #9b5de5">schedule</span>
+            <h2 class="text-capitalize font-weight-bold">Appointment schedule</h2>
+        </div>
+    </div>
+    <div class="row my-5">
+        <div class="col-lg-6 col-md-12 col-sm-12 my-sm-3">
+            <p class="text-center" style="color: #9b5de5">AM</p>
+            <div class="d-flex align-items-center  justify-content-center" style="margin: 20px 0">
+                <div style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">09:00 : 10:00</h4>
+                </div>
+                <div class="">
+                    <h6>Meeting Specialist</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center  justify-content-center" style="margin: 20px 0">
+                <div style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">10:15 : 11:00</h4>
+                </div>
+                <div >
+                    <h6>Registered for kidney transplant</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center  justify-content-center" style="margin: 20px 0">
+                <div class="" style="width: 200px;">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">11:10 : 12:00</h4>
+                </div>
+                <div >
+                    <h6>Meeting Dr Zoya Khan</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" style="margin: 20px 0">
+                <div class="" style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">12:00 : 12:45</h4>
+                </div>
+                <div class="">
+                    <h6>Lunch Time checkup with Dr Zayon</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-12 col-sm-12 my-sm-3">
+            <p class="text-center" style="color: #9b5de5">PM</p>
+            <div class="d-flex align-items-center justify-content-center" style="margin: 20px 0">
+                <div style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">01:00 : 02:00</h4>
+                </div>
+                <div>
+                    <h6>Doctor spectre opperation</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" style="margin: 20px 0">
+                <div style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">02:15 : 03:00</h4>
+                </div>
+                <div >
+                    <h6>Sleeping pills delivery</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" style="margin: 20px 0">
+                <div class="" style="width: 200px;">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">03:10 : 04:00</h4>
+                </div>
+                <div >
+                    <h6>Football Doctor</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+            <div class="d-flex align-items-center justify-content-center" style="margin: 20px 0">
+                <div class="" style="width: 200px">
+                    <h4 class="font-weight-bold"  style="color: #9b5de5">04:20 : 05:30</h4>
+                </div>
+                <div class="">
+                    <h6>doctor stevens checkup</h6>
+                    <small class="text-secondary">Lorem ipsum dolor sit amet.</small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</main>
+
+<div id="popup">
+  <div class="popup-content">
+    <h1>Booking Appoitment</h1>
+    <button class="btnonline">Online consultation</button>
+    <button class="btnphysical">Physical consultation</button>
+    <a href="#" class="close-popup">&times;</a>
+  </div>
+
+  <div class="popup-content1">
+    <h1>Symptoms  <i class="fa fa-arrow-right" style="font-size: 21px; margin-left: 20px;"></i></h1>
+    <button class="btnonline1" onclick="active(this)">headache</button>
+    <button class="btnonline1" onclick="active(this)">Coughing</button>
+    <button class="btnonline1" onclick="active(this)">body pains</button>
+    <button class="btnonline1" onclick="active(this)">Fever</button>
+    <button class="btnonline1" onclick="active(this)">diarrhoea</button>
+    <button class="btnonline1" onclick="active(this)">rash</button>
+    <button class="btnonline1" onclick="active(this)">fatigue</button>
+    <button class="btnonline1" onclick="active(this)">Chills</button>
+    <button class="btnonline1" onclick="active(this)">Coughing up blood or mucus</button>
+    <button class="btnonline1" onclick="active(this)">Weakness</button>
+    <button class="btnonline1" onclick="active(this)">Loss of appetite</button>
+    <button class="btnonline1" onclick="active(this)">Nausea</button>
+    <a href="#" onclick="history.go(0);" class="close-popup1">&times;</a>
+  </div>
+
+
+
+  <div class="popup-content2">
+    <img class="profile" src="nurse-g826a52938_1280.jpg">
+    <p class="profiletext">Dr John Smith</p>
+    <p class="specialisation">specialization: <strong>neurologist</strong></p>
+    <p class="address"><i class="fa fa-map-marker"></i> 2156 louis street, Pretoria, 0001</p>
+
+    <button class="message">message</button>
+    <button class="close" onclick="history.go(0);">close</button>
+  </div>
+</div>
+
+
+  
+
+
+<span class="shoutout hide">Photo by
+  <a href="https://unsplash.com/@bekky_bekks?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Bekky Bekks</a>
+  on
+  <a href="https://unsplash.com/wallpapers/colors/pink?utm_source=unsplash&amp;utm_medium=referral&amp;utm_content=creditCopyText">Unsplash</a></span>
+
+<details class="attributions">
+  <summary>History</summary>
+  <p>
+    Items
+  </p>
+
+  <p>
+    lorem
+  </p>
+  <p>Ipsum</p>
+
+  <p>Dola sit</p>
+</details>
+<!-- partial -->
+  
+
+  <script type="text/javascript">
+    
+    
+      var coll = document.getElementsByClassName("logo");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+    
+
+$(document).ready(function(){
+  $(".btnonline").click(function(){
+    $(".popup-content").animate({
+      left: '100%',
+      opacity: '0',
+      height: '150px',
+      width: '150px'
+    });
+     $(".popup-content1").show();
+  });
+});
+
+
+$(document).ready(function(){
+  $(".btnphysical").click(function(){
+    $(".popup-content").animate({
+      left: '100%',
+      opacity: '0',
+      height: '150px',
+      width: '150px'
+    });
+     $(".popup-content1").show();
+  });
+});
+
+$(document).ready(function(){
+  $(".fa-arrow-right").click(function(){
+    $(".popup-content1").animate({
+      left: '100%',
+      opacity: '0',
+      height: '150px',
+      width: '150px'
+    });
+     $(".popup-content2").show();
+  });
+});
+
+
+
+function active(el){
+  if (el.className == 'active') {
+    el.className = "btnonline1";
+  }
+  else{
+    el.className = "active";
+  }
+}
+
+
+
+
+  </script>
+</body>
+</html>
