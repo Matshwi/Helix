@@ -55,13 +55,14 @@
           </div>
         </div>  
       </div>
-      <!-- Bouton qui valide le formulaire --> 
+      
+    </form>
+    <!-- Bouton qui valide le formulaire --> 
       <div class="row justify-center align-items">
         <div class="offset-4 col-4 mb-5">
-          <button onclick="register()" class="bouton-valider btn btn-primary w-100">Submit</button>
+          <button id="bouton-valider" class="bouton-valider btn btn-primary w-100">Submit</button>
         </div> 
       </div> 
-    </form>
     <!-- FIN DU FORMULAIRE -->  
     <!-- OMBRES -->  
     <div class="drop drop-1"></div>
@@ -136,7 +137,7 @@ var reader;
 //insert
 
 // Set up our register function
-function register() {
+document.getElementById('bouton-valider').onclick = function(){
   // Get all our input fields
   name = document.getElementById('fname').value
   surname = document.getElementById('lname').value
