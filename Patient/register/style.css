@@ -13,7 +13,7 @@
     padding: 0; 
 }
 body{ 
-    font-family: 'Parisienne',Verdana, Helvetica, serif;
+    font-family: "Vollkorn", sans-serif;
     font-size: 1rem;/* Font-size définie en rem pour le body puis en em dans le reste du code, qui se référera au rem du body */    
 }
 .titleSection{
@@ -21,7 +21,7 @@ body{
     font-size: 2em;
 }
 h1{
-    font-family: 'Parisienne',Verdana, Helvetica, serif;
+    font-family: "Vollkorn", sans-serif;
     text-align: center;
 }
 /******************        SECTION 5  ( CONTACT )   *******************/
@@ -37,6 +37,7 @@ h1{
     z-index: 1;
 }
 #formulaire{
+    height: 580px;
     border-radius: 1em;
     background-color: var(--twhite);
     border-left: 1px solid var(--twhite);
@@ -52,7 +53,7 @@ h1{
 }
 #section5 label, button{
     color: black;
-    font-family: 'Philisopher', Verdana, Helvetica, sans-serif;
+    font-family: "Vollkorn", sans-serif;
     opacity: .8;
     font-size: 1.1em;
 }
@@ -74,6 +75,7 @@ h1{
     padding: 10px;
     border: none;
     transition: all 1s;
+    margin-top: -150px;
 }
 .bouton-valider:hover{
     background: white;
