@@ -84,3 +84,27 @@ document.querySelector('.menu-button').addEventListener('click', function () {
 document.querySelector('.close-menu').addEventListener('click', function () {
     document.querySelector('.app-left').classList.remove('show');
 });
+
+document.getElementById('Pat1').addEventListener('click', function () {
+  document.getElementById('PPW').style.backgroundImage = "url('1.png')";
+  x=document.getElementsByClassName("profile-text");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Oprah Winfrey";    // Change the content
+    }
+  
+
+});
+
+document.getElementById('Pat2').addEventListener('click', function () {
+  document.getElementById('PPW').style.backgroundImage = "url('2.png')";
+  x=document.getElementsByClassName("profile-text");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    x[i].innerText="Elon Musk";    // Change the content
+    }
+});
+document.getElementById('Pat3').addEventListener('click', function () {
+  document.getElementById('PPW').style.backgroundImage = "url('3.png')";
+});
+document.getElementById('Pat4').addEventListener('click', function () {
+  document.getElementById('PPW').style.backgroundImage = "url('4.png')";
+});
