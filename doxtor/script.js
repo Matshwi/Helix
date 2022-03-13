@@ -91,7 +91,25 @@ document.getElementById('Pat1').addEventListener('click', function () {
     for(var i = 0; i < x.length; i++){
     x[i].innerText="Oprah Winfrey";    // Change the content
     }
-  
+    document.getElementById('BP_circle').style.strokeDasharray = "70,100";
+    document.getElementById('TEMP_circle').style.strokeDasharray = "70,100";
+    document.getElementById('BPM_circle').style.strokeDasharray = "70,100";
+    bp=document.getElementsByClassName("profile-text");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    bp[i].innerText="Oprah Winfrey";    // Change the content
+    }
+    temp=document.getElementsByClassName("profile-text");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    temp[i].innerText="Oprah Winfrey";    // Change the content
+    }
+    bpm=document.getElementsByClassName("percentage");  // Find the elements
+    for(var i = 0; i < x.length; i++){
+    bpm[i].innerText="Oprah Winfrey";    // Change the content
+    }
+    document.getElementById('BP_circle_info').style.animation = "circle-chart-fill 2s reverse";
+    document.getElementById('BPM_circle_info').innerHTML = "70";
+    document.getElementById('TEMP_circle_info').innerText = "110/70";
+    document.getElementById('BP_circle_info').innerHTML = "110/70";
 
 });
 

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Parisienne&family=Philosopher&display=swap');
+
 body {
   margin: 0;
 }
@@ -32,11 +34,23 @@ input{
   color: black;
 }
 
+.titleSection{
+  color: black;
+  font-size: 2em;
+  display: flex; 
+  position: absolute; 
+  width: 100%; 
+  align-items: center; 
+  justify-content: center;
+}
 
 h1 {
-  margin-left: 35%;
+  font-family: "Vollkorn", sans-serif;
+  text-align: center;
   color: black;
 }
+
+
 
 .bg_text {
 
@@ -47,4 +61,18 @@ h1 {
 button:hover{
   background-color: white;
   color: black;
+}
+
+.bouton-valider {
+    background: var(--dark-green);
+    border-color: var(--light-green);  
+    box-shadow: 4px 4px 60px rgba(0, 0, 0, .2); 
+    padding: 10px;
+    border: none;
+    transition: all 1s;
+    margin-top: -150px;
+}
+.bouton-valider:hover{
+    background: white;
+    color: black;
 }

@@ -10,7 +10,10 @@
 <!-- partial:index.partial.html -->
 <head>
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Jura:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="./style.css">
 <style type="text/css">
   
   input{
@@ -63,14 +66,17 @@
   <div class="bg_text"> Helix </div>
 
   <div class="foreground">
-    <h1>L O G I N</h1>
-<form></form>
-<input type="text" id="email" placeholder="Email">
-<input type="password" id="pass" class="input2" placeholder="password">
+    <h1 class="titleSection">Login</h1>
+    <form></form>
+    <input type="text" id="email" placeholder="Email">
+    <input type="password" id="pass" class="input2" placeholder="Password">
 
-<button id="submit">Submit</button>
+    <button id="submit">Submit</button>
+    <div style="display: flex; position: absolute; width: 76%; justify-content: center;">
 
-<p>you dont have an account? <a href="../register/index.html">Register</a></p>
+      <p>Don't have an account? <a href="../register/index.html">Register</a></p>
+    </div>
+    
   </div>
 
 </div>

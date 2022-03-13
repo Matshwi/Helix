@@ -681,6 +681,13 @@ button {
   cursor: pointer;
 }
 
+#BP_circle{}
+#TEMP_circle{}
+#BPM_circle{}
+#BP_circle_info{}
+#TEMP_circle_info{}
+#BPM_circle_info{}
+
 #Pat1{}
 #Pat2{}
 #Pat3{}
