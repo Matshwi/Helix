@@ -435,7 +435,7 @@ img{
 	background-color: grey;
 	height: 10vh;
 	width: 2px;
-	margin-left: 17%;
+	margin-left: 19%;
 	margin-top: -5rem;
 }
 
@@ -463,8 +463,38 @@ img{
 
 
 .callicon {
-	background-color: limegreen;
-	padding: 10px 15px;
+	background-color: #73d986;
+	padding: 10px 12px;
+	border-radius: 50%;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+.Messages {
+	background-color: #8193cc;
+	padding: 10px 12px;
+	border-radius: 50%;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+
+.Cancel {
+	background-color: #e0809e;
+	padding: 10px 12px;
+	border-radius: 50%;
+	font-size: 15px;
+	font-weight: bold;
+
+}
+
+
+
+.rebook {
+	background-color: #e7ff6e;
+	padding: 10px 12px;
 	border-radius: 50%;
 	font-size: 15px;
 	font-weight: bold;
