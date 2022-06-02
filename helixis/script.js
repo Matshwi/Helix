@@ -27,10 +27,13 @@ const showAsideBtn = $('.show-side-btn')
 const sidebar = $('.sidebar')
 const wrapper = $('#wrapper')
 
+/*
 showAsideBtn.addEventListener('click', function () {
   $(`#${this.dataset.show}`).classList.toggle('show-sidebar')
   wrapper.classList.toggle('fullwidth')
 })
+
+*/
 
 if (window.innerWidth < 767) {
   sidebar.classList.add('show-sidebar');
@@ -79,14 +82,14 @@ $('.sidebar .categories').addEventListener('click', function (event) {
   }
 })
 
-$('.sidebar .close-aside').addEventListener('click', function () {
+$('.sidebar').addEventListener('click', function () {
   $(`#${this.dataset.close}`).classList.add('show-sidebar')
   wrapper.classList.remove('margin')
 })
 
 
 // Global defaults
-Chart.defaults.global.animation.duration = 2000; // Animation duration
+/*Chart.defaults.global.animation.duration = 2000; // Animation duration
 Chart.defaults.global.title.display = false; // Remove title
 Chart.defaults.global.defaultFontColor = '#71748c'; // Font color
 Chart.defaults.global.defaultFontSize = 13; // Font size for every label
@@ -259,3 +262,5 @@ var myChart = new Chart(chart, {
     }
   }
 })
+
+*/

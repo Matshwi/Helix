@@ -3,14 +3,87 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
-  <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
- <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+  <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./schedule.css">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
+
+  /*start search*/
+
+  #myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInputhospital {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myULhospital {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myULhospital li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#myULhospital li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+  /*end search*/
   
 .sidebar {
   width: 17.9%;
@@ -30,6 +103,139 @@
 .charts {
   margin-top: -2rem;
 }
+
+.specialty{
+  margin-top: 20px;
+}
+
+.specialtycondition{
+  margin-top: 20px;
+}
+
+.specialty li{
+  height: 40px;
+  border-bottom: 1px solid white;
+  padding-top: 10px;
+  color: white;
+}
+.specialtycondition li{
+  height: 40px;
+  border-bottom: 1px solid white;
+  padding-top: 10px;
+  color: white;
+}
+
+.specialty li:hover{
+  background-color: whitesmoke;
+  color: black;
+  padding-left: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.specialtycondition li:hover{
+  background-color: whitesmoke;
+  color: black;
+  padding-left: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.w3-button{
+  color: white;
+}
+
+.otherelements{
+  background-color: transparent;
+  backdrop-filter: blur(3px);
+  scrollbar-color: aqua;
+}
+
+#inputaddress{
+  color: black;
+  display: none;
+  width: 80%;
+  height: 50px;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  border: none;
+  border-bottom: 2px solid aqua;
+}
+
+#inputaddress: hover{
+  border: none;
+}
+
+.specialty li.on{
+  background-color: white;
+  color: black;
+  padding-left: 10px;
+}
+
+.specialtycondition li.on{
+  background-color: white;
+  color: black;
+  padding-left: 10px;
+}
+
+.calenderbtn{
+  width: 40%;
+}
+
+.scheduled{
+  float: right;
+}
+
+iframe{
+  width: 80vw;
+  height: 55vh;
+}
+
+.scheduletext{
+  text-align: center;
+  border: none;
+}
+
+span.fa{
+  float: right;
+}
+
+
+.next{
+  float: right;
+}
+
+.star_rating{
+  margin-left: 80%;
+  margin-top: -15px;
+}
+
+.star{
+  font-size: 21px;
+  background-color: unset;
+}
+.star:hover{
+  color: yellow;
+}
+
+.star_rating span:hover ~{
+  color: lightgoldenrodyellow;
+  background-color: unset;
+}
+
+.sendloc{
+  float: right;
+  margin-right: 5rem;
+  margin-top: -3rem;
+  border: 3px solid black;
+  padding: 9px;
+  border-radius: 4rem;
+  display: none;
+}
+
+   
 </style>
 </head>
 <body>
@@ -38,8 +244,8 @@
   
   
 
-  <div class="search position-relative text-center px-4 py-3 mt-2">
-    <p class="sidebarname">Name</p>
+  <div class="search position-relative text-center px-4 py-3 mt-2" id="nearbystops">
+    <p class="sidebarname"></p>
   </div>
 
   <ul class="categories list-unstyled">
@@ -91,52 +297,49 @@
         </ul>
       </div>
     </div>
-  </nav>
-
+  </nav>                                                                                                                   
   <div class="p-4 .mt-5">
     <div class="headtext">
       <div class="query">
         <p class="headertext">How can we help you?  <span style="font-weight: lighter;font-size: 12px;margin-left: 60%;">Press and hold S to speak</span></p>
       </div>
     </div>
-
-
     <section class="charts">
       <div class="row">
         <div class="col-lg-12">
           <div class="chart-container1 p-4 medics activity">
             
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('specialty').style.display='block'">
               <i class="uil-star icon"></i>
               <p style="margin-left: -1.6rem;width: 100%;font-size: 80%">Choose a specialty</p>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('condition').style.display='block'">
               <i class="uil-heart icon"></i>
-              <p style="margin-left: -1rem;width: 100%;font-size: 80%">Choose your condition</p>
+              <p style="margin-left: -1rem;width: 100%;font-size: 80%">Choose your condition </p>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('location').style.display='block'">
               <i class="uil-map-marker icon"></i>
-              <p style="margin-left: -1.2rem;width: 100%;font-size: 80%">Choose your location</p>
+              <p style="margin-left: -1.2rem;width: 100%;font-size: 80%">Choose your location </p>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('time').style.display='block'">
               <i class="uil-clock icon"></i>
-              <p style="margin-left: -2.8rem;width: 100%;font-size: 80%">Choose Time</p>
+              <p style="margin-left: -2.8rem;width: 100%;font-size: 80%">Choose Time </p>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('doctor').style.display='block'">
               <i class="uil-user icon"></i>
-              <p style="margin-left: -0.8rem;width: 100%;font-size: 80%">Search Doctor by name</p>
+              <p style="margin-left: -0.8rem;width: 100%;font-size: 80%">Search Doctor by name </p>
             </div>
-            <div class="btn">
+            <div class="btn" onclick="document.getElementById('hospital').style.display='block'">
               <i class="uil-hospital icon"></i>
-              <p style="margin-left: 0rem;width: 100%;font-size: 80%">Search hospital by name</p>
+              <p style="margin-left: 0rem;width: 100%;font-size: 80%">Search hospital by name </p>
             </div>
             <div class="btn">
               <i class="uil-mobile-vibrate icon"></i>
               <p style="margin-left: -1rem;width: 100%;font-size: 80%">Speak to a consultant</p>
             </div>
-            <div class="btn searchbtn">
-              <i class="uil-search icon"></i>
-              <p style="margin-left: -3.8rem;width: 100%;font-size: 80%">Search</p>
+            <div class="btn searchbtn" onclick="startappoint()">
+              <i class="uil-book icon"></i>
+              <p style="margin-left: -3.8rem;width: 100%;font-size: 80%">Book</p>
             </div>
           </div>
         </div>
@@ -145,9 +348,868 @@
 
   </div>
 </section>
+<div id="specialty" class="w3-modal">
+  <div class="w3-modal-content otherelements">
+    <div class="w3-container">
+      <span onclick="document.getElementById('specialty').style.display='none'" class="w3-button w3-diplay-topright">
+        &times;
+      </span>
+      <span class="w3-button next" onclick="nextCondition()"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+
+      <ul class="specialty">
+        <li id="Gaenycologyst" class="Gaenycologyst" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
+        <li id="General Practitioner" class="General Practitioner" value="General Practitioner" onclick="active(this)">General Practitioner</li>
+        <li id="Dentist" class="Dentist" value="Dentist" onclick="active(this)">Dentist</li>
+        <li id="surgery doctor" class="surgery doctor" value="surgery doctor" onclick="active(this)">surgery doctor</li>
+        <li id="urologist" class="urologist" value="urologist" onclick="active(this)">urologist</li>
+        <li id="Gaenycologyst1" class="Gaenycologyst1" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
+        <li id="General Practitioner1" class="General Practitioner1" value="General Practitioner" onclick="active(this)">General Practitioner</li>
+        <li id="Dentist1" class="Dentist1" value="Dentist" onclick="active(this)">Dentist</li>
+        <li id="surgery doctor1" class="surgery doctor1" value="surgery doctor" onclick="active(this)">surgery doctor</li>
+        <li id="urologist1" class="urologist1" value="urologist" onclick="active(this)">urologist</li>
+        <li id="Gaenycologyst2" class="Gaenycologyst2" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
+        <li id="General Practitioner2" class="General Practitioner2" value="General Practitioner" onclick="active(this)">General Practitioner</li>
+        <li id="Dentist2" class="Dentist2" value="Dentist" onclick="active(this)">Dentist</li>
+        <li id="surgery doctor2" class="surgery doctor2" value="surgery doctor" onclick="active(this)">surgery doctor</li>
+        <li id="urologist2" class="urologist2" value="urologist" onclick="active(this)">urologist</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<div id="condition" class="w3-modal">
+  <div class="w3-modal-content otherelements">
+    <div class="w3-container">
+      <span onclick="document.getElementById('condition').style.display='none'" class="w3-button w3-diplay-topright">
+        &times;
+      </span>
+      <span class="w3-button next" onclick="nextLocation()"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+
+      <ul class="specialtycondition" >
+      
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="location" class="w3-modal">
+  <div class="w3-modal-content otherelements">
+    <div class="w3-container">
+      <span onclick="document.getElementById('location').style.display='none'" class="w3-button w3-diplay-topright">
+        &times;
+      </span>
+
+      <ul class="specialty">
+        <li onclick="locationeraddress(this)">2152 BLOCK-GG, botaleng cres, Soshanguve, Pretoria, Gauteng, 0152</li>
+        <li value="pregnant2" onclick="locationer()">Current location | coordinates</li>
+        <li id="ediloc" onclick="listexpend()">Add address +
+          <br><br><br>
+
+          <input id="inputaddress" type="text" name="" placeholder="address"> <span class="sendloc">submit</span>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div id="time" class="w3-modal">
+  <div class="w3-modal-content">
+    <div class="w3-container timer">
+      <span onclick="document.getElementById('time').style.display='none'" class="w3-button w3-diplay-topright" style="color: black;">
+        &times;
+      </span>
+
+      <div class="calendar">
+        <div class="calendar-header">
+            <span class="month-picker" id="month-picker">February</span>
+            <div class="year-picker">
+                <span class="year-change" id="prev-year">
+                    <pre><</pre>
+                </span>
+                <span id="year">2021</span>
+                <span class="year-change" id="next-year">
+                    <pre>></pre>
+                </span>
+            </div>
+        </div>
+        <div class="calendar-body">
+            <div class="calendar-week-day">
+                <div>Sun</div>
+                <div>Mon</div>
+                <div>Tue</div>
+                <div>Wed</div>
+                <div>Thu</div>
+                <div>Fri</div>
+                <div>Sat</div>
+            </div>
+            <div class="calendar-days"></div>
+        </div>
+        <div class="calendar-footer">
+          <button class="calenderbtn">done</button>
+            <div class="toggle">
+                <input type="time" style="color: blue;">
+            </div>
+        </div>
+        <div class="month-list"></div>
+    </div>
+
+        <div class="scheduled">
+          <h6 class="scheduletext">scheduled activities</h6>
+          <iframe src="inframe/index.html"></iframe>
+          
+        </div>
+    </div>
+  </div>
+</div>
+
+<div id="doctor" class="w3-modal">
+  <div class="w3-modal-content otherelements">
+    <div class="w3-container">
+      <span onclick="document.getElementById('doctor').style.display='none'" class="w3-button w3-diplay-topright">
+        &times;
+      </span>
+
+      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li onclick="adddoctor(this)" id="DrAdele"><a href="#">Dr Adele</a></li>
+  <li><a href="#">Dr Agnes</a></li>
+
+  <li><a href="#">Dr Billy</a></li>
+  <li><a href="#">Dr Bob</a></li>
+
+  <li><a href="#">Dr Calvin</a></li>
+  <li><a href="#">Dr Christina</a></li>
+  <li><a href="#">Dr Cindy</a></li>
+</ul>
+
+
+   </div>
+  </div>
+</div>
+
+<div id="hospital" class="w3-modal">
+  <div class="w3-modal-content otherelements">
+    <div class="w3-container">
+      <span onclick="document.getElementById('hospital').style.display='none'" class="w3-button w3-diplay-topright">
+        &times;
+      </span>
+
+      <input type="text" id="myInputhospital" onkeyup="myhospital()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myULhospital">
+  <li onclick="addhospital()"><a href="#">Dr George Mukhari</a></li>
+  <li><a href="#">Botshilo hospital</a></li>
+
+  <li><a href="#">Louis Pasture hospital</a></li>
+  <li><a href="#">Medic Bob hospital</a></li>
+
+  <li><a href="#">steven biko academic hospital</a></li>
+</ul>
+
+   </div>
+  </div>
+</div>
 <!-- partial -->
-  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script><script  src="./script.js"></script>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+ <!-- TODO: Add SDKs for Firebase products that you want to use 
+
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <!--<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>-->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+<script type="text/javascript">
+
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAybUF58ye2xdEx5Cty63VQYf0aWjhfLjQ",
+  authDomain: "helix-3ee55.firebaseapp.com",
+  databaseURL: "https://helix-3ee55-default-rtdb.firebaseio.com/",
+  projectId: "helix-3ee55",
+  storageBucket: "helix-3ee55.appspot.com",
+  messagingSenderId: "794490224146",
+  appId: "1:794490224146:web:8313c7d926b0b91a6722cb"
+  };
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
+
+
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+const success = (position) => {
+
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
+
+    fetch(geoApiUrl).then(res => res.json()).then(data => {
+      console.log(data);
+      console.log("inside " + longitude);
+      console.log("inside " + latitude);
+
+
+
+    })
+  }
+  const error = () => {
+    status.textContent = 'unable to retrieve your location';
+  }
+
+  function listexpend(){
+    document.getElementById("ediloc").style.height = "180px";
+
+    setTimeout(displayer, 1000);
+
+    function displayer(){
+      document.getElementById("inputaddress").style.display = "block";
+      document.querySelector(".sendloc").style.display = "block";
+    }
+
+
+
+  }
+
+
+
+  var addressinput = document.querySelector(".sendloc");
+
+  addressinput.addEventListener("click", function(){
+    var thedress = document.getElementById("inputaddress").value
+
+
+    var address = {
+    address: thedress
+  }
+
+     firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(address);
+  })
+
+ 
+
+
+  firebase.database().ref("Appoiments/ratedcondition/" + useruid + "/" + booknum).on("child_added",function(snapshot){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+   /* snapshot.forEach(function(element){
+
+      var totale = 0;
+
+      var numele = element.val();
+      console.log(numele);
+
+      totale += numele;
+
+      console.log(totale);
+
+    })
+
+    var totally = Object.values(num);
+    total += totally;
+    console.log("this total is " + totally);*/
+
+var total = 0;
+var num = snapshot.val();
+    
+    for (var [key, value] of Object.entries(num)) {
+
+  total += value;
+
+
+
+  //0-20 booking in the next 7 days
+  if (total < 20) {
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    //check the date
+    var today;
+    var daydue = new Date().getDate() + 6;
+    var mondue = new Date().getMonth();
+    var yeardue = new Date().getFullYear();
+    today = new Date(yeardue, mondue, daydue);
+
+    var date = {
+    day: today,
+  }
+  
+
+  firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).update(date);
+    
+    //set seven days after today
+    //send that day to the database
+  }else if (total == 21 || total > 21 || total == 35) {
+    //send
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    var today;
+    var daydue = new Date().getDate() + 3;
+    var mondue = new Date().getMonth();
+    var yeardue = new Date().getFullYear();
+    today = new Date(yeardue, mondue, daydue);
+
+    var date = {
+    day: today,
+  }
+
+  firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).update(date);
+  }//21-35 booking in the next 2-5 days
+   else if (total == 36 || total > 36 || total == 50) {
+    //send
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+
+    var today;
+    var daydue = new Date().getDate() + 1;
+    var mondue = new Date().getMonth();
+    var yeardue = new Date().getFullYear();
+    today = new Date(yeardue, mondue, daydue);
+    var date = {
+    day: today,
+  }
+
+  firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).update(date);
+  }//36-50 booking in the next 24 hours
+
+}
+
+  })
+
+  firebase.database().ref("symptomps").on("value",function(snapshot){
+
+
+    var snappy = snapshot.val();
+    snapshot.forEach(function(element){
+
+      
+
+      var thevalues = element.val();
+
+      document.querySelector('.specialtycondition').innerHTML += `<li id="${thevalues}" class="${thevalues}" value="${thevalues}">${thevalues}
+          <div class="star_rating">
+          <span value="1" class="star" id="1" onclick="rating(${thevalues}, 1)">&#9734;</span>
+          <span value="2" class="star" id="2" onclick="rating(${thevalues}, 2)">&#9734;</span>
+          <span value="3" class="star" id="3" onclick="rating(${thevalues}, 3)">&#9734;</span>
+          <span value="4" class="star" id="4" onclick="rating(${thevalues}, 4)">&#9734;</span>
+          <span value="5" class="star" id="5" onclick="rating(${thevalues}, 5)">&#9734;</span>
+          </div>
+          
+        </li>`;
+
+  
+       /* const rated = document.querySelectorAll('.star');
+            rated.
+    
+    rated.forEach((star, i) => {
+      star.addEventListener('click', ()=> {
+        console.log(`${star} ${i + 1} was clicked`);
+      });
+            star.innerHTML = '&#9733';
+            star.innerHTML = '&#9734';
+    })*/
+
+    })
+
+    /* var symptoms = snapshot.val();
+
+
+     var conditions = Object.entries(symptoms);
+
+     var element = document.querySelector('.specialtycondition');
+     for (const [key, value] of Object.entries(symptoms)) {
+  console.log(`${key}: ${value}`);
+}
+
+
+  
+        
+*/
+  })
+
+  
+
+  function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+
+
+function myhospital() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInputhospital");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myULhospital");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+
+function adddoctor(doc){
+
+  var doctor = doc.id;
+
+   var doctorobj = {
+    doctor: doctor
+  }
+
+  firebase.database().ref("Appoiments/doctor").update(doctorobj);
+}
+
+function addhospital(hos){
+
+  var hospital = hos.id;
+
+   var hospitalobj = {
+    hospital: hospital
+  }
+
+  firebase.database().ref("Appoiments/hospital").update(hospitalobj);
+}
+
+/*
+
+firebase.database().ref("doctors").on("value",function(snapshot){
+      /*document.getElementById().value = snapshot.val().nameofthething;
+      //var results = snapshot.val();
+      snapshot.forEach(function(element){
+        element.forEach(function(item){
+item.forEach(function(output){
+
+var results = output.val();
+//for (var i in results) {
+
+//console.log(results);
+//}
+   })
+
+})
+
+ })
+    })
+
+*/
+
+/*document.querySelector("#specialtyitem").addEventListener("click", ()=> {
+
+  var test = document.getElementById('specialtyitem');
+alert(test.value);
+
+ // const variable = document.getElementById().value;
+ // firebase.database().ref("Appoiments").push(email);
+});*/
+
+
+
+
+function active(val){
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+
+  const specialist = val.className;
+
+  var specialistobj = {
+    [specialist]: specialist
+  }
+
+  firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).update(specialistobj);
+
+   if (specialist !== 'on') {
+    val.className = "on";
+  }else if(specialist == 'on'){
+
+    var theidname = val.id;
+
+
+    val.className = val.id;
+
+
+      firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum + "/" + specialist).remove();
+      firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum + "/" + theidname).remove();
+    
+    
+  
+}
+
+}
+function rating(num, val){
+
+
+  }
+
+function rating(val, num){
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+
+  const conditionlist = val.className;
+  const number = num;
+
+  var conditionobj = {
+    [conditionlist]: number
+  }
+  firebase.database().ref("Appoiments/ratedcondition/" + "/" + useruid + "/" + booknum).update(conditionobj);
+
+   if (conditionlist !== 'on') {
+    
+
+    val.className = "on";
+    
+
+
+     //rated.style.fontSize = '25px';
+     
+    
+  }else if(conditionlist == 'on'){
+
+    var theidname = val.id;
+    
+
+     
+    val.className = val.id;
+
+
+      firebase.database().ref("Appoiments/ratedcondition/" + "/" + useruid + "/" + booknum + "/" + conditionlist).remove();
+      firebase.database().ref("Appoiments/ratedcondition/" + "/" + useruid + "/" + booknum + "/" + theidname).remove();
+    
+    
+  }
+
+}
+
+
+function locationeraddress(val) {
+
+  var theaddress = val.textContent;
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    var addressobj = {
+    [addressobj]: theaddress
+  }
+
+     firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(addressobj);
+
+      firebase.database().ref("doctors").on("value",function(element){
+
+        console.log(Object.keys(element.val()).length);
+    element.forEach(function(snapshot){
+
+    var thedoctor = snapshot.val();
+    
+
+    
+  console.log("outside " + longitude);
+      console.log("outside " + latitude);
+
+    var data = [{
+        "code": "0001",
+        "lat": "1.28210155945393",
+        "lng": "103.81722480263163",
+        "location": "Stop 1"
+    }, {
+        "code": "0003",
+        "lat": "1.2777380589964",
+        "lng": "103.83749709165197",
+        "location": "Stop 2"
+    }];
+
+    var html = "";
+    var poslat = latitude;
+    var poslng = longitude;
+
+    for (var i = 0; i < data.length; i++) {
+        // if this location is within 0.1KM of the user, add it to the list
+        if (distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 1 || distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 2) {
+            html = data[i];
+            console.log(html);
+        }
+    }
+
+    document.querySelector('#nearbystops').append(html);
+    })
+
+  });
+      navigator.geolocation.getCurrentPosition(success, error);
+}
+
+
+function locationer(){  //start locationer function
+ // const status = document.querySelector('');
+
+  const success = (position) => {
+
+    var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
+
+    const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
+
+    fetch(geoApiUrl).then(res => res.json()).then(data => { //fetch geoApiUrl function
+      
+
+       var locationobj = {
+    latitude: latitude,
+    longitude: longitude
+  }
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+      firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(locationobj);
+
+firebase.database().ref("doctors").on("value",function(element){ // start from element
+
+        var lengthdoc = Object.keys(element.val()).length;
+    element.forEach(function(snapshot){ // start from element to snapshot
+
+    var thedoctor = snapshot.val();
+
+
+var html;
+    var poslat = latitude;
+    var poslng = longitude;
+
+
+    for (var i = 0; i < lengthdoc; i++) { //start for function
+        // if this location is within 0.1KM of the user, add it to the list
+        var distances = distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K");
+
+        console.log(distances);
+
+        if (distances < 1) {
+          
+            alert("not igain");
+        }else if(distances < 50){ //start if < 50 function
+          Swal.fire(
+  'Appointment set!',
+  'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
+  'success'
+).then(function(){ //start then function
+
+  firebase.database().ref("Register/"+useruid).on("value",function(element){ //start element data from register
+
+    const userdata = element.val();
+    const username = userdata.First_Name;
+    const email = userdata.Email;
+
+  Email.send({  //start email send
+    Host: "smtp.gmail.com",
+    Username : "matshwikatlego@gmail.com",
+    Password : "C505B013719B1DCB5BE95790D2A765F90500",
+    To: `${email}`,
+    From: "matshwikatlego@gmail.com",
+    Subject: "appoitment set",
+    Body: `Hi ${username}
+
+    Thank you for writing to confirm our appointment. I have you scheduled on the calendar on [date] at [time] at [location]. Please contact this number 011 234 5678 or info@helix.com if you have any questions before the meeting. I appreciate your timely attendance at this appointment.
+
+Sincerely,
+Helix Team
+
+
+    `
+    })//end email send
+    .then( //start then on message
+    message => alert(message)
+  )//end then on message
+
+})//end element data from register
+    
+
+    document.querySelector('#nearbystops').append(html);
+
+  }) //end then function
+
+    
+
+    }//end if < 50 function
+  }//end for function
+  
+   }) // end from element to snapshot
+  }) // end from element
+navigator.geolocation.getCurrentPosition(success);
+ }); //fetch geoApiUrl function
+   
+} //end locationer function
+
+
+
+
+
+
+
+
+function nextCondition(){
+  document.getElementById('specialty').style.display='none';
+  document.getElementById('condition').style.display='block';
+}
+
+function nextLocation(){
+  document.getElementById('condition').style.display='none';
+  document.getElementById('location').style.display='block';
+}
+
+
+
+function startappoint(){
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const product = urlParams.get('userid')
+
+  var appointmentname = Date.now();
+
+  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
+  
+}
+
+firebase.database().ref("Register").on('value', function(snapshot){
+})
+
+
+    var linker = '?userid=' + useruid;
+    var linkey = '?userid=' + useruid + '&booknum=' + booknum;
+
+if (queryString == linker) {
+  document.getElementById('specialty').style.display='none';
+} else if(queryString == linkey) {
+  document.getElementById('specialty').style.display='block';
+}
+
+
+console.log(calcCrow(-25.652698384379825,28.227487535167622,-25.660679718090567,28.234572930323047).toFixed(1));
+
+const arr = [1, 2, 3, 4, 5];
+
+var sum = 0;
+
+for (var number of arr) {
+    sum += number;
+}
+
+average = sum / arr.length;
+
+console.log(average);
+
+    //This function takes in latitude and longitude of two location and returns the distance between them as the crow flies (in km)
+    function calcCrow(lat1, lon1, lat2, lon2) 
+    {
+      var R = 6371; // km
+      var dLat = toRad(lat2-lat1);
+      var dLon = toRad(lon2-lon1);
+      var lat1 = toRad(lat1);
+      var lat2 = toRad(lat2);
+
+      var a = Math.sin(dLat/2) * Math.sin(dLat/2) +
+        Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
+      var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+      var d = R * c;
+      return d;
+    }
+
+    // Converts numeric degrees to radians
+    function toRad(Value) 
+    {
+        return Value * Math.PI / 180;
+    }
+
+
+function distance(lat1, lon1, lat2, lon2, unit) {
+      var radlat1 = Math.PI * lat1/180
+      var radlat2 = Math.PI * lat2/180
+      var theta = lon1-lon2
+      var radtheta = Math.PI * theta/180
+      var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      if (dist > 1) {
+        dist = 1;
+      }
+      dist = Math.acos(dist)
+      dist = dist * 180/Math.PI
+      dist = dist * 60 * 1.1515
+      if (unit=="K") { dist = dist * 1.609344 }
+      if (unit=="N") { dist = dist * 0.8684 }
+      return dist
+    }
+
+    
+
+
+</script>
+<script src="app.js"></script>
+
+
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>-->
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+
+<script  src="./script.js"></script>
 
 </body>
 </html>

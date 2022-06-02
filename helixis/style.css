@@ -628,7 +628,15 @@ img{
 	margin-right: 20px;
 }
 
-.uil-hospital{
+.uil-phone-volume{
+	padding: 0.5rem 0.7rem 0.5rem 0.6rem;
+	text-align: center;
+	background-color: white;
+	border-radius: 50%;
+	font-size: 20px;
+}
+
+.uil-comment-dots{
 	padding: 0.5rem 0.7rem 0.5rem 0.6rem;
 	text-align: center;
 	background-color: white;
@@ -759,4 +767,8 @@ button {
 
 .doccontainer {
 	padding: 20px 5px 0px 5px;
+}
+
+ul{
+	list-style: none;
 }
