@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
+  <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
+ <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
+<!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
+<!--<link rel="stylesheet" type="text/css" href="line.css">-->
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+  
+  .text {
+  margin-top: .5rem;
+  font-size: 10px;
+  color: #fff;
+  }
+
+  .headertext {
+    margin-top: 10%;
+    margin-left: 0%;
+    font-weight: bold;
+    color: #eee;
+  }
+
+  button.patientstatus{
+    border: 2px solid red;
+    padding: 12px 5px;
+    background-color: transparent;
+    color: red;
+    width: max-content;
+    margin-top: 5px;
+    font-size: 10px;
+    font-weight: 900;
+  }
+
+  .patientstatus span{
+    background-color: red;
+    color: #eee;
+    padding: 10px 30px;
+    border-radius: 999em;
+  }
+
+  .fa{
+    border: 1px solid #eee;
+    padding: 10px;
+    border-radius: 50%;
+  }
+
+  .patienticon{
+    font-size: 10px;
+  }
+
+  .fa-sliders{
+    padding: 5px  !important;
+  }
+
+  .searcher{
+    margin-top: -3rem;
+    position: absolute;
+    margin-left: 45rem;
+    width: 40rem;
+    float: left;
+  }
+
+  .searcher input{
+    border-radius: 999em;
+    background-color: rgba(255, 255, 255, .5);
+    width: 15rem;
+    margin-top: -50%;
+    height: 30px;
+  }
+
+  .searcher span{
+    width: fit-content;
+  }
+
+  .fa-search{
+    border: none;
+  }
+
+
+
+  /* Popup container - can be anything you want */
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: rgba(255, 255, 255, .7);
+  color: #2a2b3d;
+  text-align: left;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  z-index: 1;
+  top: 125%;
+  left: 50%;
+  margin-left: 25px;
+  font-size: 12px;
+}
+
+/* Popup arrow */
+.popup .popuptext::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #555 transparent transparent transparent;
+}
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
+  -webkit-animation: fadeIn 1s;
+  animation: fadeIn 1s;
+}
+
+/* Add animation (fade in the popup) */
+@-webkit-keyframes fadeIn {
+  from {opacity: 0;} 
+  to {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity:1 ;}
+}
+
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+
+  <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+  
+  
+
+  <div class="search position-relative text-center px-4 py-3 mt-2">
+    <p class="sidebarname">Name</p>
+  </div>
+
+  <ul class="categories list-unstyled">
+    <li class="sidetext">
+      <i class="uil-estate fa-fw"></i><a href="#"> Overview</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-calendar-alt"></i><a href="#"> Calender</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-file fa-fw"></i><a href="#"> Documents</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-comment-message"></i><a href="#"> Message</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-file-medical"></i><a href="#"> Medical Form</a>
+    </li>
+  </ul>
+</aside>
+    
+  
+
+<section id="wrapper">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid mx-2">
+      <div class="collapse navbar-collapse" id="toggle-navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img class="proimg" src="man-g24ba357cd_1280.jpg">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="p-4">
+    <div class="">
+      <div class="headertext">
+
+        <p>
+          <div class="popup">All Patients
+         
+          <i onclick="myoptions()" class="fa fa-sliders" aria-hidden="true"></i>
+          <span class="popuptext" id="myPopup">
+            <ul>
+              <li>Alphabetical (a-z)</li>
+              <li>Alphabetical (z-a)</li>
+              <li>High Risk</li>
+              <li>Upcoming Appointments</li>
+              <li>Previous Appointments</li>
+              <li>New Appointments</li>
+              <li>Prescriptions</li>
+            </ul>
+          </span>
+        </div>
+          <div class="searcher">
+            <span style="margin-top: 10rem">
+          <i class="fa fa-search" aria-hidden="true"></i>
+        </span>
+        <span style="margin-left: -3rem;margin-top: -5rem">
+          <input type="text" name="">
+        </span>
+      </div>
+         
+      </p>
+      </div>
+    </div>
+    <div class="welcome doclist">
+      <div style="background-color: #0a1736 !important;" class="content doccontainer medics">
+        <ul class="doctor">
+              <li style="font-weight: bold;font-size: 14px;">
+                Mariam tristal
+              </li>
+              <li style="font-size: 11px;">
+                Next Appointment: June 25, 10am - 11:30am
+              </li>
+            </ul>
+            <ul class="docitems">
+              <li>
+                <button class="patientstatus">
+                  <span>
+                    high heart rate
+                  </span> 
+                </button>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-phone"></i>
+                <p class="text">call</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-commenting-o"></i>
+                <p class="text">message</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-plus"></i>
+                <p class="text">More info</p>
+              </li>
+            </ul>
+      </div>
+    </div>
+    <div class="welcome doclist">
+      <div style="background-color: #0a1736 !important;" class="content doccontainer medics">
+        <ul class="doctor">
+              <li style="font-weight: bold;font-size: 14px;">
+                Alvin Naidoo
+              </li>
+              <li style="font-size: 13px;">
+                Next Appointmet: June 26, 10am - 11:30am
+              </li>
+            </ul>
+            <ul class="docitems">
+              <li>
+                <button class="patientstatus">
+                  <span>
+                   Low blood pressure
+                  </span> 
+                </button>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-phone"></i>
+                <p class="text">call</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-commenting-o"></i>
+                <p class="text">message</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-plus"></i>
+                <p class="text">More info</p>
+              </li>
+            </ul>
+      </div>
+    </div>
+    <div class="welcome doclist">
+      <div style="background-color: #0a1736 !important;" class="content doccontainer medics">
+        <ul class="doctor">
+              <li style="font-weight: bold;font-size: 14px;">
+                Chantel Morgan
+              </li>
+              <li style="font-size: 13px;">
+                Next Appoimtment: June 26, 10am - 11:30am 
+              </li>
+            </ul>
+            <ul class="docitems">
+              <li class="patienticon">
+                <i class="fa fa-phone"></i>
+                <p class="text">call</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-commenting-o"></i>
+                <p class="text">message</p>
+              </li>
+              <li class="patienticon">
+                <i class="fa fa-plus"></i>
+                <p class="text">More info</p>
+              </li>
+            </ul>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- partial -->
+
+<script>
+// When the user clicks on div, open the popup
+function myoptions() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+}
+</script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+<script  src="../script.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
+  <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
+ <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
+<!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
+<!--<link rel="stylesheet" type="text/css" href="line.css">-->
+<link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+  
+  .Personalinfo li{
+  font-size: 0.8rem;
+}
+
+.Personalinfo {
+  margin-left: -1.5rem;
+  margin-bottom: 0px;
+}
+
+.options {
+  display: inline-block;
+  background-color: #0a1736 !important;
+}
+
+i.fa.fa-video-camera{
+  font-size: 15px;
+}
+
+i.fa-eye{
+  font-size: 15px;
+}
+i.fa-line-chart{
+  font-size: 15px;
+}
+
+.alert{
+  margin-top: -20px;
+  float: right;
+  background-color: transparent;
+  padding: 15px 8px 15px 8px;
+  border-radius: 999em;
+  font-size: 10px;
+  font-weight: 900;
+  border: 1px solid red;
+}
+
+.alert span{
+  color: white;
+  background-color: red;
+  padding: 10px;
+  border-radius: 999em;
+  text-align: center;
+}
+
+.sidetext{
+  color: #eee !important;
+}
+
+h3{
+  color: #eee;
+}
+
+.changer{
+  color: #eee;
+  margin-top: 16px;
+}
+
+.next{
+  float: right;
+  border: 2px solid #eee;
+  border-radius: 50%;
+  padding: 4px 10px;
+}
+
+.Previously{
+  border: 2px solid #eee;
+  border-radius: 50%;
+  padding: 5px 10px;
+  margin-top: 5px;
+}
+
+.editicon{
+  float: right;
+  background-color: white;
+  padding: 7px 10px;
+  border-radius: 50%;
+  font-size: 15px;
+  font-weight: bold;
+  color: black;
+}
+
+.thirdcont{
+  width: 5.4rem;
+  margin-left: 17rem;
+  font-size: .555rem;
+}
+
+
+.responders{
+  margin-top: 80rem;
+}
+
+
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+  
+  
+
+  <div class="search position-relative text-center px-4 py-3 mt-2">
+    <p class="sidebarname">Name</p>
+  </div>
+
+  <ul class="categories list-unstyled">
+    <li class="sidetext">
+      <i class="uil-estate fa-fw"></i><a href="#"> Overview</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-calendar-alt"></i><a href="#"> Calender</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-file fa-fw"></i><a href="#"> Documents</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-comment-message"></i><a href="#"> Message</a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-file-medical"></i><a href="#"> Medical Form</a>
+    </li>
+  </ul>
+</aside>
+
+<section id="wrapper">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid mx-2">
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="uil-bars text-white"></i>
+        </button>
+        
+      </div>
+      <div class="collapse navbar-collapse" id="toggle-navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link">
+              
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Support</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Account</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img class="proimg" src="man-g24ba357cd_1280.jpg">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <div class="p-4">
+    <div class="">
+      <div class="content rounded-3 p-3">
+        <p class="mb-0">Dr C Bekker &nbsp;&nbsp;&nbsp; > &nbsp;&nbsp;&nbsp; <span style="font-weight: lighter;">Dashboard</span> </p>
+      </div>
+    </div>
+    <div class="welcome">
+      <div class="content rounded-2 p-3 options">
+        <ul class="Personalinfo">
+              <li>
+                <i class="fa fa-video-camera" aria-hidden="true"></i>
+                </li> 
+                <br>
+                <li>
+                Virtual Sessions 
+                </li>
+                <br>
+                <li style="font-size: 10px;">today
+                </li>
+                <br>
+                <li style="margin-top: 1rem;font-weight: 800;">4
+                </li>
+            </ul>
+      </div>
+      <div class="content rounded-2 p-3 options">
+            <ul class="Personalinfo">
+              <li>
+                <i class="fa fa-eye" aria-hidden="true"></i>
+                </li> 
+                <br>
+                <li>
+                In-person sessions
+                </li>
+                <br>
+                <li style="font-size: 10px;">today
+                </li>
+                <br>
+                <li style="margin-top: 1rem;font-weight: 800;">6
+                </li>
+            </ul>
+      </div>
+      <div class="content rounded-2 p-3 options">
+            <ul class="Personalinfo">
+              <li>
+                <i class="fa fa-line-chart" aria-hidden="true"></i>
+                </li> 
+                <br>
+                <li>
+                Total Patients 
+                </li>
+                <br>
+                <li style="font-size: 10px;">today
+                </li>
+                <br>
+                <li style="margin-top: 1rem;font-weight: 800;">4
+                </li>
+            </ul>
+      </div>
+      <div class="content rounded-2 p-3 options">
+            <ul class="Personalinfo">
+              <li>
+                <i class="fa fa-calendar" aria-hidden="true"></i>
+                </li> 
+                <br>
+                <li>
+                Offline consultations 
+                </li>
+                <br>
+                <li style="font-size: 10px;">today
+                </li>
+                <br>
+                <li style="margin-top: 1rem;font-weight: 800;">4
+                </li>
+            </ul>
+      </div>
+    </div>
+    <div class="welcome" style="margin-top: 1rem; background-color: #13254f !important;width: fit-content;">
+      <div class="content rounded-2 p-3" style="background-color: #13254f !important;">
+        <h6 class="fs-6">Next Patient <div class="PIcross1"><i class="fa fa-eye"></i></div></h6>
+        <ul class="Personalinfo">
+              <li>
+                <i class="uil-user" style="font-size: 1.2rem"></i><br> Name
+                <br>
+                <span style="font-size: .725rem">Albert Schneider
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-clock-o" style="font-size: 1.2rem"></i><br>Time 
+                <br>
+                <span style="font-size: .725rem">June 26,<br> 10-11:30
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-check-square" style="font-size: 1.2rem"></i><br>Reason 
+                <br>
+                <span style="font-size: .725rem">Regular, <br> Check-up
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-medkit" style="font-size: 1.2rem"></i><br>Medical Aid 
+                <br>
+                <span style="font-size: .725rem"> Discovery, <br> Classic Priority
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-user-plus" style="font-size: 1.2rem"></i><br>Newcomer 
+                <br>
+                <span style="font-size: .725rem"> No, <br> 3rd Visit
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-file-text-o" style="font-size: 1.2rem"></i><br>Symptoms 
+                <br>
+                <span style="font-size: .725rem"> Ear Ache <br> Headaches
+                </span>
+              </li>
+              <li>
+                <i class="fa fa-user-circle-o" style="font-size: 1.2rem"></i><br>Age 
+                <br>
+                <span style="font-size: .725rem"> 46 <br> Years Old
+                </span>
+              </li>
+            </ul>
+      </div>
+    </div>
+
+    <section class="charts">
+      <div class="row">
+        <div class="medico" style="background-color: #13254f;padding: 30px 15px;border-radius: 10px;">
+          <h3 class="fs-6 mb-3">Helix bands > Mariam Tristal <br><span style="font-size: 10px">Pulse Oximeter</span><div class="alert"><span><i class="fa fa-exclamation-triangle" aria-hidden="true"></i> &nbsp; high heart rate</span></div></h3>
+          <div class="chart-container medics p-3" style="width: 25rem !important;background-color: #0a1736 !important;">
+            
+
+       <canvas id="myChart" style="width:100%;max-width:70rem;"></canvas>
+
+            <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
+          </div>
+          <div class="changer"><span class="Previously"><</span><span class="next">></span></div>
+        </div>
+
+
+        <div class="col-lg-6 medico  p-3" style="margin-top: 50px;background-color: #13254f;border-radius: 1rem;">
+          <h3 class="fs-6 mb-3">All Notifications &nbsp;<span>Appointment Requests</span> <div class="editicon"><i class="uil-edit-alt"></i></div></h3>
+          <div class="chart-container medics" style="background-color: #13254f;">
+            
+            <div class="medireccontent">
+              <div class="firstcont">
+                <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Appointment Request</p>
+                <p style="font-size: .700rem; font-weight: bold;width: fit-content;">Beth Rattan</p>
+              </div>
+              <div class="linemedrec">
+              </div>
+              <div class="secondcontrec">
+                <p style="font-size: .555rem;margin-bottom: 0%;width: fit-content;">Check-up</p>
+                <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am  1130am</p>
+              </div>
+
+              <div class="thirdcont">
+                <div>
+                  <i class="fa fa-volume-control-phone MRcross"></i>
+                <br>
+                <span class="responders">confirm</span>
+                </div>
+                <div style="margin-left: 3rem;margin-top: -2.5rem">
+                  <i class="fa fa-commenting-o MRcross"></i>
+                <br>
+                <span class="responders" style="margin-left: 5px">deny</span>
+              </div>
+                
+              </div>
+            </div>
+            <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <section class="charts appoint">
+      <div class="chart-container medics p-3">
+        <h3 class="fs-6 mb-3">Previous Appointments <span class="upcoming">Upcoming appointments</span><div class="PIcross">+</div></h3>
+        <div>
+          <div class="appointmentcontent" style="margin-top: 30px">
+            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">in-person</p>
+            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Albert Schnider</span>
+            <div class="line"></div>
+            <div class="titletime">
+              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">check-up</p>
+            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
+          </div>
+            <ul class="action">
+            <li>
+              <div>
+                <span class="callicon">
+                  <i class="uil-phone"></i>
+                </span>
+              <p class="texts">call
+              </p>
+            </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Messages">
+                <i class="uil-chat-info"></i>
+              </span>
+              <p class="texts">Messages
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Cancel">
+                <i class="uil-multiply"></i>
+              </span>
+              <p class="texts">Cancel
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="rebook">
+                <i class="uil-edit"></i>
+              </span>
+              <p class="texts">Re-book
+              </p>
+              </div>
+            </li>
+            </ul>
+          </div>
+          <div class="appointmentcontent">
+            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">in-person</p>
+            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Albert Schnider</span>
+            <div class="line"></div>
+            <div class="titletime">
+              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">check-up</p>
+            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
+          </div>
+            <ul class="action">
+            <li>
+              <div>
+                <span class="callicon">
+                  <i class="uil-phone"></i>
+                </span>
+              <p class="texts">call
+              </p>
+            </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Messages">
+                <i class="uil-chat-info"></i>
+              </span>
+              <p class="texts">Messages
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Cancel">
+                <i class="uil-multiply"></i>
+              </span>
+              <p class="texts">Cancel
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="rebook">
+                <i class="uil-edit"></i>
+              </span>
+              <p class="texts">Re-book
+              </p>
+              </div>
+            </li>
+            </ul>
+          </div>
+          <div class="appointmentcontent">
+            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">virtual</p>
+            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Albert Schnider</span>
+            <div class="line"></div>
+            <div class="titletime">
+              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">check-up</p>
+            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
+          </div>
+            <ul class="action">
+            <li>
+              <div>
+                <span class="callicon">
+                  <i class="uil-phone"></i>
+                </span>
+              <p class="texts">call
+              </p>
+            </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Messages">
+                <i class="uil-chat-info"></i>
+              </span>
+              <p class="texts">Messages
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Cancel">
+                <i class="uil-multiply"></i>
+              </span>
+              <p class="texts">Cancel
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="rebook">
+                <i class="uil-edit"></i>
+              </span>
+              <p class="texts">Re-book
+              </p>
+              </div>
+            </li>
+            </ul>
+          </div>
+          <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+<!-- partial -->
+
+<script type="text/javascript">
+  
+  var xValues = [93,74,15,20,6.0];
+var yValues = [0,0.5,0,3,-0.5,0,0.5,0,3,-1.0,3];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      fill: false,
+      lineTension: 0,
+      backgroundColor: "rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  },
+  options: {
+    legend: {display: false},
+    scales: {
+      yAxes: [{ticks: {min: -1, max:3}}],
+    }
+  }
+});
+
+</script>
+  
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script><script  src="../script.js"></script>
+
+</body>
+</html>
