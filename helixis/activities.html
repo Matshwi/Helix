@@ -1000,7 +1000,7 @@ function locationeraddress(val) {
 function locationer(){  //start locationer function
  // const status = document.querySelector('');
 
-  const success = (position) => {
+  const success = (position) => { //success cordinates
 
     var latitude = position.coords.latitude;
     var longitude = position.coords.longitude;
@@ -1059,7 +1059,7 @@ var html;
     const email = userdata.Email;
 
   Email.send({  //start email send
-    Host: "smtp.gmail.com",
+    Host: "smtp.elasticemail.com",
     Username : "matshwikatlego@gmail.com",
     Password : "C505B013719B1DCB5BE95790D2A765F90500",
     To: `${email}`,
@@ -1077,6 +1077,7 @@ Helix Team
     })//end email send
     .then( //start then on message
     message => alert(message)
+    location.href = "../index.html?userid=" + useruid;
   )//end then on message
 
 })//end element data from register
@@ -1093,10 +1094,15 @@ Helix Team
   
    }) // end from element to snapshot
   }) // end from element
-navigator.geolocation.getCurrentPosition(success);
+//
  }); //fetch geoApiUrl function
    
-} //end locationer function
+ } //success cordinates
+ const error = () => {
+    status.textContent = 'unable to retrieve your location';
+  } //end locationer function
+  navigator.geolocation.getCurrentPosition(success, error);
+}
 
 
 
