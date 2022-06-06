@@ -218,7 +218,10 @@ span.fa{
 }
 .star:hover{
   color: yellow;
+  background-color: unset;
 }
+
+
 
 .star_rating span:hover ~{
   color: lightgoldenrodyellow;
@@ -309,27 +312,27 @@ span.fa{
         <div class="col-lg-12">
           <div class="chart-container1 p-4 medics activity">
             
-            <div class="btn" onclick="document.getElementById('specialty').style.display='block'">
+            <div class="btn starbtn">
               <i class="uil-star icon"></i>
               <p style="margin-left: -1.6rem;width: 100%;font-size: 80%">Choose a specialty</p>
             </div>
-            <div class="btn" onclick="document.getElementById('condition').style.display='block'">
+            <div class="btn">
               <i class="uil-heart icon"></i>
               <p style="margin-left: -1rem;width: 100%;font-size: 80%">Choose your condition </p>
             </div>
-            <div class="btn" onclick="document.getElementById('location').style.display='block'">
+            <div class="btn">
               <i class="uil-map-marker icon"></i>
               <p style="margin-left: -1.2rem;width: 100%;font-size: 80%">Choose your location </p>
             </div>
-            <div class="btn" onclick="document.getElementById('time').style.display='block'">
+            <div class="btn">
               <i class="uil-clock icon"></i>
               <p style="margin-left: -2.8rem;width: 100%;font-size: 80%">Choose Time </p>
             </div>
-            <div class="btn" onclick="document.getElementById('doctor').style.display='block'">
+            <div class="btn">
               <i class="uil-user icon"></i>
               <p style="margin-left: -0.8rem;width: 100%;font-size: 80%">Search Doctor by name </p>
             </div>
-            <div class="btn" onclick="document.getElementById('hospital').style.display='block'">
+            <div class="btn">
               <i class="uil-hospital icon"></i>
               <p style="margin-left: 0rem;width: 100%;font-size: 80%">Search hospital by name </p>
             </div>
@@ -600,9 +603,6 @@ const success = (position) => {
      firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(address);
   })
 
- 
-
-
   firebase.database().ref("Appoiments/ratedcondition/" + useruid + "/" + booknum).on("child_added",function(snapshot){
 
     const queryString = window.location.search;
@@ -610,23 +610,6 @@ const success = (position) => {
 
     const booknum = urlParams.get('booknum')
     const useruid = urlParams.get('userid')
-
-   /* snapshot.forEach(function(element){
-
-      var totale = 0;
-
-      var numele = element.val();
-      console.log(numele);
-
-      totale += numele;
-
-      console.log(totale);
-
-    })
-
-    var totally = Object.values(num);
-    total += totally;
-    console.log("this total is " + totally);*/
 
 var total = 0;
 var num = snapshot.val();
@@ -850,7 +833,20 @@ alert(test.value);
  // firebase.database().ref("Appoiments").push(email);
 });*/
 
+function startappoint(){
 
+  document.getElementById('specialty').style.display='block';
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const product = urlParams.get('userid')
+
+  var appointmentname = Date.now();
+
+  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
+  
+}
 
 
 function active(val){
@@ -872,7 +868,10 @@ function active(val){
 
    if (specialist !== 'on') {
     val.className = "on";
+document.querySelector(".starbtn").style.backgroundColor = "cornflowerblue";
   }else if(specialist == 'on'){
+
+    document.querySelector(".starbtn").style.backgroundColor = "white";
 
     var theidname = val.id;
 
@@ -888,10 +887,6 @@ function active(val){
 }
 
 }
-function rating(num, val){
-
-
-  }
 
 function rating(val, num){
 
@@ -901,7 +896,7 @@ function rating(val, num){
     const booknum = urlParams.get('booknum')
     const useruid = urlParams.get('userid')
 
-
+         
   const conditionlist = val.className;
   const number = num;
 
@@ -933,6 +928,37 @@ function rating(val, num){
       firebase.database().ref("Appoiments/ratedcondition/" + "/" + useruid + "/" + booknum + "/" + theidname).remove();
     
     
+  }
+
+  if (num == 1) {
+
+    
+    var numone = document.getElementById(1);
+
+    if (numone.className = star) {}
+
+    numone.style.color = "yellow"
+console.log(numone.className);
+
+
+  }else if (num == 2) {
+    document.getElementById(1).style.color = "yellow";
+    document.getElementById(2).style.color = "yellow";
+  }else if (num == 3) {
+    document.getElementById(1).style.color = "yellow";
+    document.getElementById(3).style.color = "yellow";
+    document.getElementById(2).style.color = "yellow";
+  }else if (num == 4) {
+    document.getElementById(1).style.color = "yellow";
+    document.getElementById(4).style.color = "yellow";
+    document.getElementById(3).style.color = "yellow";
+    document.getElementById(2).style.color = "yellow";
+  }else if (num == 5) {
+    document.getElementById(1).style.color = "yellow";
+    document.getElementById(5).style.color = "yellow";
+    document.getElementById(4).style.color = "yellow";
+    document.getElementById(3).style.color = "yellow";
+    document.getElementById(2).style.color = "yellow";
   }
 
 }
@@ -1076,9 +1102,10 @@ Helix Team
     `
     })//end email send
     .then( //start then on message
-    message => alert(message)
+      function(message){
+     alert(message)
     location.href = "../index.html?userid=" + useruid;
-  )//end then on message
+  })//end then on message
 
 })//end element data from register
     
@@ -1123,18 +1150,7 @@ function nextLocation(){
 
 
 
-function startappoint(){
 
-  const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    const product = urlParams.get('userid')
-
-  var appointmentname = Date.now();
-
-  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
-  
-}
 
 firebase.database().ref("Register").on('value', function(snapshot){
 })
