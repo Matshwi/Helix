@@ -129,29 +129,15 @@ submit.onclick = function(){
     // Don't continue running the code
   }
 
-  firebase.database().ref("Register").on("value",function(element){
-    element.forEach(function(snapshot){
+  firebase.database().ref("Register").orderByChild('Password').equalTo(password).on("value",function(element){
 
-    // Create User data
-    var user_data = {
-      last_login : Date.now()
-    }
-
-var key = element.val();
+    var key = element.val();
 var userkey = Object.keys(key);
-    var userlogin = snapshot.val();
-    if (userlogin.Email == email && userlogin.Password == password) {
-
-    // Push to Firebase Database
-    firebase.database().ref('Register/' + userkey).update(user_data)
-
     
 
+  
     location.href = "../index.html?userid=" + userkey;
-  }else{
-    alert('if code not working');
-  }
-   })
+  
   
   })
   /*.catch(function(error) {
