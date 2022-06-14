@@ -35,7 +35,7 @@
         <div class="offset-1 col-10 offset-md-1 col-md-5 ">                   
           <div class="form-group">
             <label class="col-form-label" for="fname" >Name</label>
-            <input type="text" name="fullname" id="fname" class="form-control" required title="full name">
+            <input type="text" name="fname" id="fname" class="form-control" required title="full name">
           </div>
           <div class="form-group">
             <label class="col-form-label" for="lname">Surname</label>
@@ -79,7 +79,7 @@
     <!-- Bouton qui valide le formulaire --> 
       <div class="row justify-center align-items">
         <div class="offset-4 col-4 mb-5">
-          <button id="bouton-valider" class="bouton-valider btn btn-primary w-100">Submit</button>
+          <button id="bouton-valider" class="bouton-valider btn btn-primary w-100" onclick="register()">Submit</button>
         </div> 
       </div> 
     <!-- FIN DU FORMULAIRE -->  
@@ -129,7 +129,10 @@ const database = firebase.database()
 
 
 
-
+const queryString = window.location.search;
+const urlParams = new URLSearchParams(queryString);
+const theid = urlParams.get('emaid')
+const thename = urlParams.get('name')
 
 
 
@@ -154,23 +157,18 @@ var reader;
 //insert
 
 // Set up our register function
-document.getElementById('bouton-valider').onclick = function(){
-
-  var name = document.getElementById('fname').value
-  var surname = document.getElementById('lname').value
-  var IDnumber = document.getElementById('Idnumber').value
-  var Age = document.getElementById('age').value
-  var gender = document.getElementById('gender').value
-  var email = document.getElementById('email').value
-  var password = document.getElementById('pass').value
-
+function register() {
+  // Get all our input fields
+  name = document.getElementById('fname').value
+  surname = document.getElementById('lname').value
+  Identitynum = document.getElementById('Idnumber').value
+  contact = document.getElementById('age').value
+  email = document.getElementById('email').value
+  password = document.getElementById('pass').value
 var imgurl;
 
 var files = [];
 var reader;
-
-console.log(email);
-console.log(password);
 
 
   // Validate input fields
@@ -179,7 +177,7 @@ console.log(password);
     return
     // Don't continue running the code
   }
-  if (validate_field(name) == false || validate_field(surname) == false || validate_field(IDnumber) == false || validate_field(Age) == false || validate_field(gender) == false) {
+  if (validate_field(name) == false || validate_field(surname) == false || validate_field(Address) == false || validate_field(contact) == false) {
     alert('One or More Extra Fields is Outta Line!!')
     return
   }
@@ -197,44 +195,45 @@ console.log(password);
                 data.ref.getDownloadURL().then(url => {
                     imgurl = url;
  
+  // Move on with Auth
+  auth.createUserWithEmailAndPassword(email, password)
+  .then(function() {
+    // Declare user variable
+    var user = auth.currentUser
 
-  var d = new Date();
+    // Add this user to Firebase Database
+    var database_ref = database.ref()
 
-  var user = d.getTime();
-
-
-
-      firebase.database().ref('Register/' + user).set({
-      Email: email,
+    // Create User data
+    var user_data = {
+      Email : email,
       First_Name: name,
-      IDnumber: IDnumber,
-      Last_name: surname,
-      Age: Age,
+      Address : Address,
+      Last_name : surname,
+      PhoneNum: contact,
       Logo: imgurl,
-      Gender: gender,
-      Password: password,
-      last_login: Date.now(),
-      }).then(function(){
-console.log(user);
+      last_login : Date.now()
+    }
+
+    // Push to Firebase Database
+    database_ref.child('Patient/' + user.uid).set(user_data).then(function(){
+      // DOne
     alert('User Created!!')
-    location.href = "../index.html?userid=" + user;
-      });
-
-      
+    location.href = "../index.html?userid=" + user.uid
+    })
 
     
-    
-  
+    });
 
-
-      
-
-    
-
-  })
   });
- 
-  
+  })
+  .catch(function(error) {
+    // Firebase will use this to alert of its errors
+    var error_code = error.code
+    var error_message = error.message
+
+    alert(error_message)
+  })
 }
 
 
@@ -278,6 +277,7 @@ function validate_field(field) {
     return true
   }
 }
+
 
 
 

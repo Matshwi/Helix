@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"/>
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
+  <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">
+ <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
+<link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
+<!--<link rel="stylesheet" type="text/css" href="line.css">-->
+<link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="./schedule.css">
+<link rel="stylesheet" href="app.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="buttons.css">
+<style type="text/css">
+
+  /*start search*/
+
+  #myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myInputhospital {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myULhospital {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myULhospital li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+#myULhospital li a:hover:not(.header) {
+  background-color: #eee;
+}
+
+  /*end search*/
+  
+.sidebar {
+  width: 10%;
+}
+
+
+.chart-container1 {
+  margin-left: -10%;
+  width:100% !important;
+  background-color: rgba(255, 255, 255, .5);
+}
+
+.headertext {
+  margin-left: 7%;
+}
+
+.charts {
+  margin-top: -2rem;
+}
+
+.specialty{
+  margin-top: 20px;
+}
+
+.specialtycondition{
+  margin-top: 20px;
+}
+
+.specialty li{
+  height: 40px;
+  border-bottom: 1px solid white;
+  padding-top: 10px;
+  color: white;
+}
+.specialtycondition li{
+  height: 40px;
+  border-bottom: 1px solid white;
+  padding-top: 10px;
+  color: white;
+}
+
+.specialty li:hover{
+  background-color: whitesmoke;
+  color: black;
+  padding-left: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.specialtycondition li:hover{
+  background-color: whitesmoke;
+  color: black;
+  padding-left: 10px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: 0.8s;
+}
+
+.w3-button{
+  color: white;
+}
+
+.otherelements{
+  background-color: transparent;
+  backdrop-filter: blur(3px);
+  scrollbar-color: aqua;
+}
+
+#inputaddress{
+  color: black;
+  display: none;
+  width: 80%;
+  height: 50px;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  border: none;
+  border-bottom: 2px solid aqua;
+}
+
+#inputaddress: hover{
+  border: none;
+}
+
+.specialty li.on{
+  background-color: white;
+  color: black;
+  padding-left: 10px;
+}
+
+.specialtycondition li.on{
+  background-color: white;
+  color: black;
+  padding-left: 10px;
+}
+
+.calenderbtn{
+  width: 40%;
+}
+
+.scheduled{
+  float: right;
+}
+
+iframe{
+  width: 80vw;
+  height: 55vh;
+}
+
+.scheduletext{
+  text-align: center;
+  border: none;
+}
+
+span.fa{
+  float: right;
+}
+
+
+.next{
+  float: right;
+}
+
+.star_rating{
+  margin-left: 80%;
+  margin-top: -15px;
+}
+
+.star{
+  font-size: 21px;
+  background-color: unset;
+}
+.star:hover{
+  color: yellow;
+  background-color: unset;
+}
+
+
+.star_rating ~ .star:hover {
+  color: yellow;
+  background-color: unset;
+}
+
+.sendloc{
+  float: right;
+  margin-right: 5rem;
+  margin-top: -3rem;
+  border: 3px solid black;
+  padding: 9px;
+  border-radius: 4rem;
+  display: none;
+}
+
+.cancelbook{
+  border: 2px solid white;
+  border-radius: ;
+}
+
+.thelist > i{
+  font-size: 38px !important;
+}
+
+
+
+div.imgcontainer{
+  background-color: #d3dff2;
+  height: 17rem;
+  width: 17rem;
+  border-radius: 1rem;
+  text-align: center;
+  padding-top: 10%;
+}
+
+.custom-file-input{
+  padding-top: 10px;
+  width: 45%;
+}
+
+.custom-file-input::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.custom-file-input::before {
+  content: 'Select some files';
+  display: inline-block;
+  background: transparent;
+  border: 1px solid #999;
+  border-radius: 1rem;
+  padding: 17px 29px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  text-shadow: 1px 1px #fff;
+  font-weight: 700;
+  font-size: 10pt;
+  height: 60px;
+}
+.custom-file-input:hover::before {
+  border-color: black;
+}
+.custom-file-input:active::before {
+  background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
+}
+
+.fileinput{
+  margin-top: 5%;
+  width: fit-content;
+}
+
+.userinfo{
+  margin-left: 30%;
+  position: absolute;
+  margin-top: -340px;
+  width: fit-content;
+  display: none;
+}
+
+.edituserinfo{
+  margin-left: 30%;
+  position: absolute;
+  margin-top: -340px;
+  width: 30%;
+}
+
+.edituserinfo > div{
+  margin-top: 5%;
+}
+
+label{
+  font-weight: 900;
+}
+
+.editinput{
+  margin-left: 20%;
+  border: none;
+  background-color: #D6D5CB;
+  width: 50%;
+  height: 2rem;
+}
+
+   
+</style>
+</head>
+<body>
+<!-- partial:index.partial.html -->
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+  
+  
+
+  <div class="search position-relative text-center px-4 py-3 mt-2" id="nearbystops">
+    <p class="sidebarname"></p>
+  </div>
+
+  <ul class="categories list-unstyled">
+    <li class="thelist">
+      <i class="uil-calender"></i><a href="#"></a>
+    </li>
+    <li class="thelist">
+      <i class="uil-calendar-alt"></i><a href="#"></a>
+    </li>
+    <li class="thelist">
+      <i class="uil-calender"></i><a href="#"></a>
+    </li>
+    <li class="thelist">
+      <i class="uil-comment-message"></i><a href="#"></a>
+    </li>
+    <li class="thelist">
+      <i class="uil-file-medical"></i><a href="#"></a>
+    </li>
+  </ul>
+</aside>
+
+<section id="wrapper">
+  <nav class="navbar navbar-expand-md">
+    <div class="container-fluid mx-2">
+      <div class="navbar-header">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#toggle-navbar" aria-controls="toggle-navbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="uil-bars text-white"></i>
+        </button>
+        
+      </div>
+      <div class="collapse navbar-collapse" id="toggle-navbar">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link">
+              Dashboard
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link">Appointments</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <img class="proimg" src="man-g24ba357cd_1280.jpg">
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>                                                                                                                   
+  <div class="p-4 .mt-5">
+    <div class="headtext">
+      <div class="query">
+        
+      </div>
+    </div>
+    <section class="charts">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="chart-container1 p-4 medics">
+            
+            <!-- here we insert the profile things -->
+
+
+            <!-- image starts here -->
+
+            <div>
+              <div>
+                <div class="imgcontainer">
+                  <img src="6-2-pokemon-png-hd.png" style="width: 13rem !important;height: 13rem !important;" class="imager">
+                </div>
+                <div class="fileinput">
+                  <input type="file" class="custom-file-input">
+
+              <button class="custom-btn btn-3"><span>edit Profile</span></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- image ends here -->
+
+            <div class="userinfo">
+              <div>
+                <p style="font-weight: 900;">
+                  Name:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  User Name
+                </p>
+              </div>
+              <div>
+                <p style="font-weight: 900;">
+                  Email:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  User@email.com
+                </p>
+              </div>
+              <div>
+                <p style="font-weight: 900;">
+                  Phone number:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  098 765 4321
+                </p>
+              </div>
+              <div>
+                <p style="font-weight: 900;">
+                  Address:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  2152 block gg, Soshanguve,
+                  PTA,0152
+                </p>
+              </div>
+              <div>
+                <p style="font-weight: 900;">
+                  Medical Aid:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  Discovery
+                </p>
+              </div>
+              <div>
+                <p style="font-weight: 900;">
+                  Marital status:
+                </p>
+                <br>
+                <p style="margin-top: -38px;">
+                  Married
+                </p>
+              </div>
+            </div>
+            <div class="edituserinfo">
+              <div>
+                <label>Name:</label>
+                <input type="text" name="" class="editinput" style="margin-left: 35.5%">
+              </div>
+              <div>
+                <label>Email:</label>
+                <input type="text" name="" class="editinput" style="margin-left: 35.7%">
+              </div>
+              <div>
+                <label>Phone number:</label>
+                <input type="text" name="" class="editinput">
+              </div>
+              <div>
+                <label>Address:</label>
+                <input type="text" name="" class="editinput" style="margin-left: 31.2%">
+              </div>
+              <div>
+                <label>Medical Aid:</label>
+                <input type="text" name="" class="editinput" style="margin-left: 24.6%">
+              </div>
+              <div>
+                <label>Marital status:</label>
+                <input type="text" name="" class="editinput" style="margin-left: 20.4%">
+              </div>
+            </div>
+
+            <!-- then it ands here -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</section>
+
+<!-- partial -->
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+ <!-- TODO: Add SDKs for Firebase products that you want to use 
+
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <!--<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>-->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+<script type="text/javascript">
+
+   // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAybUF58ye2xdEx5Cty63VQYf0aWjhfLjQ",
+  authDomain: "helix-3ee55.firebaseapp.com",
+  databaseURL: "https://helix-3ee55-default-rtdb.firebaseio.com/",
+  projectId: "helix-3ee55",
+  storageBucket: "helix-3ee55.appspot.com",
+  messagingSenderId: "794490224146",
+  appId: "1:794490224146:web:8313c7d926b0b91a6722cb"
+  };
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
+
+
+const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+
+</script>
+<script src="app.js"></script>
+
+
+<!--<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>-->
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+
+<script  src="./script.js"></script>
+
+</body>
+</html>

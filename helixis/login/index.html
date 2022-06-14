@@ -71,7 +71,7 @@
     <input type="text" id="email" placeholder="Email">
     <input type="password" id="pass" class="input2" placeholder="Password">
 
-    <button id="submit">Submit</button>
+    <button onclick="login()">Submit</button>
     <div style="display: flex; position: absolute; width: 76%; justify-content: center;">
 
       <p>Don't have an account? <a href="../register/index.html">Register</a></p>
@@ -93,6 +93,7 @@
 
 <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
 
+
   <script type="text/javascript">
     
     // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -113,14 +114,14 @@ const firebaseConfig = {
 const auth = firebase.auth()
 const database = firebase.database()
 
-submit = document.getElementById('submit');
+
+
 
 // Set up our login function
-submit.onclick = function(){
+function login () {
   // Get all our input fields
   email = document.getElementById('email').value
   password = document.getElementById('pass').value
-
 
   // Validate input fields
   if (validate_email(email) == false || validate_password(password) == false) {
@@ -129,24 +130,37 @@ submit.onclick = function(){
     // Don't continue running the code
   }
 
-  firebase.database().ref("Register").orderByChild('Password').equalTo(password).on("value",function(element){
+  auth.signInWithEmailAndPassword(email, password)
+  .then(function() {
+    // Declare user variable
+    var user = auth.currentUser
 
-    var key = element.val();
-var userkey = Object.keys(key);
+    // Add this user to Firebase Database
+    var database_ref = database.ref()
+
+    // Create User data
+    var user_data = {
+      last_login : Date.now()
+    }
+
+    // Push to Firebase Database
+    database.ref('adminlogin/' + user.uid).update(user_data).then(() => {
+      // DOne
+    alert('User Logged In!!')
+
+    location.href = "../index.html?userid=" + user.uid;
+    })
+
     
 
-  
-    location.href = "../index.html?userid=" + userkey;
-  
-  
   })
-  /*.catch(function(error) {
+  .catch(function(error) {
     // Firebase will use this to alert of its errors
     var error_code = error.code
     var error_message = error.message
 
     alert(error_message)
-  })*/
+  })
 }
 
 

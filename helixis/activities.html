@@ -222,9 +222,8 @@ span.fa{
 }
 
 
-
-.star_rating span:hover ~{
-  color: lightgoldenrodyellow;
+.star_rating ~ .star:hover {
+  color: yellow;
   background-color: unset;
 }
 
@@ -236,6 +235,11 @@ span.fa{
   padding: 9px;
   border-radius: 4rem;
   display: none;
+}
+
+.cancelbook{
+  border: 2px solid white;
+  border-radius: ;
 }
 
    
@@ -340,9 +344,9 @@ span.fa{
               <i class="uil-mobile-vibrate icon"></i>
               <p style="margin-left: -1rem;width: 100%;font-size: 80%">Speak to a consultant</p>
             </div>
-            <div class="btn searchbtn" onclick="startappoint()">
+            <div class="btn searchbtn">
               <i class="uil-book icon"></i>
-              <p style="margin-left: -3.8rem;width: 100%;font-size: 80%">Book</p>
+              <p style="margin-left: -3.8rem;width: 100%;font-size: 80%"  onclick="startappoint()">Book</p>
             </div>
           </div>
         </div>
@@ -352,14 +356,17 @@ span.fa{
   </div>
 </section>
 <div id="specialty" class="w3-modal">
-  <div class="w3-modal-content otherelements">
-    <div class="w3-container">
-      <span onclick="document.getElementById('specialty').style.display='none'" class="w3-button w3-diplay-topright">
-        &times;
-      </span>
-      <span class="w3-button next" onclick="nextCondition()"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
 
-      <ul class="specialty">
+  <div class="w3-modal-content otherelements">
+
+    <div class="w3-container">
+      <p style="color: white;">Please Selector only one doctor relevant to your circumstances if you are unsure kindly select the general practitioner or request assistance</p>
+      <span onclick="document.getElementById('specialty').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
+        cancel
+      </span>
+      <span class="w3-button next" onclick="nextCondition()">next &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+
+      <ul data-tag="channelList" class="specialty">
         <li id="Gaenycologyst" class="Gaenycologyst" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
         <li id="General Practitioner" class="General Practitioner" value="General Practitioner" onclick="active(this)">General Practitioner</li>
         <li id="Dentist" class="Dentist" value="Dentist" onclick="active(this)">Dentist</li>
@@ -383,10 +390,11 @@ span.fa{
 <div id="condition" class="w3-modal">
   <div class="w3-modal-content otherelements">
     <div class="w3-container">
-      <span onclick="document.getElementById('condition').style.display='none'" class="w3-button w3-diplay-topright">
-        &times;
+      <p style="color: white;">Please Select conditions that relate to you by clicking on the number of stars on the condition, 1- means low 2- low but not getting well, 3- mild, 4-getting worse and 5- severe</p>
+      <span onclick="document.getElementById('condition').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
+        cancel
       </span>
-      <span class="w3-button next" onclick="nextLocation()"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+      <span class="w3-button next" onclick="nextLocation()">next &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
 
       <ul class="specialtycondition" >
       
@@ -397,8 +405,8 @@ span.fa{
 <div id="location" class="w3-modal">
   <div class="w3-modal-content otherelements">
     <div class="w3-container">
-      <span onclick="document.getElementById('location').style.display='none'" class="w3-button w3-diplay-topright">
-        &times;
+      <span onclick="document.getElementById('location').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
+        cancel
       </span>
 
       <ul class="specialty">
@@ -702,14 +710,65 @@ var num = snapshot.val();
 
       document.querySelector('.specialtycondition').innerHTML += `<li id="${thevalues}" class="${thevalues}" value="${thevalues}">${thevalues}
           <div class="star_rating">
-          <span value="1" class="star" id="1" onclick="rating(${thevalues}, 1)">&#9734;</span>
-          <span value="2" class="star" id="2" onclick="rating(${thevalues}, 2)">&#9734;</span>
-          <span value="3" class="star" id="3" onclick="rating(${thevalues}, 3)">&#9734;</span>
-          <span value="4" class="star" id="4" onclick="rating(${thevalues}, 4)">&#9734;</span>
-          <span value="5" class="star" id="5" onclick="rating(${thevalues}, 5)">&#9734;</span>
+          <span value="${thevalues}" class="star ${thevalues}" id="1" onclick="rating(${thevalues}, 1)">&#9734;</span>
+          <span value="${thevalues}" class="star ${thevalues}" id="2" onclick="rating(${thevalues}, 2)">&#9734;</span>
+          <span value="${thevalues}" class="star ${thevalues}" id="3" onclick="rating(${thevalues}, 3)">&#9734;</span>
+          <span value="${thevalues}" class="star ${thevalues}" id="4" onclick="rating(${thevalues}, 4)">&#9734;</span>
+          <span value="${thevalues}" class="star ${thevalues}" id="5" onclick="rating(${thevalues}, 5)">&#9734;</span>
           </div>
           
         </li>`;
+
+
+/*
+
+    var one = document.getElementById(1);
+    var two = document.getElementById(2);
+    var three = document.getElementById(3);
+    var four = document.getElementById(4);
+    var five = document.getElementById(5);
+
+    one.onmouseover = function(){
+
+      one.style.color = "yellow";
+
+    }
+
+    two.onmouseover = function(){
+
+      one.style.color = "yellow";
+      two.style.color = "yellow";
+
+    }
+
+    three.onmouseover = function(){
+
+      one.style.color = "yellow";
+      two.style.color = "yellow";
+      three.style.color = "yellow";
+
+    }
+
+    four.onmouseover = function(){
+
+      one.style.color = "yellow";
+      two.style.color = "yellow";
+      three.style.color = "yellow";
+      four.style.color = "yellow";
+
+    }
+
+    five.onmouseover = function(){
+
+      one.style.color = "yellow";
+      two.style.color = "yellow";
+      three.style.color = "yellow";
+      four.style.color = "yellow";
+      five.style.color = "yellow";
+
+    }
+
+    */
 
   
        /* const rated = document.querySelectorAll('.star');
@@ -835,17 +894,20 @@ alert(test.value);
 
 function startappoint(){
 
-  document.getElementById('specialty').style.display='block';
 
-  const queryString = window.location.search;
+const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
-
-    const product = urlParams.get('userid')
-
-  var appointmentname = Date.now();
-
-  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
   
+
+    var linker = '?userid=' + useruid;
+    var linkey = '?userid=' + useruid + '&booknum=' + booknum;
+
+if (queryString == linker) {
+  document.getElementById('specialty').style.display='none';
+} else if(queryString == linkey) {
+  document.getElementById('specialty').style.display='block';
+}
+
 }
 
 
@@ -864,31 +926,48 @@ function active(val){
     [specialist]: specialist
   }
 
-  firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).update(specialistobj);
+  firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).set(specialistobj).then(function(){
+    firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).on("value",function(snapshot){
 
-   if (specialist !== 'on') {
-    val.className = "on";
-document.querySelector(".starbtn").style.backgroundColor = "cornflowerblue";
-  }else if(specialist == 'on'){
+      var valueofsnap = snapshot;
 
-    document.querySelector(".starbtn").style.backgroundColor = "white";
+  console.log(valueofsnap.length);
 
-    var theidname = val.id;
+  snapshot.forEach(function(element){
 
+  var valueofsnap = element.val();
 
-    val.className = val.id;
-
-
-      firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum + "/" + specialist).remove();
-      firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum + "/" + theidname).remove();
-    
-    
+  console.log(valueofsnap.length);
+var getitem = document.querySelector(".starbtn");
+console.log(getitem);
   
-}
+  
+
+// find all the elements in your channel list and loop over them
+  Array.prototype.slice.call(document.querySelectorAll('ul[data-tag="channelList"] li')).forEach(function(elem){
+    // remove the selected class
+    elem.classList.remove('on');
+  });
+
+val.classList.add('on');
+
+    
+    
+
+
+   })
+  })
+  })
+
+
+
 
 }
 
 function rating(val, num){
+
+  
+
 
   const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -933,38 +1012,101 @@ function rating(val, num){
   if (num == 1) {
 
     
-    var numone = document.getElementById(1);
-
-    if (numone.className = star) {}
-
-    numone.style.color = "yellow"
-console.log(numone.className);
+ document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement
+        //text = target.textContent || target.innerText; 
+        console.log(e.clientX);
+        target.style.color = "#2de810";
+        
+}, false);
 
 
   }else if (num == 2) {
-    document.getElementById(1).style.color = "yellow";
-    document.getElementById(2).style.color = "yellow";
+
+     document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement
+        //text = target.textContent || target.innerText;
+        target.style.color = "#2de810";
+        target.previousElementSibling.style.color = "#2de810";
+        //var second = target.nextElementSibling;
+
+        //second.style.color = "#2de810"
+}, false);
+
   }else if (num == 3) {
-    document.getElementById(1).style.color = "yellow";
-    document.getElementById(3).style.color = "yellow";
-    document.getElementById(2).style.color = "yellow";
+
+    document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement
+        //text = target.textContent || target.innerText;
+        target.style.color = "#2de810";
+        var second = target.previousElementSibling;
+
+          second.style.color = "#2de810";
+          second.previousElementSibling.style.color = "#2de810";
+        //var second = target.nextElementSibling;
+
+        //second.style.color = "#2de810"
+}, false);
   }else if (num == 4) {
-    document.getElementById(1).style.color = "yellow";
-    document.getElementById(4).style.color = "yellow";
-    document.getElementById(3).style.color = "yellow";
-    document.getElementById(2).style.color = "yellow";
+    
+document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement
+        //text = target.textContent || target.innerText;
+        target.style.color = "#2de810";
+        var third = target.previousElementSibling;
+
+          third.style.color = "#2de810";
+
+          var second = third.previousElementSibling;
+
+          second.style.color = "#2de810";
+
+          second.previousElementSibling.style.color = "#2de810";
+
+
+        //var second = target.nextElementSibling;
+
+        //second.style.color = "#2de810"
+}, false);
+
   }else if (num == 5) {
-    document.getElementById(1).style.color = "yellow";
-    document.getElementById(5).style.color = "yellow";
-    document.getElementById(4).style.color = "yellow";
-    document.getElementById(3).style.color = "yellow";
-    document.getElementById(2).style.color = "yellow";
+
+    document.addEventListener('click', function(e) {
+    e = e || window.event;
+    var target = e.target || e.srcElement
+        //text = target.textContent || target.innerText;
+        target.style.color = "#2de810";
+        var four = target.previousElementSibling;
+
+          four.style.color = "#2de810";
+
+          var third = four.previousElementSibling;
+
+          third.style.color = "#2de810";
+
+          var second = third.previousElementSibling;
+
+          second.style.color = "#2de810";
+
+          second.previousElementSibling.style.color = "#2de810";
+
+
+        //var second = target.nextElementSibling;
+
+        //second.style.color = "#2de810"
+}, false);
   }
 
 }
 
 
 function locationeraddress(val) {
+
+  const success = (position) => {
 
   var theaddress = val.textContent;
   const queryString = window.location.search;
@@ -986,10 +1128,10 @@ function locationeraddress(val) {
 
     var thedoctor = snapshot.val();
     
-
+var latitude = position.coords.latitude;
+    var longitude = position.coords.longitude;
     
-  console.log("outside " + longitude);
-      console.log("outside " + latitude);
+  
 
     var data = [{
         "code": "0001",
@@ -1007,6 +1149,23 @@ function locationeraddress(val) {
     var poslat = latitude;
     var poslng = longitude;
 
+    function distance(lat1, lon1, lat2, lon2, unit) {
+      var radlat1 = Math.PI * lat1/180
+      var radlat2 = Math.PI * lat2/180
+      var theta = lon1-lon2
+      var radtheta = Math.PI * theta/180
+      var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      if (dist > 1) {
+        dist = 1;
+      }
+      dist = Math.acos(dist)
+      dist = dist * 180/Math.PI
+      dist = dist * 60 * 1.1515
+      if (unit=="K") { dist = dist * 1.609344 }
+      if (unit=="N") { dist = dist * 0.8684 }
+      return dist
+    }
+
     for (var i = 0; i < data.length; i++) {
         // if this location is within 0.1KM of the user, add it to the list
         if (distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 1 || distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 2) {
@@ -1018,7 +1177,11 @@ function locationeraddress(val) {
     document.querySelector('#nearbystops').append(html);
     })
 
-  });
+  })
+  } //success cordinates
+ const error = () => {
+    status.textContent = 'unable to retrieve your location';
+  }
       navigator.geolocation.getCurrentPosition(success, error);
 }
 
@@ -1034,7 +1197,7 @@ function locationer(){  //start locationer function
     const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
 
     fetch(geoApiUrl).then(res => res.json()).then(data => { //fetch geoApiUrl function
-      
+      console.log(data);
 
        var locationobj = {
     latitude: latitude,
@@ -1055,13 +1218,31 @@ firebase.database().ref("doctors").on("value",function(element){ // start from e
     element.forEach(function(snapshot){ // start from element to snapshot
 
     var thedoctor = snapshot.val();
+    console.log(thedoctor);
 
 
 var html;
     var poslat = latitude;
     var poslng = longitude;
 
+function distance(lat1, lon1, lat2, lon2, unit) {
+      var radlat1 = Math.PI * lat1/180
+      var radlat2 = Math.PI * lat2/180
+      var theta = lon1-lon2
+      var radtheta = Math.PI * theta/180
+      var dist = Math.sin(radlat1) * Math.sin(radlat2) + Math.cos(radlat1) * Math.cos(radlat2) * Math.cos(radtheta);
+      if (dist > 1) {
+        dist = 1;
+      }
+      dist = Math.acos(dist)
+      dist = dist * 180/Math.PI
+      dist = dist * 60 * 1.1515
+      if (unit=="K") { dist = dist * 1.609344 }
+      if (unit=="N") { dist = dist * 0.8684 }
+      return dist
+    }
 
+    
     for (var i = 0; i < lengthdoc; i++) { //start for function
         // if this location is within 0.1KM of the user, add it to the list
         var distances = distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K");
@@ -1151,20 +1332,7 @@ function nextLocation(){
 
 
 
-
-firebase.database().ref("Register").on('value', function(snapshot){
-})
-
-
-    var linker = '?userid=' + useruid;
-    var linkey = '?userid=' + useruid + '&booknum=' + booknum;
-
-if (queryString == linker) {
-  document.getElementById('specialty').style.display='none';
-} else if(queryString == linkey) {
-  document.getElementById('specialty').style.display='block';
-}
-
+/*
 
 console.log(calcCrow(-25.652698384379825,28.227487535167622,-25.660679718090567,28.234572930323047).toFixed(1));
 
@@ -1219,6 +1387,9 @@ function distance(lat1, lon1, lat2, lon2, unit) {
       if (unit=="N") { dist = dist * 0.8684 }
       return dist
     }
+
+*/
+
 
     
 
