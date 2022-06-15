@@ -177,7 +177,7 @@ var reader;
     return
     // Don't continue running the code
   }
-  if (validate_field(name) == false || validate_field(surname) == false || validate_field(Address) == false || validate_field(contact) == false) {
+  if (validate_field(name) == false || validate_field(surname) == false || validate_field(Identitynum) == false || validate_field(contact) == false) {
     alert('One or More Extra Fields is Outta Line!!')
     return
   }
@@ -208,7 +208,7 @@ var reader;
     var user_data = {
       Email : email,
       First_Name: name,
-      Address : Address,
+      IDnumber : Identitynum,
       Last_name : surname,
       PhoneNum: contact,
       Logo: imgurl,
