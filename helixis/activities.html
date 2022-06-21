@@ -15,6 +15,8 @@
 <link rel="stylesheet" href="./schedule.css">
 <link rel="stylesheet" href="app.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
 <style type="text/css">
 
   /*start search*/
@@ -242,6 +244,16 @@ span.fa{
   border-radius: ;
 }
 
+.proimg{
+    margin-top: 30%;
+    width: 60px !important;
+    height: 60px !important;
+  }
+
+  .sidetext:hover{
+    background: grey;
+    color: white !important;
+  }
    
 </style>
 </head>
@@ -252,24 +264,36 @@ span.fa{
   
 
   <div class="search position-relative text-center px-4 py-3 mt-2" id="nearbystops">
+    <img class="proimg" src="man-g24ba357cd_1280.jpg">
     <p class="sidebarname"></p>
   </div>
 
   <ul class="categories list-unstyled">
-    <li class="">
-      <i class="uil-calender"></i><a href="#"> Make appointment</a>
+    <li class="sidetext">
+      <i class="uil-estate fa-fw"></i><a href="#"> Dashboard</a>
     </li>
-    <li class="">
-      <i class="uil-calendar-alt"></i><a href="#"> Upcoming appointment</a>
+    <li class="sidetext" onclick="toappointments()">
+      <i class="uil-calendar-alt"></i><a href="#"> Book Appointment</a>
     </li>
-    <li class="">
-      <i class="uil-calender"></i><a href="#"> Previous appoitment</a>
+    <li class="sidetext">
+      <i class="uil-file fa-fw"></i><a href="#"> Appointments</a>
     </li>
-    <li class="">
-      <i class="uil-comment-message"></i><a href="#"> Message</a>
+    <li class="sidetext" onclick="todoctors()">
+      <i class="uil-comment-message"></i>
+      <a href="#"> Doctors</a>
     </li>
-    <li class="">
-      <i class="uil-file-medical"></i><a href="#"> Medical Form</a>
+    <li class="sidetext" onclick="toprofile()">
+      <i class="uil-file-medical"></i>
+      <a href="#" class="profileitem">   
+        Profile
+      </a>
+    </li>
+    <li class="sidetext">
+      <i class="uil-file-medical"></i><a href="#"> Support</a>
+    </li>
+    <li class="sidetext" onclick="gophp()">
+      <i class="uil-file-medical"></i>
+      <a href="#"> Logout</a>
     </li>
   </ul>
 </aside>
@@ -287,18 +311,18 @@ span.fa{
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
             <a class="nav-link">
-              Dashboard
+              
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Support</a>
+            <a class="nav-link"></a>
           </li>
           <li class="nav-item">
-            <a class="nav-link">Account</a>
+            <a class="nav-link"></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <img class="proimg" src="man-g24ba357cd_1280.jpg">
+              
             </a>
           </li>
         </ul>
@@ -370,7 +394,7 @@ span.fa{
         <li id="Gaenycologyst" class="Gaenycologyst" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
         <li id="General Practitioner" class="General Practitioner" value="General Practitioner" onclick="active(this)">General Practitioner</li>
         <li id="Dentist" class="Dentist" value="Dentist" onclick="active(this)">Dentist</li>
-        <li id="surgery doctor" class="surgery doctor" value="surgery doctor" onclick="active(this)">surgery doctor</li>
+        <li id="surgery doctor" class="surgery doctor" value="surgeon" onclick="active(this)">surgeon</li>
         <li id="urologist" class="urologist" value="urologist" onclick="active(this)">urologist</li>
         <li id="Gaenycologyst1" class="Gaenycologyst1" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
         <li id="General Practitioner1" class="General Practitioner1" value="General Practitioner" onclick="active(this)">General Practitioner</li>
@@ -549,12 +573,12 @@ const firebaseConfig = {
   };
 
 
+
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
 // Initialize variables
 const auth = firebase.auth()
 const database = firebase.database()
-
 
 const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -570,9 +594,9 @@ const success = (position) => {
     const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
 
     fetch(geoApiUrl).then(res => res.json()).then(data => {
-      console.log(data);
+      /*console.log(data);
       console.log("inside " + longitude);
-      console.log("inside " + latitude);
+      console.log("inside " + latitude);*/
 
 
 
@@ -581,6 +605,26 @@ const success = (position) => {
   const error = () => {
     status.textContent = 'unable to retrieve your location';
   }
+
+
+
+
+  firebase.database().ref("Patient/" + useruid).on("value",function(element){
+
+  var data = element.val();
+
+  var name = data.First_Name;
+  var surname = data.Last_name;
+  var imager = data.Logo;
+
+  var idNumber = data.Address;
+
+document.querySelector(".sidebarname").innerHTML = name + " " + surname;
+
+document.querySelector(".proimg").src = imager;
+
+
+})
 
   function listexpend(){
     document.getElementById("ediloc").style.height = "180px";
@@ -611,7 +655,10 @@ const success = (position) => {
      firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(address);
   })
 
-  firebase.database().ref("Appoiments/ratedcondition/" + useruid + "/" + booknum).on("child_added",function(snapshot){
+
+
+  firebase.database().ref("Appoiments/ratedcondition/" + useruid + "/" + booknum).on("value",function(snapshot){
+
 
     const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
@@ -620,12 +667,15 @@ const success = (position) => {
     const useruid = urlParams.get('userid')
 
 var total = 0;
+
 var num = snapshot.val();
-    
+console.log(snapshot.val());
+
     for (var [key, value] of Object.entries(num)) {
 
   total += value;
-
+  console.log(total);
+  console.log(value, key);
 
 
   //0-20 booking in the next 7 days
@@ -696,7 +746,7 @@ var num = snapshot.val();
 
 }
 
-  })
+  });
 
   firebase.database().ref("symptomps").on("value",function(snapshot){
 
@@ -923,7 +973,7 @@ function active(val){
   const specialist = val.className;
 
   var specialistobj = {
-    [specialist]: specialist
+    Specialty: specialist
   }
 
   firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).set(specialistobj).then(function(){
@@ -931,15 +981,15 @@ function active(val){
 
       var valueofsnap = snapshot;
 
-  console.log(valueofsnap.length);
+  //console.log(valueofsnap.length);
 
   snapshot.forEach(function(element){
 
   var valueofsnap = element.val();
 
-  console.log(valueofsnap.length);
+  //console.log(valueofsnap.length);
 var getitem = document.querySelector(".starbtn");
-console.log(getitem);
+//console.log(getitem);
   
   
 
@@ -1016,7 +1066,7 @@ function rating(val, num){
     e = e || window.event;
     var target = e.target || e.srcElement
         //text = target.textContent || target.innerText; 
-        console.log(e.clientX);
+        //console.log(e.clientX);
         target.style.color = "#2de810";
         
 }, false);
@@ -1045,7 +1095,8 @@ function rating(val, num){
         var second = target.previousElementSibling;
 
           second.style.color = "#2de810";
-          second.previousElementSibling.style.color = "#2de810";
+          var first = second.previousElementSibling;
+          first.style.color = "#2de810";
         //var second = target.nextElementSibling;
 
         //second.style.color = "#2de810"
@@ -1065,7 +1116,8 @@ document.addEventListener('click', function(e) {
 
           second.style.color = "#2de810";
 
-          second.previousElementSibling.style.color = "#2de810";
+         var first = second.previousElementSibling;
+         first.style.color = "#2de810";
 
 
         //var second = target.nextElementSibling;
@@ -1123,7 +1175,7 @@ function locationeraddress(val) {
 
       firebase.database().ref("doctors").on("value",function(element){
 
-        console.log(Object.keys(element.val()).length);
+        //console.log(Object.keys(element.val()).length);
     element.forEach(function(snapshot){
 
     var thedoctor = snapshot.val();
@@ -1170,7 +1222,7 @@ var latitude = position.coords.latitude;
         // if this location is within 0.1KM of the user, add it to the list
         if (distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 1 || distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K") <= 2) {
             html = data[i];
-            console.log(html);
+            //console.log(html);
         }
     }
 
@@ -1185,19 +1237,25 @@ var latitude = position.coords.latitude;
       navigator.geolocation.getCurrentPosition(success, error);
 }
 
+firebase.database().ref("doctors").on("value",function(element){
 
-function locationer(){  //start locationer function
- // const status = document.querySelector('');
+  element.forEach(function(snapshot){
 
-  const success = (position) => { //success cordinates
+  //console.log(snapshot.val().latitude);
+
+  })
+
+  })
+
+
+
+
+function locationer(){  
+
+  const success = (position) => { 
 
     var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-
-    const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
-
-    fetch(geoApiUrl).then(res => res.json()).then(data => { //fetch geoApiUrl function
-      console.log(data);
+    var longitude = position.coords.longitude; 
 
        var locationobj = {
     latitude: latitude,
@@ -1212,13 +1270,61 @@ function locationer(){  //start locationer function
 
       firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(locationobj);
 
-firebase.database().ref("doctors").on("value",function(element){ // start from element
+firebase.database().ref("Hospitals").on("value",function(element){ 
 
-        var lengthdoc = Object.keys(element.val()).length;
-    element.forEach(function(snapshot){ // start from element to snapshot
 
-    var thedoctor = snapshot.val();
-    console.log(thedoctor);
+  var overall = Object.keys(element.val());
+
+  console.log(element.val());
+ 
+
+        var lengthdoc = overall.length;
+    element.forEach(function(snapshot){ 
+
+      snapshot.forEach(function(snaps){
+
+        snaps.forEach(function(snapza){
+          firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).on("value",function(specialdata){
+
+    var specialtydata = specialdata.val().Specialty;
+    console.log(specialtydata);
+
+  console.log(snapza.val().Specialty);
+
+  if (specialtydata == snapza.val().Specialty) {
+
+    var docname = snapza.val().First_Name;
+    var docLname = snapza.val().Last_name;
+    var docmail = snapza.val().Email;
+
+    var doctorobj = {
+    Name: docname,
+    Surname: docLname,
+    Email: docmail
+  }
+
+        firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).update(doctorobj);
+
+  }
+
+
+
+        })
+          })
+
+      })
+
+    var thehospital = snapshot.val();
+    console.log([thehospital]);
+
+    var hospitaldata = {
+    Name: thehospital.Name,
+    Address: thehospital.Address,
+    latitude: thehospital.latitude,
+    longitude: thehospital.longitude
+  }
+
+    firebase.database().ref("Appoiments/hospital/" + useruid + "/" + booknum).update(hospitaldata);
 
 
 var html;
@@ -1243,77 +1349,131 @@ function distance(lat1, lon1, lat2, lon2, unit) {
     }
 
     
-    for (var i = 0; i < lengthdoc; i++) { //start for function
-        // if this location is within 0.1KM of the user, add it to the list
-        var distances = distance(poslat, poslng, thedoctor.latitude, thedoctor.longitude, "K");
+    for (var i = 0; i < lengthdoc; i++) { 
 
-        console.log(distances);
+        var distances = distance(poslat, poslng, thehospital.latitude, thehospital.longitude, "K");
+
+        //console.log(distances);
 
         if (distances < 1) {
           
-            alert("not igain");
-        }else if(distances < 50){ //start if < 50 function
+            alert("less than 1km");
+        }else if(distances < 50){ 
+
+          
+
+          console.log(distances);
+
+          var hospiname = element.val();
+          var doc = Object.keys(hospiname);
+          //console.log(doc);
+          let numid = parseInt(doc);
+  //console.log(numid);
+
+
+
+          
+
+
           Swal.fire(
   'Appointment set!',
   'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
   'success'
-).then(function(){ //start then function
+).then(function(){ 
 
-  firebase.database().ref("Register/"+useruid).on("value",function(element){ //start element data from register
 
-    const userdata = element.val();
+  firebase.database().ref("Patient/"+useruid).on("value",function(patientdata){ 
+
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(userdata){
+
+    var userinfo = userdata.val();
+
+    firebase.database().ref("Appoiments/date/"+useruid+"/"+booknum).on("value",function(datadate){
+
+
+  
+var dater = datadate.val();
+var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+    //console.log(datadate.val());
+    var userdata = patientdata.val();
     const username = userdata.First_Name;
     const email = userdata.Email;
 
-  Email.send({  //start email send
-    Host: "smtp.elasticemail.com",
-    Username : "matshwikatlego@gmail.com",
-    Password : "C505B013719B1DCB5BE95790D2A765F90500",
-    To: `${email}`,
-    From: "matshwikatlego@gmail.com",
-    Subject: "appoitment set",
-    Body: `Hi ${username}
+    var user = userinfo.First_Name + " " + userinfo.Last_name;
 
-    Thank you for writing to confirm our appointment. I have you scheduled on the calendar on [date] at [time] at [location]. Please contact this number 011 234 5678 or info@helix.com if you have any questions before the meeting. I appreciate your timely attendance at this appointment.
+    var usermail = userinfo.Email;
 
-Sincerely,
-Helix Team
+     gophp(user, usermail)
 
+    //hey [username] we have assigned your with doctor [who] at [address] on the [date]
 
-    `
-    })//end email send
-    .then( //start then on message
-      function(message){
-     alert(message)
-    location.href = "../index.html?userid=" + useruid;
-  })//end then on message
+      
+     
+   })
+  })
 
-})//end element data from register
+})
     
 
     document.querySelector('#nearbystops').append(html);
 
-  }) //end then function
+  }) 
 
     
 
-    }//end if < 50 function
-  }//end for function
+    }
+  }
   
-   }) // end from element to snapshot
-  }) // end from element
-//
- }); //fetch geoApiUrl function
+   }) 
+  }) 
+
+
    
- } //success cordinates
+ } 
  const error = () => {
     status.textContent = 'unable to retrieve your location';
-  } //end locationer function
+  } 
   navigator.geolocation.getCurrentPosition(success, error);
 }
 
 
+function gophp(user, usermail){
 
+  firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).on("value",function(dataval){
+
+    var dater = dataval.val();
+    var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+
+firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("value",function(docval){
+
+  var docdata = docval.val();
+
+  firebase.database().ref("Appoiments/hospital/" + useruid + "/" + booknum).on("value",function(hosval){
+
+
+    var hosdata = hosval.val();
+
+    var hosname = hosdata.Name;
+    var hosadd = hosdata.Address;
+    var dr = docdata.Name + " " + docdata.Surname;
+    console.log(user);
+    console.log(usermail);
+
+    location.href = "http://localhost:8080/PHPMailer/mail.php?docname=" + dr + "&hosname="+ hosname + "&hosadd="+ hosadd + "&date="+ thedate + "&name=" + user + "&mail=" + usermail;
+
+
+    })
+   })
+
+  });
+
+}
 
 
 
@@ -1392,7 +1552,32 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
 
     
+function preventBack() 
+   {
+   window.history.forward();
 
+   }
+
+  function todoctors(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    location.href = "doctors.html?userid=" + useruid + "$booknum=" + booknum;
+  }
+  function toprofile(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    location.href = "profile.html?userid=" + useruid + "$booknum=" + booknum;
+  }
 
 </script>
 <script src="app.js"></script>

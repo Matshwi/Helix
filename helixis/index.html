@@ -10,6 +10,7 @@
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
   
   .nav-link{
@@ -26,6 +27,10 @@
     color: white !important;
   }
 
+  .fa-exclamation-circle{
+    color: red;
+  }
+
 </style>
 </head>
 <body>
@@ -35,7 +40,8 @@
   
 
   <div class="search position-relative text-center px-4 py-3 mt-2">
-    <p class="sidebarname"><img class="proimg" src="man-g24ba357cd_1280.jpg">
+    <p class="sidebarname">
+      <img class="proimg" src="man-g24ba357cd_1280.jpg">
       <p id="userheadname"></p>
   </div>
 
@@ -49,11 +55,14 @@
     <li class="sidetext">
       <i class="uil-file fa-fw"></i><a href="#"> Appointments</a>
     </li>
-    <li class="sidetext">
+    <li class="sidetext" onclick="todoctors()">
       <i class="uil-comment-message"></i><a href="#"> Doctors</a>
     </li>
-    <li class="sidetext">
-      <i class="uil-file-medical"></i><a href="#"> Profile</a>
+    <li class="sidetext" onclick="toprofile()">
+      <i class="uil-file-medical"></i>
+      <a href="#" class="profileitem">   
+        
+      </a>
     </li>
     <li class="sidetext">
       <i class="uil-file-medical"></i><a href="#"> Support</a>
@@ -151,7 +160,11 @@
       <div class="row">
         <div class="col-lg-6 medico">
           <div class="chart-container medics p-3">
-            <h3 class="fs-6 mb-3">Medications <div class="PIcross"><i class="uil-edit-alt"></i></div></h3>
+            <h3 class="fs-6 mb-3">Medications 
+              <div class="PIcross">
+                <i class="uil-edit-alt"></i>
+              </div>
+            </h3>
             <div class="medicontent">
               <div class="firstcont">
                 <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">6 Month Prescription</p>
@@ -210,7 +223,11 @@
 
         <div class="col-lg-6 medico" style="margin-top: 50px;">
           <div class="chart-container medics p-3">
-            <h3 class="fs-6 mb-3">Medical Records <div class="PIcross"><i class="uil-edit-alt"></i></div></h3>
+            <h3 class="fs-6 mb-3">Medical Records 
+              <div class="PIcross">
+                <i class="uil-edit-alt"></i>
+              </div>
+            </h3>
             <div class="medireccontent">
               <div class="firstcont">
                 <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Vaccination</p>
@@ -445,12 +462,37 @@ document.getElementById("number").innerHTML = idNumber;
 
    document.getElementById("dob").innerHTML = dob;
 
+})
 
-   
+
+firebase.database().ref("Patient/" + useruid).on("value",function(element){
+
+  console.log(element.val().Addres);
+
+if (element.val().Address == undefined) {
+
+  var exclamation = `<i class="fa fa-exclamation-circle" aria-hidden="true"></i>`;
 
 
+  document.querySelector(".profileitem").innerHTML = "Profile" + " " +exclamation;
+}else{
+  document.querySelector(".profileitem").innerHTML = "Profile";
+
+}
 
 })
+
+
+function todoctors(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    location.href = "doctors.html?userid=" + useruid + "$booknum=" + booknum;
+  }
 
 
 </script>
