@@ -1443,6 +1443,10 @@ const thedate = todate.split('T')[0]
 
 function gophp(user, usermail){
 
+  
+
+  
+
   firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).on("value",function(dataval){
 
     var dater = dataval.val();
@@ -1465,7 +1469,42 @@ firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("valu
     console.log(user);
     console.log(usermail);
 
-    location.href = "./PHPMailer/mail.php?docname=" + dr + "&hosname="+ hosname + "&hosadd="+ hosadd + "&date="+ thedate + "&name=" + user + "&mail=" + usermail;
+    /*
+
+    username: helixinfo31@gmail.com,
+    Password: 77141F2C361EEE436245687801E5B3F06247
+    Server: smtp.elasticemail.com
+    Port: 2525
+
+    Security Token: c3330c13-00c5-4488-a292-5bdbecf6d428
+
+    //////////////////////////////////////////////////////
+
+    katlegomatshwi@outlook.com
+    543C027040C9836C0F9F22E73EAD71E8861C
+
+    Security Token: def72b47-ecea-4f8d-b201-ed9974e3c600
+    */
+
+
+Email.send({
+    SecureToken : "c3330c13-00c5-4488-a292-5bdbecf6d428",
+    To : usermail,
+    From : "matshwikatlego@gmail.com",
+    Subject : "Appoitment Set",
+    Body : `Hi ${user} 
+
+    I have you scheduled to meet with doctor ${dr} at ${hosname} located at ${hosadd} on ${thedate} Please contact this number 011 234 5678 or info@helix.com if you have any questions before the meeting.email
+
+     your timely attendance to this appointment, will be very much Appreciated.
+
+     Sincerely,
+     Helix Team`
+}).then(
+  message => alert(message)
+);
+
+   /* location.href = "./PHPMailer/mail.php?docname=" + dr + "&hosname="+ hosname + "&hosadd="+ hosadd + "&date="+ thedate + "&name=" + user + "&mail=" + usermail;*/
 
 
     })
