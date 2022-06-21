@@ -1465,7 +1465,7 @@ firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("valu
     console.log(user);
     console.log(usermail);
 
-    location.href = "http://localhost:8080/PHPMailer/mail.php?docname=" + dr + "&hosname="+ hosname + "&hosadd="+ hosadd + "&date="+ thedate + "&name=" + user + "&mail=" + usermail;
+    location.href = "./PHPMailer/mail.php?docname=" + dr + "&hosname="+ hosname + "&hosadd="+ hosadd + "&date="+ thedate + "&name=" + user + "&mail=" + usermail;
 
 
     })
