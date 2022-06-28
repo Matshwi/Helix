@@ -52,7 +52,7 @@
     <li class="sidetext" onclick="toappointments()">
       <i class="uil-calendar-alt"></i><a href="#"> Book Appointment</a>
     </li>
-    <li class="sidetext">
+    <li class="sidetext" onclick="appointmentlist()">
       <i class="uil-file fa-fw"></i><a href="#"> Appointments</a>
     </li>
     <li class="sidetext" onclick="todoctors()">
@@ -61,10 +61,10 @@
     <li class="sidetext" onclick="toprofile()">
       <i class="uil-file-medical"></i>
       <a href="#" class="profileitem">   
-        
+        Profile
       </a>
     </li>
-    <li class="sidetext">
+    <li class="sidetext" onclick="toSupport()">
       <i class="uil-file-medical"></i><a href="#"> Support</a>
     </li>
     <li class="sidetext">
@@ -253,127 +253,8 @@
     <section class="charts appoint">
       <div class="chart-container medics p-3">
         <h3 class="fs-6 mb-3">Previous Appointments <span class="upcoming">Upcoming appointments</span><div class="PIcross">+</div></h3>
-        <div>
-          <div class="appointmentcontent">
-            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">neurologist</p>
-            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Dr Lynn Backster</span>
-            <div class="line"></div>
-            <div class="titletime">
-              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Consultation</p>
-            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
-          </div>
-            <ul class="action">
-            <li>
-              <div>
-                <span class="callicon">
-                  <i class="uil-phone"></i>
-                </span>
-              <p class="texts">call
-              </p>
-            </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Messages">
-                <i class="uil-chat-info"></i>
-              </span>
-              <p class="texts">Messages
-              </p>
-              </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Cancel">
-                <i class="uil-multiply"></i>
-              </span>
-              <p class="texts">Cancel
-              </p>
-              </div>
-            </li>
-            </ul>
-          </div>
-          <div class="appointmentcontent">
-            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">neurologist</p>
-            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Dr Lynn Backster</span>
-            <div class="line"></div>
-            <div class="titletime">
-              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Consultation</p>
-            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
-          </div>
-            <ul class="action">
-            <li>
-              <div>
-                <span class="callicon">
-                  <i class="uil-phone"></i>
-                </span>
-              <p class="texts">call
-              </p>
-            </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Messages">
-                <i class="uil-chat-info"></i>
-              </span>
-              <p class="texts">Messages
-              </p>
-              </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Cancel">
-                <i class="uil-multiply"></i>
-              </span>
-              <p class="texts">Cancel
-              </p>
-              </div>
-            </li>
-            </ul>
-          </div>
-          <div class="appointmentcontent">
-            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">neurologist</p>
-            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Dr Lynn Backster</span>
-            <div class="line"></div>
-            <div class="titletime">
-              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Consultation</p>
-            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">June 26, 10am - 11:30am</p>
-          </div>
-            <ul class="action">
-            <li>
-              <div>
-                <span class="callicon">
-                  <i class="uil-phone"></i>
-                </span>
-              <p class="texts">call
-              </p>
-            </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Messages">
-                <i class="uil-chat-info"></i>
-              </span>
-              <p class="texts">Messages
-              </p>
-              </div>
-            </li>
-
-            <li>
-              <div>
-              <span class="Cancel">
-                <i class="uil-multiply"></i>
-              </span>
-              <p class="texts">Cancel
-              </p>
-              </div>
-            </li>
-            </ul>
-          </div>
+        <div class="appoints">
+          
           <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
         </div>
       </div>
@@ -420,12 +301,42 @@ const database = firebase.database()
     console.log(queryString);
     const urlParams = new URLSearchParams(queryString);
 
-    const product = urlParams.get('userid')
-    console.log(product);
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
 
 var appointmentname = Date.now();
 
+if (booknum == null) {
+
   location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
+}else{
+
+  location.href = "activities.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+  }
+
+
+  function appointmentlist(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
+var appointmentname = Date.now();
+
+if (booknum == null) {
+
+  location.href = "appointments.html?userid=" + useruid;
+}else{
+
+  location.href = "appointments.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+
+  
   }
 
   const queryString = window.location.search;
@@ -433,6 +344,72 @@ var appointmentname = Date.now();
 
     const booknum = urlParams.get('booknum')
     const useruid = urlParams.get('userid')
+
+
+firebase.database().ref("Appoiments/doctor/" + useruid).on("value",function(element){
+
+  element.forEach(function(snaps){
+
+
+      var dater = snaps.val();
+    var todate = dater.date;
+
+
+console.log(snaps.val());
+
+        var specialty = snaps.val().Specialty;
+        var fullName = snaps.val().Name + " " + snaps.val().Surname;
+
+     
+     document.querySelector('.appoints').innerHTML += `<div class="appointmentcontent">
+            <p style="font-size: .555rem;width: fit-content;margin-bottom: -1%;">${specialty}</p>
+            <span style="font-size: .700rem; font-weight: bold;width: fit-content;">Dr ${fullName}</span>
+            <div class="line"></div>
+            <div class="titletime">
+              <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Consultation</p>
+            <p style="font-size: .700rem; font-weight: bold;width: fit-content;">${todate}, 10am - 11:30am</p>
+          </div>
+            <ul class="action">
+            <li>
+              <div>
+                <span class="callicon">
+                  <i class="uil-phone"></i>
+                </span>
+              <p class="texts">call
+              </p>
+            </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Messages">
+                <i class="uil-chat-info"></i>
+              </span>
+              <p class="texts">Messages
+              </p>
+              </div>
+            </li>
+
+            <li>
+              <div>
+              <span class="Cancel">
+                <i class="uil-multiply"></i>
+              </span>
+              <p class="texts">Cancel
+              </p>
+              </div>
+            </li>
+            </ul>
+          </div>`;
+
+        
+           })
+
+        });
+
+
+
+  
 
 
 firebase.database().ref("Patient/" + useruid).on("value",function(element){
@@ -482,6 +459,8 @@ if (element.val().Address == undefined) {
 
 })
 
+console.log(booknum);
+
 
 function todoctors(){
 
@@ -491,7 +470,59 @@ function todoctors(){
     const booknum = urlParams.get('booknum')
     const useruid = urlParams.get('userid')
 
-    location.href = "doctors.html?userid=" + useruid + "$booknum=" + booknum;
+
+    if (booknum == null) {
+
+   location.href = "doctors.html?userid=" + useruid;
+}else{
+
+location.href = "doctors.html?userid=" + useruid + "booknum=" + booknum;
+
+}
+
+
+  }
+
+
+  function toprofile(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    
+
+    if (booknum == null) {
+
+  location.href = "profile.html?userid=" + useruid;
+}else{
+
+  location.href = "profile.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+
+
+  }
+  function toSupport(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    
+
+    if (booknum == null) {
+
+  location.href = "support.html?userid=" + useruid;
+}else{
+
+  location.href = "support.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
   }
 
 

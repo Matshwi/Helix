@@ -86,9 +86,7 @@
 
   /*end search*/
   
-.sidebar {
-  width: 10%;
-}
+
 
 
 .chart-container1 {
@@ -103,6 +101,7 @@
 
 .charts {
   margin-top: -2rem;
+  margin-left: 10%;
 }
 
 .specialty{
@@ -243,14 +242,18 @@ span.fa{
   border-radius: ;
 }
 
-.thelist > i{
-  font-size: 38px !important;
+.thelist:hover{
+  border-right: 3px solid black;
+  color: black !important;
+  font-weight: bold;
+  line-height: 5px;
+  cursor: pointer;
 }
 
 
 
+
 div.imgcontainer{
-  background-color: #d3dff2;
   height: 17rem;
   width: 17rem;
   border-radius: 1rem;
@@ -290,23 +293,16 @@ div.imgcontainer{
 }
 
 .fileinput{
-  margin-top: 5%;
   width: fit-content;
+  float: right;
+  margin-top: -15%;
+  margin-right: 58%;
 }
 
 .userinfo{
-  margin-left: 30%;
-  position: absolute;
-  margin-top: -340px;
-  width: fit-content;
-  display: none;
 }
 
 .edituserinfo{
-  margin-left: 30%;
-  position: absolute;
-  margin-top: -340px;
-  width: 30%;
 }
 
 .edituserinfo > div{
@@ -314,7 +310,9 @@ div.imgcontainer{
 }
 
 label{
+  margin-top: 10%;
   font-weight: 900;
+  margin-bottom: 5%;
 }
 
 .editinput{
@@ -325,6 +323,51 @@ label{
   height: 2rem;
 }
 
+.sidebar{
+  width: 15%;
+}
+
+
+.img{
+  margin-top: -10%;
+}
+
+
+.usernamer{
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.status{
+  margin-top: -10%;
+}
+.right{
+  margin-left: 55%;
+  width: fit-content;
+  margin-top: -40%;
+}
+
+input{
+  line-height: 30px;
+  width: 250px;
+  text-align: center;
+  background-color: #e7e9fe;
+  border: 1px solid #e7e9fe;
+}
+
+.editbtn{
+  background-color: rgba(255, 255, 255, 0.7);
+  padding: 15px 38px;
+  cursor: pointer;
+  border: 1px solid #46f2ea;
+}
+.editbtn:hover{
+  box-shadow: 1px 1px 10px #4593ed;
+  }
+
+  .nav-item{
+    cursor: pointer;
+  }
    
 </style>
 </head>
@@ -340,19 +383,19 @@ label{
 
   <ul class="categories list-unstyled">
     <li class="thelist">
-      <i class="uil-calender"></i><a href="#"></a>
+      <i class="fa fa-user-circle-o" aria-hidden="true"></i><a href="#">User info</a>
     </li>
     <li class="thelist">
-      <i class="uil-calendar-alt"></i><a href="#"></a>
+      <i class="fa fa-comments-o" aria-hidden="true"></i><a href="#">Chats</a>
     </li>
     <li class="thelist">
-      <i class="uil-calender"></i><a href="#"></a>
+      <i class="fa fa-usd" aria-hidden="true"></i><a href="#">billing</a>
     </li>
     <li class="thelist">
-      <i class="uil-comment-message"></i><a href="#"></a>
+      <i class="fa fa-cog" aria-hidden="true"></i><a href="#">setting</a>
     </li>
     <li class="thelist">
-      <i class="uil-file-medical"></i><a href="#"></a>
+      <i class="fa fa-sign-in" aria-hidden="true"></i><a href="#">logout</a>
     </li>
   </ul>
 </aside>
@@ -368,13 +411,16 @@ label{
       </div>
       <div class="collapse navbar-collapse" id="toggle-navbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <li class="nav-item" onclick="Dashboard()">
             <a class="nav-link">
               Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" onclick="appointmentlist()">
             <a class="nav-link">Appointments</a>
+          </li>
+          <li class="nav-item" onclick="toSupport()">
+            <a class="nav-link">Support</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
@@ -385,7 +431,7 @@ label{
       </div>
     </div>
   </nav>                                                                                                                   
-  <div class="p-4 .mt-5">
+  <div class="p-4">
     <div class="headtext">
       <div class="query">
         
@@ -402,104 +448,60 @@ label{
             <!-- image starts here -->
 
             <div>
-              <div>
-                <div class="imgcontainer">
-                  <img src="6-2-pokemon-png-hd.png" style="width: 13rem !important;height: 13rem !important;" class="imager">
+              <div class="imgcontainer">
+                  <img src="man-g24ba357cd_1280.jpg" style="width: 10rem !important;height: 10rem !important;box-shadow: 2px 2px 10px #32a852;" class="proimg img">
                 </div>
-                <div class="fileinput">
-                  <input type="file" class="custom-file-input">
 
-              <button class="custom-btn btn-3"><span>edit Profile</span></button>
+                <div class="fileinput">
+                  <p class="usernamer">Sara Tancredi</p>
+                  <p class="status">active</p>
                 </div>
+            </div>
+            <div style="border: 1px solid white;">
+             <div style="width: fit-content;margin-left: 7%;">
+              <div>
+                <label>Name</label><br />
+                <input type="text" class="inputstate" id="name" placeholder="Sara">
               </div>
+              <div>
+                <label>Surname</label><br />
+                <input type="text" class="inputstate" id="surname" placeholder="Trancedi">
+              </div>
+              <div>
+                <label>Email</label><br />
+                <input type="text" class="inputstate" id="email" placeholder="Sara@email.com">
+              </div>
+              <div>
+                <label>image</label><br />
+                <input type="file" class="inputstate" id="img" onchange="submitimg();">
+              </div>
+              </div>
+              <div class="right">
+              <div>
+                <label>Phone</label><br />
+                <input type="text" class="inputstate" id="phone" placeholder="+27 00 000 0000">
+              </div>
+              <div>
+                <label>Address</label><br />
+                <input type="text" class="inputstate" id="address" placeholder="bothaleng cres, Soshanguve, PTA">
+              </div>
+              <div>
+                <label>Marital Status</label><br />
+                <input type="text" class="inputstate" id="marital" placeholder="Sara">
+              </div>
+              <div>
+                <label>Medical Aid</label><br />
+                <input type="text" class="inputstate" id="medical" placeholder="Discovery">
+              </div>
+              </div>
+
             </div>
 
             <!-- image ends here -->
 
-            <div class="userinfo">
-              <div>
-                <p style="font-weight: 900;">
-                  Name:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  User Name
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 900;">
-                  Email:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  User@email.com
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 900;">
-                  Phone number:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  098 765 4321
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 900;">
-                  Address:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  2152 block gg, Soshanguve,
-                  PTA,0152
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 900;">
-                  Medical Aid:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  Discovery
-                </p>
-              </div>
-              <div>
-                <p style="font-weight: 900;">
-                  Marital status:
-                </p>
-                <br>
-                <p style="margin-top: -38px;">
-                  Married
-                </p>
-              </div>
-            </div>
-            <div class="edituserinfo">
-              <div>
-                <label>Name:</label>
-                <input type="text" name="" class="editinput" style="margin-left: 35.5%">
-              </div>
-              <div>
-                <label>Email:</label>
-                <input type="text" name="" class="editinput" style="margin-left: 35.7%">
-              </div>
-              <div>
-                <label>Phone number:</label>
-                <input type="text" name="" class="editinput">
-              </div>
-              <div>
-                <label>Address:</label>
-                <input type="text" name="" class="editinput" style="margin-left: 31.2%">
-              </div>
-              <div>
-                <label>Medical Aid:</label>
-                <input type="text" name="" class="editinput" style="margin-left: 24.6%">
-              </div>
-              <div>
-                <label>Marital status:</label>
-                <input type="text" name="" class="editinput" style="margin-left: 20.4%">
-              </div>
-            </div>
-
+<div style="margin-top: 10%;text-align: center;" id="editsubmit">
+  
+</div>
             <!-- then it ands here -->
           </div>
         </div>
@@ -546,6 +548,7 @@ const auth = firebase.auth()
 const database = firebase.database()
 
 
+
 const queryString = window.location.search;
     const urlParams = new URLSearchParams(queryString);
 
@@ -553,8 +556,225 @@ const queryString = window.location.search;
     const useruid = urlParams.get('userid')
 
 
+    function appointmentlist(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
+var appointmentname = Date.now();
+
+if (booknum == null) {
+
+  location.href = "appointments.html?userid=" + useruid;
+}else{
+
+  location.href = "appointments.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+
+  
+  }
+
+  function Dashboard(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
+
+
+if (booknum == null) {
+
+  location.href = "index.html?userid=" + useruid;
+}else{
+
+  location.href = "activities.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+  }
+
+  function toSupport(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    
+
+    if (booknum == null) {
+
+  location.href = "support.html?userid=" + useruid;
+}else{
+
+  location.href = "support.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+  }
+
+
+
+firebase.database().ref("Patient/" + useruid).on("value",function(element){
+
+  var PData = element.val();
+
+  document.querySelector(".proimg").src = PData.Logo;
+  document.querySelector(".img").src = PData.Logo;
+  document.querySelector(".usernamer").innerHTML = PData.First_Name + " " + PData.Last_name;
+
+  
+
+if (PData.Address == undefined) {
+
+    document.getElementById("name").value = PData.First_Name;
+  document.getElementById("surname").value = PData.Last_name;
+  document.getElementById("email").value = PData.Email;
+  document.getElementById("phone").value = PData.PhoneNum;
+  document.getElementById("address").value = "house number,street name, township and/or city,province,zipcode";
+  document.getElementById("marital").value = PData.Marital;
+  document.getElementById("medical").value = PData.Medical;
+  document.querySelectorAll(".proimg").src = PData.Logo;
+  document.querySelector(".usernamer").innerHTML = PData.First_Name + " " + PData.Last_name;
+
+} else if(PData.Marital == undefined){
+
+    document.getElementById("name").value = PData.First_Name;
+  document.getElementById("surname").value = PData.Last_name;
+  document.getElementById("email").value = PData.Email;
+  document.getElementById("phone").value = PData.PhoneNum;
+  document.getElementById("address").value = PData.Address;
+  document.getElementById("marital").value = "married, divorced, not married";
+  document.getElementById("medical").value = PData.Medical;
+  document.querySelectorAll(".proimg").src = PData.Logo;
+  document.querySelector(".usernamer").innerHTML = PData.First_Name + " " + PData.Last_name;
+
+}else if(PData.Medical == undefined){
+  document.getElementById("name").value = PData.First_Name;
+  document.getElementById("surname").value = PData.Last_name;
+  document.getElementById("email").value = PData.Email;
+  document.getElementById("phone").value = PData.PhoneNum;
+  document.getElementById("address").value = PData.Address;
+  document.getElementById("marital").value = PData.Marital;
+  document.getElementById("medical").value = "medical aid";
+  document.querySelectorAll(".proimg").src = PData.Logo;
+  document.querySelector(".usernamer").innerHTML = PData.First_Name + " " + PData.Last_name;
+}else{
+  document.getElementById("name").value = PData.First_Name;
+  document.getElementById("surname").value = PData.Last_name;
+  document.getElementById("email").value = PData.Email;
+  document.getElementById("phone").value = PData.PhoneNum;
+  document.getElementById("address").value = PData.Address;
+  document.getElementById("marital").value = PData.Marital;
+  document.getElementById("medical").value = PData.Medical;
+  
+}
+
+  console.log(PData);
+
+})
+
+document.querySelector("#editsubmit").innerHTML=`<span class="editbtn" onclick="edit()">edit</span>`;
+
+function edit() {
+  document.querySelector("#editsubmit").innerHTML = `<span class="editbtn" onclick="submit()">submit</span>`;
+}
+function submit(){
+
+  var imaging = document.getElementById("img").src;
+
+    var name = document.getElementById("name").value;
+  var surname = document.getElementById("surname").value;
+  var email = document.getElementById("email").value;
+  var contact = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+  var marital = document.getElementById("marital").value;
+  var medical = document.getElementById("medical").value;
+  var imgurl = document.querySelector(".img").src;
+
+  var user_data = {
+      Email : email,
+      First_Name: name,
+      Last_name : surname,
+      PhoneNum: contact,
+      Logo: imgurl,
+      Address: address,
+      Marital: marital,
+      Medical: medical,
+      last_login : Date.now()
+    }
+
+    // Push to Firebase Database
+    firebase.database().ref('Patient/' + useruid).update(user_data).then(function(){
+      // DOne
+    alert('User Updated')
+
+})
+
+  document.querySelector("#editsubmit").innerHTML = `<span class="editbtn" onclick="edit()">edit</span>`;
+
+}
+
+function submitimg(){
+  var name = document.getElementById("name").value;
+  var surname = document.getElementById("surname").value;
+  var email = document.getElementById("email").value;
+  var contact = document.getElementById("phone").value;
+  var address = document.getElementById("address").value;
+  var marital = document.getElementById("marital").value;
+  var medical = document.getElementById("medical").value;
+
+    var uploadtask = firebase.storage().ref('customer/');
+
+  const file = document.querySelector("#img").files[0];
+
+       console.log(file);
+
+       var imgurl;
+
+var files = [];
+      const   nameofimg = Date.now() + "-" + file.name;
+      const metadata = {
+        contentType: file.type
+      };
+      const task = uploadtask.child(nameofimg);
+
+ task.put(file, metadata).then(data => {
+                data.ref.getDownloadURL().then(url => {
+imgurl = url;
+  var user_data = {
+      Email : email,
+      First_Name: name,
+      Last_name : surname,
+      PhoneNum: contact,
+      Logo: imgurl,
+      Address: address,
+      Marital: marital,
+      Medical: medical,
+      last_login : Date.now()
+    }
+
+    // Push to Firebase Database
+    firebase.database().ref('Patient/' + useruid).update(user_data).then(function(){
+      // DOne
+    alert('User Updated')
+
+})
+  })
+
+  document.querySelector("#editsubmit").innerHTML = `<span class="editbtn" onclick="edit()">edit</span>`;
+})
+}
+
+
+
+
 </script>
-<script src="app.js"></script>
 
 
 <!--<script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>-->

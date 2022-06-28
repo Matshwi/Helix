@@ -254,6 +254,109 @@ span.fa{
     background: grey;
     color: white !important;
   }
+
+  .imgrobot{
+    text-align: center;
+  }
+  .imgconsult{
+    width: 200px !important;
+    height: 200px !important;
+  }
+
+  .Qtxt{
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .Ftxt{
+    font-weight: 900;
+    font-size: 22px;
+  }
+
+
+  .btns{
+  display: inline-block;
+  padding: .75rem 1.25rem;
+  border-radius: 10rem;
+  color: black;
+  text-transform: uppercase;
+  font-size: 1rem;
+  letter-spacing: .15rem;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  cursor: pointer;
+  }
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+.open-button {
+  background-color: #555;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  opacity: 0.8;
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+/* The popup chat - hidden by default */
+.chat-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #f1f1f1;
+  z-index: 9;
+}
+
+/* Add styles to the form container */
+.form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: white;
+}
+
+/* Full-width textarea */
+.form-container textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: none;
+  background: #f1f1f1;
+  resize: none;
+  min-height: 200px;
+}
+
+/* When the textarea gets focus, do something */
+.form-container textarea:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+/* Set a style for the submit/send button */
+.form-container .btn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom:10px;
+  opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+  background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+  opacity: 1;
+}
    
 </style>
 </head>
@@ -279,7 +382,8 @@ span.fa{
       <i class="uil-file fa-fw"></i><a href="#"> Appointments</a>
     </li>
     <li class="sidetext" onclick="todoctors()">
-      <i class="uil-comment-message"></i><a href="#"> Doctors</a>
+      <i class="uil-comment-message"></i>
+      <a href="#"> Doctors</a>
     </li>
     <li class="sidetext" onclick="toprofile()">
       <i class="uil-file-medical"></i>
@@ -287,11 +391,12 @@ span.fa{
         Profile
       </a>
     </li>
-    <li class="sidetext" onclick="toSupport()">
+    <li class="sidetext">
       <i class="uil-file-medical"></i><a href="#"> Support</a>
     </li>
-    <li class="sidetext">
-      <i class="uil-file-medical"></i><a href="#"> Logout</a>
+    <li class="sidetext" onclick="">
+      <i class="uil-file-medical"></i>
+      <a href="#"> Logout</a>
     </li>
   </ul>
 </aside>
@@ -330,7 +435,7 @@ span.fa{
   <div class="p-4 .mt-5">
     <div class="headtext">
       <div class="query">
-        <p class="headertext">To book please go through all options provided</p>
+        <p class="headertext"></p>
       </div>
     </div>
     <section class="charts">
@@ -338,38 +443,46 @@ span.fa{
         <div class="col-lg-12">
           <div class="chart-container1 p-4 medics activity">
             
-            <div class="btn starbtn">
-              <i class="uil-star icon"></i>
-              <p style="margin-left: -1.6rem;width: 100%;font-size: 80%">Choose a specialty</p>
-            </div>
-            <div class="btn">
-              <i class="uil-heart icon"></i>
-              <p style="margin-left: -1rem;width: 100%;font-size: 80%">Choose your condition </p>
-            </div>
-            <div class="btn">
-              <i class="uil-map-marker icon"></i>
-              <p style="margin-left: -1.2rem;width: 100%;font-size: 80%">Choose your location </p>
-            </div>
-            <div class="btn">
-              <i class="uil-clock icon"></i>
-              <p style="margin-left: -2.8rem;width: 100%;font-size: 80%">Choose Time </p>
-            </div>
-            <div class="btn">
-              <i class="uil-user icon"></i>
-              <p style="margin-left: -0.8rem;width: 100%;font-size: 80%">Search Doctor by name </p>
-            </div>
-            <div class="btn">
-              <i class="uil-hospital icon"></i>
-              <p style="margin-left: 0rem;width: 100%;font-size: 80%">Search hospital by name </p>
-            </div>
-            <div class="btn">
-              <i class="uil-mobile-vibrate icon"></i>
-              <p style="margin-left: -1rem;width: 100%;font-size: 80%">Speak to a consultant</p>
-            </div>
-            <div class="btn searchbtn">
-              <i class="uil-book icon"></i>
-              <p style="margin-left: -3.8rem;width: 100%;font-size: 80%"  onclick="startappoint()">Book</p>
-            </div>
+                      <!-- start-->
+
+                    <div>
+
+                      <div class="imgrobot">
+                        <img src="robot-3156763_1280.png" class="imgconsult">
+                      </div>
+                      <div class="Qtxt">
+                        <p class="Ftxt">ARE YOU FACING ANY PROBLEM?</p>
+                        <p style="font-weight: 600;">If you require urgent support kindly use the live chat, however you may also use the open ticket and our consultants will be with you as soon as posible</p>
+                      </div>
+                      <div style="text-align: center;">
+                        <span class="btns" style="border: 2px solid #44ebb3;" onclick="openForm()">start live chat</span>
+                        <span class="btns" style="border: 2px solid #28b3de;margin-left: 15px;">open a ticket</span>
+                      </div>
+                      <div class="chat-popup" id="myForm">
+  <form action="/action_page.php" class="form-container">
+    <h1>Chat</h1>
+
+    <label for="msg"><b>Message</b></label>
+    <textarea placeholder="Type message.." name="msg" required></textarea>
+
+    <button type="submit" class="btn">Send</button>
+    <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+  </form>
+</div>
+                      <div style="text-align: center;margin-top: 50px;">
+                        <div>
+                          <p style="font-weight: 900;">Or you can contact us on</p>
+                        </div>
+                        <div>
+                          <span>Email: helixinfo31@gmail.com</span>
+                          <span style="margin-left: 2rem;">Phone: 000 0000 000</span>
+                        </div>
+                      </div>
+                      
+                      
+                    </div>
+                      <!--end-->
+
           </div>
         </div>
       </div>
@@ -377,170 +490,7 @@ span.fa{
 
   </div>
 </section>
-<div id="specialty" class="w3-modal">
 
-  <div class="w3-modal-content otherelements">
-
-    <div class="w3-container">
-      <p style="color: white;">Please Selector only one doctor relevant to your circumstances if you are unsure kindly select the general practitioner or request assistance</p>
-      <span onclick="document.getElementById('specialty').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
-        cancel
-      </span>
-      <span class="w3-button next" onclick="nextCondition()">next &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-
-      <ul data-tag="channelList" class="specialty">
-        <li id="Gaenycologyst" class="Gaenycologyst" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
-        <li id="General Practitioner" class="General Practitioner" value="General Practitioner" onclick="active(this)">General Practitioner</li>
-        <li id="Dentist" class="Dentist" value="Dentist" onclick="active(this)">Dentist</li>
-        <li id="surgery doctor" class="surgery doctor" value="surgeon" onclick="active(this)">surgeon</li>
-        <li id="urologist" class="urologist" value="urologist" onclick="active(this)">urologist</li>
-        <li id="Gaenycologyst1" class="Gaenycologyst1" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
-        <li id="General Practitioner1" class="General Practitioner1" value="General Practitioner" onclick="active(this)">General Practitioner</li>
-        <li id="Dentist1" class="Dentist1" value="Dentist" onclick="active(this)">Dentist</li>
-        <li id="surgery doctor1" class="surgery doctor1" value="surgery doctor" onclick="active(this)">surgery doctor</li>
-        <li id="urologist1" class="urologist1" value="urologist" onclick="active(this)">urologist</li>
-        <li id="Gaenycologyst2" class="Gaenycologyst2" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
-        <li id="General Practitioner2" class="General Practitioner2" value="General Practitioner" onclick="active(this)">General Practitioner</li>
-        <li id="Dentist2" class="Dentist2" value="Dentist" onclick="active(this)">Dentist</li>
-        <li id="surgery doctor2" class="surgery doctor2" value="surgery doctor" onclick="active(this)">surgery doctor</li>
-        <li id="urologist2" class="urologist2" value="urologist" onclick="active(this)">urologist</li>
-      </ul>
-    </div>
-  </div>
-</div>
-
-<div id="condition" class="w3-modal">
-  <div class="w3-modal-content otherelements">
-    <div class="w3-container">
-      <p style="color: white;">Please Select conditions that relate to you by clicking on the number of stars on the condition, 1- means low 2- low but not getting well, 3- mild, 4-getting worse and 5- severe</p>
-      <span onclick="document.getElementById('condition').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
-        cancel
-      </span>
-      <span class="w3-button next" onclick="nextLocation()">next &nbsp;<i class="fa fa-chevron-right" aria-hidden="true"></i></span>
-
-      <ul class="specialtycondition" >
-      
-      </ul>
-    </div>
-  </div>
-</div>
-<div id="location" class="w3-modal">
-  <div class="w3-modal-content otherelements">
-    <div class="w3-container">
-      <span onclick="document.getElementById('location').style.display='none'" class="w3-button w3-diplay-topright cancelbook">
-        cancel
-      </span>
-
-      <ul class="specialty">
-        <li onclick="locationeraddress(this)">2152 BLOCK-GG, botaleng cres, Soshanguve, Pretoria, Gauteng, 0152</li>
-        <li value="pregnant2" onclick="locationer()">Current location | coordinates</li>
-        <li id="ediloc" onclick="listexpend()">Add address +
-          <br><br><br>
-
-          <input id="inputaddress" type="text" name="" placeholder="address"> <span class="sendloc">submit</span>
-        </li>
-      </ul>
-    </div>
-  </div>
-</div>
-<div id="time" class="w3-modal">
-  <div class="w3-modal-content">
-    <div class="w3-container timer">
-      <span onclick="document.getElementById('time').style.display='none'" class="w3-button w3-diplay-topright" style="color: black;">
-        &times;
-      </span>
-
-      <div class="calendar">
-        <div class="calendar-header">
-            <span class="month-picker" id="month-picker">February</span>
-            <div class="year-picker">
-                <span class="year-change" id="prev-year">
-                    <pre><</pre>
-                </span>
-                <span id="year">2021</span>
-                <span class="year-change" id="next-year">
-                    <pre>></pre>
-                </span>
-            </div>
-        </div>
-        <div class="calendar-body">
-            <div class="calendar-week-day">
-                <div>Sun</div>
-                <div>Mon</div>
-                <div>Tue</div>
-                <div>Wed</div>
-                <div>Thu</div>
-                <div>Fri</div>
-                <div>Sat</div>
-            </div>
-            <div class="calendar-days"></div>
-        </div>
-        <div class="calendar-footer">
-          <button class="calenderbtn">done</button>
-            <div class="toggle">
-                <input type="time" style="color: blue;">
-            </div>
-        </div>
-        <div class="month-list"></div>
-    </div>
-
-        <div class="scheduled">
-          <h6 class="scheduletext">scheduled activities</h6>
-          <iframe src="inframe/index.html"></iframe>
-          
-        </div>
-    </div>
-  </div>
-</div>
-
-<div id="doctor" class="w3-modal">
-  <div class="w3-modal-content otherelements">
-    <div class="w3-container">
-      <span onclick="document.getElementById('doctor').style.display='none'" class="w3-button w3-diplay-topright">
-        &times;
-      </span>
-
-      <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
-
-<ul id="myUL">
-  <li onclick="adddoctor(this)" id="DrAdele"><a href="#">Dr Adele</a></li>
-  <li><a href="#">Dr Agnes</a></li>
-
-  <li><a href="#">Dr Billy</a></li>
-  <li><a href="#">Dr Bob</a></li>
-
-  <li><a href="#">Dr Calvin</a></li>
-  <li><a href="#">Dr Christina</a></li>
-  <li><a href="#">Dr Cindy</a></li>
-</ul>
-
-
-   </div>
-  </div>
-</div>
-
-<div id="hospital" class="w3-modal">
-  <div class="w3-modal-content otherelements">
-    <div class="w3-container">
-      <span onclick="document.getElementById('hospital').style.display='none'" class="w3-button w3-diplay-topright">
-        &times;
-      </span>
-
-      <input type="text" id="myInputhospital" onkeyup="myhospital()" placeholder="Search for names.." title="Type in a name">
-
-<ul id="myULhospital">
-  <li onclick="addhospital()"><a href="#">Dr George Mukhari</a></li>
-  <li><a href="#">Botshilo hospital</a></li>
-
-  <li><a href="#">Louis Pasture hospital</a></li>
-  <li><a href="#">Medic Bob hospital</a></li>
-
-  <li><a href="#">steven biko academic hospital</a></li>
-</ul>
-
-   </div>
-  </div>
-</div>
 <!-- partial -->
 
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.4.17/dist/sweetalert2.all.min.js"></script>
@@ -584,29 +534,45 @@ const queryString = window.location.search;
     const booknum = urlParams.get('booknum')
     const useruid = urlParams.get('userid')
 
-
-      
-
-
-
-const success = (position) => {
-
-    var latitude = position.coords.latitude;
-    var longitude = position.coords.longitude;
-
-    const geoApiUrl = 'https://api.bigdatacloud.net/data/reverse-geocode-client?latitude=${latitude}&longitude=${longitude}&localityLanguage=en'
-
-    fetch(geoApiUrl).then(res => res.json()).then(data => {
-      /*console.log(data);
-      console.log("inside " + longitude);
-      console.log("inside " + latitude);*/
-
-
-
-    })
+ function dashboard(){
+    location.href ="index.html?userid=" + useruid + "&booknum=" + booknum;
   }
-  const error = () => {
-    status.textContent = 'unable to retrieve your location';
+
+
+  function openForm() {
+  document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+  document.getElementById("myForm").style.display = "none";
+}
+
+function toappointments(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const product = urlParams.get('userid')
+    console.log(product);
+
+var appointmentname = Date.now();
+
+  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
+  }
+
+  function appointmentlist(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const product = urlParams.get('userid')
+    console.log(product);
+
+var appointmentname = Date.now();
+
+  location.href = "appointments.html" + queryString + "&booknum=" + appointmentname;
   }
 
 
@@ -619,7 +585,6 @@ const success = (position) => {
   var name = data.First_Name;
   var surname = data.Last_name;
   var imager = data.Logo;
-
   var idNumber = data.Address;
 
 document.querySelector(".sidebarname").innerHTML = name + " " + surname;
@@ -628,20 +593,6 @@ document.querySelector(".proimg").src = imager;
 
 
 })
-
-  function listexpend(){
-    document.getElementById("ediloc").style.height = "180px";
-
-    setTimeout(displayer, 1000);
-
-    function displayer(){
-      document.getElementById("inputaddress").style.display = "block";
-      document.querySelector(".sendloc").style.display = "block";
-    }
-
-
-
-  }
 
 
 
@@ -1176,7 +1127,7 @@ function locationeraddress(val) {
 
      firebase.database().ref("Appoiments/location/" + useruid + "/" + booknum).update(addressobj);
 
-      firebase.database().ref("Doctors").on("value",function(element){
+      firebase.database().ref("doctors").on("value",function(element){
 
         //console.log(Object.keys(element.val()).length);
     element.forEach(function(snapshot){
@@ -1289,13 +1240,6 @@ firebase.database().ref("Hospitals").on("value",function(element){
         snaps.forEach(function(snapza){
           firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).on("value",function(specialdata){
 
-            firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).on("value",function(dateddata){
-
-              var dated = dateddata.val();
-              var todate = dated.day;
-
-const thedate = todate.split('T')[0]
-
     var specialtydata = specialdata.val().Specialty;
     console.log(specialtydata);
 
@@ -1306,14 +1250,11 @@ const thedate = todate.split('T')[0]
     var docname = snapza.val().First_Name;
     var docLname = snapza.val().Last_name;
     var docmail = snapza.val().Email;
-    var docspecialty = snapza.val().Specialty;
 
     var doctorobj = {
     Name: docname,
     Surname: docLname,
-    Email: docmail,
-    Specialty: docspecialty,
-    date: thedate
+    Email: docmail
   }
 
         firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).update(doctorobj);
@@ -1321,7 +1262,7 @@ const thedate = todate.split('T')[0]
   }
 
 
-      })
+
         })
           })
 
@@ -1501,9 +1442,7 @@ firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("valu
 
 
 Email.send({
-    Host : "smtp.elasticemail.com",
-    Username : "helixinfo31@gmail.com",
-    Password : "77141F2C361EEE436245687801E5B3F06247",
+    SecureToken : "c3330c13-00c5-4488-a292-5bdbecf6d428",
     To : usermail,
     From : "matshwikatlego@gmail.com",
     Subject : "Appoitment Set",
@@ -1632,49 +1571,6 @@ function preventBack()
 
     location.href = "profile.html?userid=" + useruid + "$booknum=" + booknum;
   }
-
-  function Logout(){
-    window.onbeforeunload = function(){
-    return "Message here";
-}
-  }
-
-
-  function dashboard(){
-    location.href ="index.html?userid=" + useruid + "$booknum=" + booknum;
-  }
-
-  function toappointments(){
-
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-
-    const product = urlParams.get('userid')
-    console.log(product);
-
-var appointmentname = Date.now();
-
-  location.href = "activities.html" + queryString + "&booknum=" + appointmentname;
-  }
-
-
-
-  function appointmentlist(){
-
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-
-    const product = urlParams.get('userid')
-    console.log(product);
-
-var appointmentname = Date.now();
-
-  location.href = "appointments.html" + queryString + "&booknum=" + appointmentname;
-  }
-
-
 
 </script>
 <script src="app.js"></script>

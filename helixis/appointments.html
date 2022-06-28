@@ -9,8 +9,8 @@
 <link rel='stylesheet' href='https://unicons.iconscout.com/release/v3.0.6/css/line.css'>
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
-<link rel="stylesheet" href="./style.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="./style.css">
 
 
 <style type="text/css">
@@ -26,12 +26,45 @@
     font-weight: bold;
   }
 
-  .docitems{
+  .line{
+    border: 1px solid black;
+    background-color: grey;
+    height: 5.2vh;
+    width: 2px;
+    margin-left: 17%;
+    margin-top: -3.2rem;
+    position: absolute;
+  }
+
+  .doctorp{
+    width: fit-content;
+  }
+
+  .consultime{
+    margin-left: 25%;
+    position: relative;
+    margin-top: -7%;
+  }
+
+.docitems{
     margin-left: 40rem;
     list-style: none;
     display: flex;
     margin-top: -4rem;
     cursor: pointer;
+}
+
+.action {
+    margin-left: 40%;
+    display: flex;
+    margin-top: -9%;
+    height: fit-content;
+    list-style: none;
+}
+
+.appoint{
+  margin-top: 10%;
+  margin-left: 20%;
 }
 
 .nav-item{
@@ -44,11 +77,6 @@ a.nav-link:hover{
 
 .navbar .navbar-nav>li>a:hover {
     color: #597199 !important;
-}
-
-.appoint{
-  margin-top: 5%;
-  margin-left: 5%;
 }
 
 </style>
@@ -86,10 +114,10 @@ a.nav-link:hover{
     </div>
   </nav>
 
-  <div class="p-4">
+  <div class="p-4" style="width: 50%;margin-left: 0%">
     <div class="">
       <div class="headertext">
-        <p>All Doctors</p>
+        <p>All Appointments</p>
       </div>
     </div>
     <div class="appoint">
@@ -99,8 +127,12 @@ a.nav-link:hover{
 </section>
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
-<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script><script  src="./script.js"></script>
 
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+
+<script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script>
+
+<script  src="./script.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use 
 
@@ -145,50 +177,35 @@ const database = firebase.database()
     const useruid = urlParams.get('userid')
 
     if (booknum == null) {
-
-      const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    const booknum = urlParams.get('booknum')
-    const useruid = urlParams.get('userid')
-
-
       firebase.database().ref("Appoiments/doctor/" + useruid).on("value",function(docval){
 
         var datakey = Object.keys(docval.val());
 
-        for (var i = 0; i < datakey.length; i++) {
-          
-        console.log(datakey[i]);
+        docval.forEach(function(docsnap){
 
-        var datakey = Object.keys(docval.val());
 
-firebase.database().ref("Doctors/" + datakey[i]).on("value",function(docdata){
 
-  
-
-  var mailtoken = docdata.val().Email;
-
-  var docid = docdata.val().IDnumber;
-
-    var specialty = docdata.val().Specialty;
-var Fname = docdata.val().First_Name + " " + docdata.val().Last_name;
-    var hospital = docdata.val().hospital;
-
-var test = docdata.val();
-
+    var specialty = docsnap.val().Specialty;
+    var Fname = docsnap.val().Name + " " + docsnap.val().Surname;
+    var dated = docsnap.val().date;
 
     document.querySelector(".appoint").innerHTML += `<div class="welcome doclist">
       <div style="background: rgba(255, 255, 255, .5) !important;" class="content doccontainer medics">
-        <ul class="doctor">
-              <li style="font-weight: bold;">
-                Dr ${Fname}
-              </li>
+        <ul class="doctorp">
               <li style="font-size: 13px;">
                 ${specialty}
               </li>
+              <li style="font-weight: bold;">
+                Dr ${Fname}
+              </li>
+            </ul>
+            <div class="line"></div>
+            <ul class="doctorp consultime">
               <li style="font-size: 13px;">
-                ${hospital}
+                Consultation
+              </li>
+              <li style="font-weight: bold;">
+                ${dated}, 10am - 11am
               </li>
             </ul>
             <ul class="docitems">
@@ -196,21 +213,21 @@ var test = docdata.val();
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <p class="text">call</p>
               </li>
-              <li onclick="chats('${docid}')">
+              <li>
                 <i class="fa fa-comments" aria-hidden="true"></i>
                 <p class="text">message</p>
               </li>
-              <li onclick="docinfo('${mailtoken}')">
-                <i class="fa fa-info-circle" aria-hidden="true"></i>
-                <p class="text">more info</p>
+              <li onclick="cancel(${datakey})">
+                <i class="fa fa-times-circle-o" aria-hidden="true"></i>
+                <p class="text">cancel</p>
               </li>
             </ul>
       </div>
     </div>`;
-  })
-}
-})
+        })
 
+
+  })
 
     }else{
 
@@ -219,23 +236,6 @@ var test = docdata.val();
     console.log(docval.val());
 
   })
-  }
-
-  function docinfo(arg) {
-
-    const queryString = window.location.search;
-    console.log(queryString);
-    const urlParams = new URLSearchParams(queryString);
-
-    const useruid = urlParams.get('userid')
-    const booknum = urlParams.get('booknum')
-
-    if (booknum == null) {
-         location.href = "doctor.html?doci=" + arg + "&userid=" + useruid;
-    }else{
-         location.href = "doctor.html?doci=" + arg + "&booknum=" +booknum + "&userid=" + useruid;
-    }
-    
   }
 
   function Dashboard(){
@@ -247,6 +247,7 @@ var test = docdata.val();
     const useruid = urlParams.get('userid')
     const booknum = urlParams.get('booknum')
 
+var appointmentname = Date.now();
 
 if (booknum == null) {
 
@@ -328,24 +329,11 @@ function cancel(getval){
 
 
 
-firebase.database().ref("Doctors").remove();
+firebase.database().ref("Appoiments/doctor/" + "/" + useruid + "/" + getval).remove();
 
 window.location.reload();
 
 }
-
-function chats(arg) {
-  const queryString = window.location.search;
-    const urlParams = new URLSearchParams(queryString);
-
-    const booknum = urlParams.get('booknum');
-    const useruid = urlParams.get('userid');
-
-
-  location.href = "chats.html?userid=" + useruid + "&docmail=" + arg;
-}
-
-
 </script>
 
 </body>

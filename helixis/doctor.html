@@ -10,12 +10,155 @@
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
 <link rel="stylesheet" href="./doc.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<style type="text/css">
+  
+  .nav-item{
+  cursor: pointer;
+}
+
+a.nav-link:hover{
+  color: #597199 !important;
+}
+
+.navbar .navbar-nav>li>a:hover {
+    color: #597199 !important;
+}
+.img{
+  height: 250px !important;
+  width: 250px !important;
+  border-radius: 0px !important;
+  margin-top: 2%;
+  margin-left: 21%;
+}
+
+
+
+.topright{
+  float: right;
+  margin-right: 35%;
+  margin-top: -19.5%;
+}
+
+.docname{
+  font-weight: bold;
+  font-size: 20px;
+  color: grey;
+}
+
+.field{
+  margin-top: -20px;
+  color: #4bd8eb !important;
+  font-weight: bold;
+}
+
+.ratext{
+  font-size: 15px;
+}
+
+.rated{
+  margin-top: -20px;
+  font-size: 22px;
+}
+
+.CTAction{
+  margin-top: 20px;
+}
+
+.below{
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+
+.below{
+  margin-top: 20px;
+  font-weight: 600;
+}
+
+
+.stars{
+  font-size: 25px;
+  font-weight: bold;
+  color: #2fc3d6;
+}
+
+
+.btns{
+  background-color: rgba(255, 255, 255, 0.3);
+  border: none;
+  padding: 10px 10px;
+  box-shadow: 0.1px 0.1px 9px white;
+}
+
+.btns:hover{
+   box-shadow: 0.1px 0.1px 9px #4c80e0;
+  }
+
+  .bottom{
+    margin-top: 0%;
+    display: inline-flex;
+    padding: 20px;
+    width: 100%;
+  }
+
+  .contactinfo{
+    margin-left: 50px;
+    width: 40%;
+  }
+
+  .experience{
+    margin-left: 35px;
+    width: 28%;
+  }
+
+
+  .worktext{
+    font-weight: 600;
+    color: grey !important;
+  }
+
+
+  .contactinfomation{
+    list-style: none;
+    font-weight: bold;
+    width: fit-content;
+    display: inline-block;
+  }
+
+  .cntinf{
+    margin-left: 30%;
+  }
+
+  .key{
+    margin-left: -6%;
+  }
+
+  .Ltxt{
+    cursor: pointer;
+    padding-bottom: 8px;
+  }
+
+  .Ltxt:hover{
+    border-bottom: 5px solid #87bede;
+  }
+
+  .topone{
+  }
+
+  .imgcontainer{
+    width: fit-content;
+  }
+
+</style>
+
 
 </head>
 <body>
 <!-- partial:index.partial.html -->
 
-  <div><p class="name">Name</p></div>
+  <div><p class="name"></p></div>
     
   
 
@@ -24,15 +167,15 @@
     <div class="container-fluid mx-2">
       <div class="collapse navbar-collapse" id="toggle-navbar">
         <ul class="navbar-nav ms-auto">
-          <li class="nav-item">
+          <li class="nav-item" onclick="Dashboard()">
             <a class="nav-link">
-              Appointment
+              Dashboard
             </a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" onclick="toSupport()">
             <a class="nav-link">Support</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" onclick="toprofile()">
             <a class="nav-link">Account</a>
           </li>
           <li class="nav-item">
@@ -48,86 +191,70 @@
   <div class="p-4">
     <div class="">
       <div class="content rounded-3 p-3">
-        <p style="font-weight: bold;">How can we help you? <span style="float: right; font-weight: lighter;font-size: 90%;">Press and hold S to speak</span></p>
+        <p style="font-weight: bold;"> <span style="float: right; font-weight: lighter;font-size: 90%;"></span></p>
       </div>
     </div>
-    <div style="background: rgba(255, 255, 255, .3) !important;" class="welcome">
+    <div style="background: rgba(255, 255, 255, .3) !important;margin-top: -5%;" class="welcome">
       <div style="background: rgba(255, 255, 255, .3) !important;" class="content rounded-3">
-        <ul class="doctor">
-              <li style="font-weight: bold;">
-                Dr Lynn Backster
-              </li>
-              <li>
-                Neurologist
-              </li>
-            </ul>
-
-            <div class="docline"></div>
-            <div class="leftside">
-              <div class="contactinfo">
-              <div class="btn">
-              <i class="uil-phone icon"></i>
-              <p style="margin-left: -5rem;width: 100%;margin-bottom: 0rem">Call us</p>
-              <p style="margin-left: -5rem;">+11 00 000 0000 <br>
-              +27 00 000 0000</p>
+        
+        <div class="topone">
+          <div class="imgcontainer">
+            <img class="proimg img" src="man-g24ba357cd_1280.jpg">
+          </div>
+          <div class="topright">
+            <div>
+              <p class="docname">Jeremy rose</p>
+              <p class="field">urologist</p>
             </div>
-            <div style="overflow: hidden;word-wrap: break-word;" class="btn">
-              <i class="uil-envelope icon"></i>
-              <p style="margin-left: -4.4rem;width: 100%;margin-bottom: 0rem">Email us</p> 
-              <p style="margin-left: 6px;width: 100%;">lynnboffices@neurohealth.co.za</p>
-              
-
+            <div>
+              <p class="ratext">rating</p>
+              <p class="rated"> 8.6 <span class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span> </p>
             </div>
-            <div class="btn">
-              <div>
-              <i class="uil-map-marker icon"></i>
-              <p style="margin-left: -9.2rem;margin-bottom: 0rem">Visit us</p>
-              <p class="addresstext">Suit 35, Sunninghill Hospital, Sunninghill, Sandton, 2191</p>
+            <div class="CTAction">
+              <input class="btns" type="submit" name="" value="send message">
+              <input class="btns" type="submit" name="" value="online chat">
+              <input class="btns" type="submit" name="" value="request medical record">
             </div>
+            <div class="below">
+              <span class="Ltxt">
+                <i class="fa fa-user" aria-hidden="true"></i> About
+              </span>
+              <span style="margin-left: 10px;" class="Ltxt">
+                <i class="fa fa-server" aria-hidden="true"></i>Services
+              </span>
             </div>
+            <hr style="width:230%;margin-left: -30%;margin-top: 7%;", size="3", color=black>
+          </div>
+        </div>
+        <div class="bottom">
+          <div class="experience">
+            <div>
+              <p class="worktext">Work <hr style="width:82%;margin-left: 36px;margin-top: -25px;", size="4", color=black></p>
             </div>
-
-            <div class="tradehours">
-              <h5>Business hours</h5>
-              <p style="margin-bottom: 0rem;">Monday - Friday: 8am - 6pm</p>
-              <p style="margin-bottom: 0rem;">Saturday: 10am - 2pm</p>
-              <p>Sunday: closed</p>
-            </div>
-            <div class="info">
-              <div class="wheelchair">
-                <i class="uil-wheelchair"></i>
-                <p>Wheelchair Accessible</p>
-              </div>
-              <div class="medicalaid">
-                <i class="uil-heart-medical"></i>
-                <p>Medical Aid Accepted</p>
-              </div>
-              <div class="medicalaid">
-                <i class="uil-chart"></i>
-                <p>Remote Patient Monitoring</p>
-              </div>
+            <div>
+              <p style="font-weight: 700;font-size: 16px;">name of hospital</p>
+              <p style="float: right;margin-top: -13%;margin-right: 25px;background-color: rgba(170, 195, 242, 0.5);padding: 5px;color: #3616d9;">position</p>
+              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
             </div>
           </div>
-            
-
-            <div class="rightside">
-              <div class="aboutdoc">
-              <h6>About L. Backster</h6>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-              consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-              cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-              proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+          <div class="contactinfo">
+            <div class="head">
+              <p class="worktext">Contact information</p>
             </div>
-
-            <div class="services">
-              <h5>Services</h5>
-              <p>Adult neurology:Diagnosis and managment of neurological conditions.</p>
+            <div class="body">
+              <ul class="contactinfomation key">
+                <li>Phone: </li>
+                <li>Email: </li>
+                <li>Website: </li>
+              </ul>
+              <ul class="contactinfomation">
+                <li>+27 00 0000 000</li>
+                <li>email@email.com</li>
+                <li>website.co.za</li>
+              </ul>
             </div>
-
-            <button>Book an appointment</button>
           </div>
+        </div>
             
       </div>
     </div>
@@ -136,6 +263,232 @@
 <!-- partial -->
   <script src='https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.bundle.js'></script>
 <script src='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.jshttps://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js'></script><script  src="./script.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use 
+
+ https://firebase.google.com/docs/web/setup#available-libraries -->
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+  <script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-app.js"></script>
+  <!--<script src="https://www.gstatic.com/firebasejs/8.9.1/firebase-analytics.js"></script>-->
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-database.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/8.6.8/firebase-storage.js"></script>
+
+<script type="text/javascript">
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAybUF58ye2xdEx5Cty63VQYf0aWjhfLjQ",
+  authDomain: "helix-3ee55.firebaseapp.com",
+  databaseURL: "https://helix-3ee55-default-rtdb.firebaseio.com/",
+  projectId: "helix-3ee55",
+  storageBucket: "helix-3ee55.appspot.com",
+  messagingSenderId: "794490224146",
+  appId: "1:794490224146:web:8313c7d926b0b91a6722cb"
+  };
+
+
+
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize variables
+const auth = firebase.auth()
+const database = firebase.database()
+  
+  function call(){
+    location.href="tel:082 487 5987";
+  }
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    if (booknum == null) {
+      firebase.database().ref("Appoiments/doctor/" + useruid).on("value",function(docval){
+
+        var datakey = Object.keys(docval.val());
+
+        for (var i = 0; i < datakey.length; i++) {
+          
+        console.log(datakey[i]);
+
+        var datakey = Object.keys(docval.val());
+
+firebase.database().ref("Doctors/" + datakey[i]).on("value",function(docdata){
+
+  
+
+  var mailtoken = docdata.val().Email;
+  
+
+    var specialty = docdata.val().Specialty;
+var Fname = docdata.val().First_Name + " " + docdata.val().Last_name;
+    var hospital = docdata.val().hospital;
+
+
+
+    document.querySelector(".appoint").innerHTML += `<div class="welcome doclist">
+      <div style="background: rgba(255, 255, 255, .5) !important;" class="content doccontainer medics">
+        <ul class="doctor">
+              <li style="font-weight: bold;">
+                Dr ${Fname}
+              </li>
+              <li style="font-size: 13px;">
+                ${specialty}
+              </li>
+              <li style="font-size: 13px;">
+                ${hospital}
+              </li>
+            </ul>
+            <ul class="docitems">
+              <li onclick="call()">
+                <i class="fa fa-phone" aria-hidden="true"></i>
+                <p class="text">call</p>
+              </li>
+              <li>
+                <i class="fa fa-comments" aria-hidden="true"></i>
+                <p class="text">message</p>
+              </li>
+              <li onclick="docinfo('${mailtoken}')">
+                <i class="fa fa-info-circle" aria-hidden="true"></i>
+                <p class="text">more info</p>
+              </li>
+            </ul>
+      </div>
+    </div>`;
+  })
+}
+})
+
+
+    }else{
+
+  firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("value",function(docval){
+
+    console.log(docval.val());
+
+  })
+  }
+
+  function docinfo(arg) {
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
+
+    if (booknum == null) {
+         location.href = "doctor.html?doci=" + arg;
+    }else{
+         location.href = "doctor.html?doci=" + arg + "&booknum=" +booknum;
+    }
+    
+  }
+
+  function Dashboard(){
+
+    const queryString = window.location.search;
+    console.log(queryString);
+    const urlParams = new URLSearchParams(queryString);
+
+    const useruid = urlParams.get('userid')
+    const booknum = urlParams.get('booknum')
+
+
+if (booknum == null) {
+
+  location.href = "index.html?userid=" + useruid;
+}else{
+
+  location.href = "activities.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+  }
+
+  function toSupport(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    
+
+    if (booknum == null) {
+
+  location.href = "support.html?userid=" + useruid;
+}else{
+
+  location.href = "support.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+  }
+
+
+  function toprofile(){
+
+    const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+    
+
+    if (booknum == null) {
+
+  location.href = "profile.html?userid=" + useruid;
+}else{
+
+  location.href = "profile.html?userid=" + useruid + "&booknum=" + booknum;
+
+}
+
+
+  }
+
+
+  firebase.database().ref("Patient/" + useruid).on("value",function(element){
+
+  var data = element.val();
+
+  var name = data.First_Name;
+  var surname = data.Last_name;
+  var imager = data.Logo;
+
+
+
+document.querySelector(".name").innerHTML = name + " " + surname;
+
+document.querySelector(".proimg").src = imager;
+
+})
+
+function cancel(getval){
+
+  const queryString = window.location.search;
+    const urlParams = new URLSearchParams(queryString);
+
+    const booknum = urlParams.get('booknum')
+    const useruid = urlParams.get('userid')
+
+
+
+firebase.database().ref("Doctors").remove();
+
+window.location.reload();
+
+}
+
+
+
+</script>
 
 </body>
 </html>
