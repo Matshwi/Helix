@@ -2,6 +2,7 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
   <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
@@ -10,7 +11,9 @@
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
 <link rel="stylesheet" href="./style.css">
+<link rel="stylesheet" type="text/css" href="index.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 <style type="text/css">
   
   .nav-link{
@@ -31,15 +34,16 @@
     color: red;
   }
 
+
 </style>
 </head>
 <body>
 <!-- partial:index.partial.html -->
 <aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
   
-  
 
   <div class="search position-relative text-center px-4 py-3 mt-2">
+    <span class="closenav" onclick="closenav()">X</span>
     <p class="sidebarname">
       <img class="proimg" src="man-g24ba357cd_1280.jpg">
       <p id="userheadname"></p>
@@ -74,6 +78,9 @@
 </aside>
 
 <section id="wrapper">
+
+   <span><i class="fa fa-bars"  onclick="openav()"></i></span>
+
   <nav class="navbar navbar-expand-md">
     <div class="container-fluid mx-2">
       <div class="navbar-header">
@@ -105,7 +112,7 @@
     </div>
   </nav>
 
-  <div class="p-4">
+  <div class="contained">
     <div class="">
       <div class="content rounded-3 p-3">
         <p class="mb-0"><span style="font-weight: lighter;"></span> </p>
@@ -127,7 +134,7 @@
                 <span style="font-size: .725rem">34 Paul St,<br> Sunninghill
                 </span>
               </li>
-              <li>
+              <li class="eish">
                 <i class="uil-compass" style="font-size: 1.2rem"></i><br>City, Province 
                 <br>
                 <span style="font-size: .725rem">Johannesburg, <br> Gauteng
@@ -136,7 +143,7 @@
               <li>
                 <i class="uil-heart" style="font-size: 1.2rem"></i><br>Marital Status 
                 <br>
-                <span style="font-size: .725rem"> Married
+                <span style="font-size: .725rem" id="MStatus"> Married
                 </span>
               </li>
               <li>
@@ -148,7 +155,7 @@
               <li>
                 <i class="uil-medical-drip" style="font-size: 1.2rem"></i><br>Medical Aid 
                 <br>
-                <span style="font-size: .725rem"> Discovery
+                <span style="font-size: .725rem" id="medicalSP">
                 </span>
               </li>
             </ul>
@@ -316,6 +323,16 @@ if (booknum == null) {
 }
   }
 
+ function closenav() {
+   document.querySelector(".sidebar").style.width = '0px';
+   document.querySelector().style.display = "block";
+ }
+
+ function openav(){
+  document.querySelector(".sidebar").style.width = '100%';
+  document.querySelector(".fa-bars").style.display = 'nones';
+ }
+
 
   function appointmentlist(){
 
@@ -420,7 +437,8 @@ firebase.database().ref("Patient/" + useruid).on("value",function(element){
   var surname = data.Last_name;
   var imager = data.Logo;
 
-  var idNumber = data.Address;
+  var idNumber = data.IDnumber;
+  var medicalSP = data.Medical;
 
 document.getElementById("userheadname").innerHTML = name + " " + surname;
 
@@ -428,10 +446,14 @@ document.querySelector(".proimg").src = imager;
 
 document.getElementById("number").innerHTML = idNumber;
 
+document.querySelector("#medicalSP").innerHTML = medicalSP;
 
-   var Year = idNumber.substring(0, 2);
-   var Month = idNumber.substring(2, 4)
-   var Day = idNumber.substring(4, 6)
+
+    var numstr = idNumber.toString();
+
+   var Year = numstr.substring(0, 2);
+   var Month = numstr.substring(2, 4);
+   var Day = numstr.substring(4, 6);
    
    var cutoff = (new Date()).getFullYear() - 2000
    
@@ -445,6 +467,8 @@ document.getElementById("number").innerHTML = idNumber;
 firebase.database().ref("Patient/" + useruid).on("value",function(element){
 
   console.log(element.val().Addres);
+
+  document.querySelector("#MStatus").innerHTML = element.val().Marital;
 
 if (element.val().Address == undefined) {
 

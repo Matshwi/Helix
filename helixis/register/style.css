@@ -114,3 +114,203 @@ h1{
     right: 20%;
     z-index:-1;
 }
+
+
+@media only screen and (min-width: 375px){
+
+#section5{
+    height: 100vh;
+}
+
+.titleSection{
+    margin-top: 0rem;
+    position: absolute;
+    margin-left: 5rem;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+label.col-form-label{
+    font-size: 15px !important;
+}
+
+form#formulaire{
+    height: 70rem;
+    width: 85vw;
+    margin-left: -1.5rem;
+}
+
+button#bouton-valider{
+    margin-top: -17rem;
+    font-size: 18px;
+    position: absolute;
+    margin-left: -16px;
+}
+
+.txtdiv{
+    margin-top: 3rem;
+    font-size: 15px;
+    margin-left: 16px;
+}
+
+.textreference{
+    margin-left: 16px !important;
+    width: 100% !important;
+}
+
+/*
+
+
+
+
+
+
+.rightside{
+    position: absolute;
+    margin-top: 85%;
+    height: fit-content;
+    margin-left: 68px;
+}
+
+.leftside{
+    height: fit-content;
+    margin-top: 15%;
+}
+
+
+
+.titleSection{
+    margin-top: 0rem;
+    position: absolute;
+    margin-left: 15rem;
+    font-weight: bold;
+    font-size: 46px;
+}
+
+
+
+*/
+
+}
+
+@media only screen and (min-width: 414px){
+
+    .titleSection{
+    margin-top: 0rem;
+    position: absolute;
+    margin-left: 5rem;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.leftside{
+    margin-top: 30px;
+}
+
+    label.col-form-label{
+    font-size: 26px !important;
+    font-weight: bold;
+}
+
+button#bouton-valider{
+    margin-top: -7rem;
+    font-size: 18px;
+    position: absolute;
+    margin-left: -16px;
+}
+
+.textreference{
+    margin-top: 2rem !important;
+}
+
+    }
+
+@media only screen and (min-width: 768px){
+
+    .titleSection{
+    margin-top: 0rem;
+    position: absolute;
+    margin-left: 15rem;
+    font-weight: bold;
+    font-size: 26px;
+}
+
+.rightside{
+    margin-top: 35rem;
+    margin-left: 3.5rem;
+    position: absolute;
+}
+
+.form-control{
+    width: 35rem;
+    height: 4rem;
+}
+
+form#formulaire{
+    height: 90rem;
+    width: 85vw;
+    margin-left: -1.5rem;
+}
+
+button#bouton-valider{
+    margin-top: -15rem;
+    font-size: 28px;
+    position: absolute;
+    margin-left: -16px;
+}
+
+.txtdiv{
+    margin-top: 40rem;
+    font-size: 15px;
+    margin-left: 10rem;
+}
+
+
+}
+
+@media only screen and (max-width: 1366px){
+
+    .titleSection{
+    font-size: 20px !important;
+    margin-left: 30rem;
+}
+
+    label.col-form-label{
+    font-size: 16px !important;
+    font-weight: bold;
+}
+
+.form-control{
+    width: 25rem;
+    height: 2rem;
+}
+
+.rightside{
+    margin-left: 40rem;
+    margin-top: 1.5rem;
+}
+
+button#bouton-valider{
+    margin-top: -5rem;
+    font-size: 18px;
+    position: absolute;
+    margin-left: -16px;
+}
+
+.txtdiv{
+    margin-top: 5rem;
+    font-size: 15px;
+    margin-left: 25rem;
+}
+
+.textreference{
+    margin-top: -1rem !important;
+}
+
+form#formulaire{
+    height: 35rem;
+    width: 85vw;
+    margin-left: -1.5rem;
+}
+
+    }

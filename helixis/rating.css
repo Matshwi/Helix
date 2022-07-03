@@ -1,65 +1,70 @@
-.rating {
-  display: inline-block;
-  position: relative;
-  height: 50px;
-  line-height: 50px;
-  font-size: 50px;
+@charset "UTF-8";
+.star-cb-group {
+  /* remove inline-block whitespace */
+  font-size: 0;
+  /* flip the order so we can use the + and ~ combinators */
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  /* the hidden clearer */
 }
-
-.rating label {
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
+.star-cb-group * {
+  font-size: 1rem;
+}
+.star-cb-group > input {
+  display: none;
+}
+.star-cb-group > input + label {
+  /* only enough room for the star */
+  display: inline-block;
+  overflow: hidden;
+  text-indent: 9999px;
+  width: 1em;
+  white-space: nowrap;
   cursor: pointer;
 }
-
-.rating label:last-child {
-  position: static;
+.star-cb-group > input + label:before {
+  display: inline-block;
+  text-indent: -9999px;
+  content: "☆";
+  color: #888;
+}
+.star-cb-group > input:checked ~ label:before, .star-cb-group > input + label:hover ~ label:before, .star-cb-group > input + label:hover:before {
+  content: "★";
+  color: #e52;
+  text-shadow: 0 0 1px #333;
+}
+.star-cb-group > .star-cb-clear + label {
+  text-indent: -9999px;
+  width: .5em;
+  margin-left: -.5em;
+}
+.star-cb-group > .star-cb-clear + label:before {
+  width: .5em;
+}
+.star-cb-group:hover > input + label:before {
+  content: "☆";
+  color: #888;
+  text-shadow: none;
+}
+.star-cb-group:hover > input + label:hover ~ label:before, .star-cb-group:hover > input + label:hover:before {
+  content: "★";
+  color: #e52;
+  text-shadow: 0 0 1px #333;
 }
 
-.rating label:nth-child(1) {
-  z-index: 5;
+
+fieldset {
+  border: 0;
+  background: #222;
+  width: 5em;
+  border-radius: 1px;
+  padding: 1em 1.5em 0.9em;
+  margin: 1em auto;
 }
 
-.rating label:nth-child(2) {
-  z-index: 4;
-}
-
-.rating label:nth-child(3) {
-  z-index: 3;
-}
-
-.rating label:nth-child(4) {
-  z-index: 2;
-}
-
-.rating label:nth-child(5) {
-  z-index: 1;
-}
-
-.rating label input {
-  position: absolute;
-  top: 0;
-  left: 0;
-  opacity: 0;
-}
-
-.rating label .icon {
-  float: left;
-  color: transparent;
-}
-
-.rating label:last-child .icon {
-  color: #000;
-}
-
-.rating:not(:hover) label input:checked ~ .icon,
-.rating:hover label:hover input ~ .icon {
-  color: #09f;
-}
-
-.rating label input:focus:not(:checked) ~ .icon:last-child {
-  color: #000;
-  text-shadow: 0 0 5px #09f;
+#log {
+  margin: 1em auto;
+  width: 5em;
+  text-align: center;
+  background: transparent;
 }

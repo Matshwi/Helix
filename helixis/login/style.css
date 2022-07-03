@@ -76,3 +76,197 @@ button:hover{
     background: white;
     color: black;
 }
+
+@media only screen and (min-width: 375px){
+
+  .foreground {
+  width: 300px;
+  height: 40rem;
+}
+
+.titleSection{
+  font-size: 3rem;
+  display: flex; 
+  position: absolute; 
+  width: 100%; 
+  align-items: center; 
+  justify-content: center;
+}
+
+#email{
+  margin-top: 10rem;
+  width: 80%;
+  height: 10%;
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+#pass{
+  margin-top: 18rem;
+  width: 80%;
+  height: 10%;
+  margin-left: 10%;
+  font-size: 20px;
+}
+
+button{
+  margin-top: 28rem !important;
+  position: absolute;
+  font-size: 20px;
+}
+
+.regdiv{
+  margin-top: 35rem;
+  font-size: 14px;
+}
+
+p{
+  margin-right: 20px;
+}
+
+
+
+}
+
+@media only screen and (min-width: 820px){
+
+  .foreground {
+  width: 600px;
+  height: 60rem;
+}
+
+#email{
+  margin-top: 20rem;
+  width: 80%;
+  height: 10%;
+  margin-left: 10%;
+  font-size: 30px;
+}
+
+#pass{
+  margin-top: 32rem;
+  width: 80%;
+  height: 10%;
+  margin-left: 10%;
+  font-size: 30px;
+}
+button{
+  margin-top: 48rem !important;
+  font-size: 30px;
+}
+
+.regdiv{
+  margin-top: 56rem;
+  font-size: 23px;
+}
+
+p{
+  margin-right: 90px;
+}
+
+  }
+
+  @media only screen and (max-width: 1366px){
+
+.foreground {
+  height: 35rem;
+  width: 85vw;
+}
+
+#email{
+  margin-top: 8rem;
+  width: 45%;
+  height: 10%;
+  margin-left: 25%;
+  font-size: 30px;
+}
+
+#pass{
+  margin-top: 18rem;
+  width: 45%;
+  height: 10%;
+  margin-left: 25%;
+  font-size: 30px;
+}
+
+button{
+  margin-top: 25rem !important;
+  font-size: 30px;
+}
+
+.regdiv{
+  margin-top: 31rem;
+  font-size: 23px;
+}
+
+p{
+  margin-right: 17rem;
+}
+
+  }
+
+  
+
+/*
+
+@media only screen and (max-width: 1024px){
+
+  .titleSection{
+  font-size: 3rem;
+}
+
+#email{
+  margin-top: 60%;
+  width: 50%;
+  height: 7%;
+  margin-left: 25%;
+  font-size: 30px;
+}
+
+  }
+
+
+@media only screen and (max-width: 1280px){
+
+    .foreground {
+  width: 90%;
+  height: 60rem;
+}
+
+.titleSection{
+  font-size: 4rem;
+  display: flex; 
+  position: relative; 
+  width: 100%; 
+  align-items: center; 
+  justify-content: center;
+  margin-top: -60%;
+}
+
+#email{
+  margin-top: 26%;
+  width: 50%;
+  height: 7%;
+  margin-left: 25%;
+  font-size: 30px;
+}
+
+#pass{
+  margin-top: 40%;
+  width: 50%;
+  height: 7%;
+  margin-left: 25%;
+  font-size: 30px;
+}
+
+button{
+  margin-top: 60% !important;
+  font-size: 50px;
+}
+
+.regdiv{
+  margin-top: 30rem;
+  font-size: 30px;
+}
+
+  }
