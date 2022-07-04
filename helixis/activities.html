@@ -392,7 +392,7 @@ span.fa{
         <li id="Gaenycologyst" class="Gaenycologyst" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
         <li id="General Practitioner" class="General Practitioner" value="General Practitioner" onclick="active(this)">General Practitioner</li>
         <li id="Dentist" class="Dentist" value="Dentist" onclick="active(this)">Dentist</li>
-        <li id="surgery doctor" class="surgery doctor" value="surgeon" onclick="active(this)">surgeon</li>
+        <li id="surgeon" class="surgeon" value="surgeon" onclick="active(this)">surgeon</li>
         <li id="urologist" class="urologist" value="urologist" onclick="active(this)">urologist</li>
         <li id="Gaenycologyst1" class="Gaenycologyst1" value="Gaenycologyst" onclick="active(this)">Gaenycologyst</li>
         <li id="General Practitioner1" class="General Practitioner1" value="General Practitioner" onclick="active(this)">General Practitioner</li>
@@ -675,7 +675,7 @@ var total = 0;
 var num = snapshot.val();
 console.log(snapshot.val());
 
-    for (var [key, value] of Object.entries(num)) {
+    for (var [key, value] of Object.entries(snapshot.val())) {
 
   total += value;
   console.log(total);
@@ -975,6 +975,9 @@ function active(val){
 
 
   const specialist = val.className;
+
+  console.log(specialist);
+  console.log(val.value);
 
   var specialistobj = {
     Specialty: specialist
@@ -1287,12 +1290,24 @@ firebase.database().ref("Hospitals").on("value",function(element){
         var lengthdoc = overall.length;
     element.forEach(function(snapshot){ 
 
+      console.log(snapshot.val());
+
       snapshot.forEach(function(snaps){
 
+        console.log(snaps.val());
+
         snaps.forEach(function(snapza){
+
+          console.log(snapza.val());
+
+
           firebase.database().ref("Appoiments/specialist/" + useruid + "/" + booknum).on("value",function(specialdata){
 
+            console.log(specialdata.val());
+
             firebase.database().ref("Appoiments/date/" + useruid + "/" + booknum).on("value",function(dateddata){
+
+              console.log(dateddata.val());
 
               var dated = dateddata.val();
               var todate = dated.day;
@@ -1318,6 +1333,8 @@ const thedate = todate.split('T')[0]
     Specialty: docspecialty,
     date: thedate
   }
+
+  console.log(doctorobj);
 
         firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).update(doctorobj);
 
@@ -1479,6 +1496,8 @@ firebase.database().ref("Appoiments/doctor/" + useruid + "/" + booknum).on("valu
 
 
     var hosdata = hosval.val();
+
+    console.log(hosdata);
 
     var hosname = hosdata.Name;
     var hosadd = hosdata.Address;
