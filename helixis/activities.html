@@ -224,7 +224,7 @@ span.fa{
 }
 
 
-.star_rating ~ .star:hover {
+div.star_rating ~ .star:hover {
   color: yellow;
   background-color: unset;
 }
@@ -673,13 +673,10 @@ document.querySelector(".proimg").src = imager;
 var total = 0;
 
 var num = snapshot.val();
-console.log(snapshot.val());
 
     for (var [key, value] of Object.entries(snapshot.val())) {
 
   total += value;
-  console.log(total);
-  console.log(value, key);
 
 
   //0-20 booking in the next 7 days
@@ -764,14 +761,12 @@ console.log(snapshot.val());
 
       document.querySelector('.specialtycondition').innerHTML += `<li id="${thevalues}" class="${thevalues}" value="${thevalues}">${thevalues}
           <div class="star_rating">
-          <span value="${thevalues}" class="star ${thevalues}" id="1" onclick="rating(${thevalues}, 1)">&#9734;</span>
-          <span value="${thevalues}" class="star ${thevalues}" id="2" onclick="rating(${thevalues}, 2)">&#9734;</span>
-          <span value="${thevalues}" class="star ${thevalues}" id="3" onclick="rating(${thevalues}, 3)">&#9734;</span>
-          <span value="${thevalues}" class="star ${thevalues}" id="4" onclick="rating(${thevalues}, 4)">&#9734;</span>
-          <span value="${thevalues}" class="star ${thevalues}" id="5" onclick="rating(${thevalues}, 5)">&#9734;</span>
+          <input type="range" min="1" max="5" class="${thevalues+'rate'}" step="1" onchange="showVal(this.value, ${thevalues})">
+          <span id="${'rating'+thevalues}">0</span>
           </div>
           
         </li>`;
+
 
 
 /*
@@ -854,6 +849,37 @@ console.log(snapshot.val());
 */
   })
 
+  /*
+
+  function color(val,num){
+    console.log(val.id);
+    for (var i = 0; i <= num; i++) {
+
+document.getElementById(num+'star'+val.id).style.color = "#2de810";
+    }
+  }
+
+  function nocolor(arg) {
+    for (var i = 0; i <= 5; i++) {
+
+document.getElementById(num+'star'+val.id).style.color = "#2de810";
+    }
+  }
+*/
+
+function showVal(newVal, secval){
+
+    console.log(newVal, secval.id);
+    document.getElementById('rating'+secval.id).innerHTML = newVal;
+
+    const conditionlist = secval.id;
+  const number = newVal;
+
+    var conditionobj = {
+    [conditionlist]: newVal
+  }
+  firebase.database().ref("Appoiments/ratedcondition/" + "/" + useruid + "/" + booknum).update(conditionobj);
+}
   
 
   function myFunction() {
@@ -1066,12 +1092,14 @@ function rating(val, num){
 
   if (num == 1) {
 
+    document.querySelectorAll("star").style.color = "black";
     console.log(num);
     console.log(val);
 
     
  document.addEventListener('click', function(e) {
     e = e || window.event;
+    console.log(e);
     var target = e.target || e.srcElement
         //text = target.textContent || target.innerText; 
         console.log(e.target);
@@ -1088,7 +1116,9 @@ function rating(val, num){
     var target = e.target || e.srcElement
         //text = target.textContent || target.innerText;
         target.style.color = "#2de810";
-        target.previousElementSibling.style.color = "#2de810";
+        
+
+        document.getElementById('1'+'star'+val.id).style.color = "#2de810";
         //var second = target.nextElementSibling;
 
         //second.style.color = "#2de810"
@@ -1103,9 +1133,8 @@ function rating(val, num){
         target.style.color = "#2de810";
         var second = target.previousElementSibling;
 
-          second.style.color = "#2de810";
-          var first = second.previousElementSibling;
-          first.style.color = "#2de810";
+          document.getElementById('1'+'star'+val.id).style.color = "#2de810";
+          document.getElementById('2'+'star'+val.id).style.color = "#2de810";
         //var second = target.nextElementSibling;
 
         //second.style.color = "#2de810"
@@ -1117,21 +1146,12 @@ document.addEventListener('click', function(e) {
     var target = e.target || e.srcElement
         //text = target.textContent || target.innerText;
         target.style.color = "#2de810";
-        var third = target.previousElementSibling;
+        
+        document.getElementById('1'+'star'+val.id).style.color = "#2de810";
+          document.getElementById('2'+'star'+val.id).style.color = "#2de810";
 
-          third.style.color = "#2de810";
+          document.getElementById('3'+'star'+val.id).style.color = "#2de810";
 
-          var second = third.previousElementSibling;
-
-          second.style.color = "#2de810";
-
-         var first = second.previousElementSibling;
-         first.style.color = "#2de810";
-
-
-        //var second = target.nextElementSibling;
-
-        //second.style.color = "#2de810"
 }, false);
 
   }else if (num == 5) {
@@ -1141,19 +1161,13 @@ document.addEventListener('click', function(e) {
     var target = e.target || e.srcElement
         //text = target.textContent || target.innerText;
         target.style.color = "#2de810";
-        var four = target.previousElementSibling;
+        
+        document.getElementById('1'+'star'+val.id).style.color = "#2de810";
+          document.getElementById('2'+'star'+val.id).style.color = "#2de810";
 
-          four.style.color = "#2de810";
+          document.getElementById('3'+'star'+val.id).style.color = "#2de810";
 
-          var third = four.previousElementSibling;
-
-          third.style.color = "#2de810";
-
-          var second = third.previousElementSibling;
-
-          second.style.color = "#2de810";
-
-          second.previousElementSibling.style.color = "#2de810";
+          document.getElementById('4'+'star'+val.id).style.color = "#2de810";
 
 
         //var second = target.nextElementSibling;
@@ -1386,7 +1400,7 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
         var distances = distance(poslat, poslng, thehospital.latitude, thehospital.longitude, "K");
 
-        //console.log(distances);
+        console.log(distances);
 
         if (distances < 1) {
           
@@ -1395,7 +1409,277 @@ function distance(lat1, lon1, lat2, lon2, unit) {
 
           
 
-          console.log(distances);
+          console.log(typeof distances);
+
+          var hospiname = element.val();
+          var doc = Object.keys(hospiname);
+          //console.log(doc);
+          let numid = parseInt(doc);
+  //console.log(numid);
+
+
+
+          
+
+
+          Swal.fire(
+  'Appointment set!',
+  'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
+  'success'
+).then(function(){ 
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(patientdata){ 
+
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(userdata){
+
+    var userinfo = userdata.val();
+
+    firebase.database().ref("Appoiments/date/"+useruid+"/"+booknum).on("value",function(datadate){
+
+
+  
+var dater = datadate.val();
+var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+    //console.log(datadate.val());
+    var userdata = patientdata.val();
+    const username = userdata.First_Name;
+    const email = userdata.Email;
+
+    var user = userinfo.First_Name + " " + userinfo.Last_name;
+
+    var usermail = userinfo.Email;
+
+     gophp(user, usermail)
+
+    //hey [username] we have assigned your with doctor [who] at [address] on the [date]
+
+      
+     
+   })
+  })
+
+})
+    
+
+    document.querySelector('#nearbystops').append(html);
+
+  }) 
+
+    
+
+    }else if(distances < 60){ 
+
+          
+
+          console.log(typeof distances);
+
+          var hospiname = element.val();
+          var doc = Object.keys(hospiname);
+          //console.log(doc);
+          let numid = parseInt(doc);
+  //console.log(numid);
+
+
+
+          
+
+
+          Swal.fire(
+  'Appointment set!',
+  'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
+  'success'
+).then(function(){ 
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(patientdata){ 
+
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(userdata){
+
+    var userinfo = userdata.val();
+
+    firebase.database().ref("Appoiments/date/"+useruid+"/"+booknum).on("value",function(datadate){
+
+
+  
+var dater = datadate.val();
+var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+    //console.log(datadate.val());
+    var userdata = patientdata.val();
+    const username = userdata.First_Name;
+    const email = userdata.Email;
+
+    var user = userinfo.First_Name + " " + userinfo.Last_name;
+
+    var usermail = userinfo.Email;
+
+     gophp(user, usermail)
+
+    //hey [username] we have assigned your with doctor [who] at [address] on the [date]
+
+      
+     
+   })
+  })
+
+})
+    
+
+    document.querySelector('#nearbystops').append(html);
+
+  }) 
+
+    
+
+    }else if(distances < 70){ 
+
+          
+
+          console.log(typeof distances);
+
+          var hospiname = element.val();
+          var doc = Object.keys(hospiname);
+          //console.log(doc);
+          let numid = parseInt(doc);
+  //console.log(numid);
+
+
+
+          
+
+
+          Swal.fire(
+  'Appointment set!',
+  'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
+  'success'
+).then(function(){ 
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(patientdata){ 
+
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(userdata){
+
+    var userinfo = userdata.val();
+
+    firebase.database().ref("Appoiments/date/"+useruid+"/"+booknum).on("value",function(datadate){
+
+
+  
+var dater = datadate.val();
+var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+    //console.log(datadate.val());
+    var userdata = patientdata.val();
+    const username = userdata.First_Name;
+    const email = userdata.Email;
+
+    var user = userinfo.First_Name + " " + userinfo.Last_name;
+
+    var usermail = userinfo.Email;
+
+     gophp(user, usermail)
+
+    //hey [username] we have assigned your with doctor [who] at [address] on the [date]
+
+      
+     
+   })
+  })
+
+})
+    
+
+    document.querySelector('#nearbystops').append(html);
+
+  }) 
+
+    
+
+    }else if(distances < 80){ 
+
+      alert("the distance is more than 70km but not more than 80km")
+
+          
+
+          console.log(typeof distances);
+
+          var hospiname = element.val();
+          var doc = Object.keys(hospiname);
+          //console.log(doc);
+          let numid = parseInt(doc);
+  //console.log(numid);
+
+
+
+          
+
+
+          Swal.fire(
+  'Appointment set!',
+  'an email containing all information regarding your appoitment has been sent to the email address you registered with!',
+  'success'
+).then(function(){ 
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(patientdata){ 
+
+
+
+  firebase.database().ref("Patient/"+useruid).on("value",function(userdata){
+
+    var userinfo = userdata.val();
+
+    firebase.database().ref("Appoiments/date/"+useruid+"/"+booknum).on("value",function(datadate){
+
+
+  
+var dater = datadate.val();
+var todate = dater.day;
+
+const thedate = todate.split('T')[0]
+    //console.log(datadate.val());
+    var userdata = patientdata.val();
+    const username = userdata.First_Name;
+    const email = userdata.Email;
+
+    var user = userinfo.First_Name + " " + userinfo.Last_name;
+
+    var usermail = userinfo.Email;
+
+     gophp(user, usermail)
+
+    //hey [username] we have assigned your with doctor [who] at [address] on the [date]
+
+      
+     
+   })
+  })
+
+})
+    
+
+    document.querySelector('#nearbystops').append(html);
+
+  }) 
+
+    
+
+    }else if(distances < 90){ 
+
+          
+
+          console.log(typeof distances);
 
           var hospiname = element.val();
           var doc = Object.keys(hospiname);
