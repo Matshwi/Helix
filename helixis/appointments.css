@@ -1,0 +1,401 @@
+@media only screen and (width: 1920px){
+
+	div.line{
+		margin-left: 10%;
+        height: 49px;
+        margin-top: -63px;
+	}
+
+}
+
+
+
+@media only screen and (width: 1680px){
+
+	div.p-4{
+		margin-top: 8%;
+	}
+
+	div.line{
+		margin-left: 12%;
+        height: 49px;
+        margin-top: -62px;
+	}
+
+}
+
+
+
+@media only screen and (width: 1600px){
+
+	div.p-4{
+		margin-top: 8%;
+	}
+
+	div.line{
+		margin-left: 12%;
+        height: 49px;
+        margin-top: -62px;
+	}
+
+}
+
+
+@media only screen and (width: 1440px){
+
+	div.p-4{
+		margin-top: 8%;
+	}
+
+	div.line{
+		margin-left: 14%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+}
+
+
+
+@media only screen and (width: 1366px){
+
+	div.p-4{
+		margin-top: 8%;
+	}
+
+	div.line{
+		margin-left: 14%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+}
+
+
+
+@media only screen and (width: 1024px){
+
+	div.p-4{
+		margin-top: 8%;
+	}
+
+	div.line{
+		margin-left: 19%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+	}
+
+}
+
+
+@media only screen and (width: 800px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 22%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		width: auto !important;
+		margin-left: -14%;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 73%;
+	}
+
+}
+
+
+
+@media only screen and (width: 768px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 22%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 70%;
+	}
+
+}
+
+
+
+@media only screen and (width: 414px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 39%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-top: 10%;
+        margin-left: 17%;
+	}
+
+	.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+  div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -44% !important;
+  }
+
+  ul.doctorp.consultime{
+  	margin-left: 41%;
+    margin-top: -16%;
+  }
+
+}
+
+
+
+
+
+
+@media only screen and (width: 411px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 39%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-top: 10%;
+        margin-left: 17%;
+	}
+
+	.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+  div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -44% !important;
+  }
+
+  ul.doctorp.consultime{
+  	margin-left: 41%;
+    margin-top: -16%;
+  }
+
+}
+
+
+@media only screen and (width: 384px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 41%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-top: 10%;
+        margin-left: 17%;
+	}
+
+	.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+  div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -49% !important;
+  }
+
+  ul.doctorp.consultime{
+  	margin-left: 41%;
+    margin-top: -18%;
+  }
+
+}
+
+
+
+
+
+@media only screen and (width: 375px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		margin-left: 42%;
+        height: 49px;
+        margin-top: -60px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-top: 10%;
+        margin-left: 17%;
+	}
+
+	.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+  div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -49% !important;
+  }
+
+  ul.doctorp.consultime{
+  	margin-left: 41%;
+    margin-top: -18%;
+  }
+
+}
+
+
+
+@media only screen and (width: 320px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.line{
+		width: 41%;
+        margin-left: 10%;
+        height: 2px;
+        margin-top: -14px;
+	}
+
+	div.appoint{
+		margin-left: -14%;
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-top: 10%;
+        margin-left: 17%;
+	}
+
+	.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+  div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -60% !important;
+  }
+
+  ul.doctorp.consultime{
+  	margin-left: -1%;
+    margin-top: 4%;
+  }
+
+}

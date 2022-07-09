@@ -1,0 +1,309 @@
+@media only screen and (width: 1024px){
+
+	div.appoint{
+		margin-left: -3%;
+	}
+
+}
+
+@media only screen and (width: 800px){
+
+	div.appoint{
+		margin-left: -3%;
+		width: auto !important;
+	}
+
+	div.welcome.doclist{
+		width: auto;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 65%;
+	}
+
+}
+
+
+
+@media only screen and (width: 768px){
+
+	div.appoint{
+		margin-left: -3%;
+		width: auto !important;
+	}
+
+	div.welcome.doclist{
+		width: auto;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 65%;
+	}
+
+}
+
+@media only screen and (width: 600px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -31% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 56%;
+	}
+
+
+}
+
+
+
+@media only screen and (width: 414px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -46% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 45%;
+	}
+
+
+}
+
+
+
+@media only screen and (width: 411px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -46% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 45%;
+	}
+
+
+}
+
+
+@media only screen and (width: 375px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -51% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 41%;
+	}
+
+
+}
+
+
+@media only screen and (width: 360px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -51% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 41%;
+	}
+
+
+}
+
+
+
+@media only screen and (width: 320px){
+
+	div.p-4{
+		margin-top: 10% !important;
+		width: 100% !important;
+	}
+
+	div.welcome.doclist{
+		margin-left: -4%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -60% !important;
+  }
+
+  div.appoint{
+		width: auto !important;
+	}
+
+	div.content.doccontainer.medics{
+		width: auto !important;
+	}
+
+	ul.docitems{
+		margin-left: 31%;
+	}
+
+	ul.doctor{
+		margin-left: -10%;
+	}
+
+
+}

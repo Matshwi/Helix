@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <link rel="stylesheet" type="text/css" href="index.css">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
   <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
  <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
@@ -11,7 +12,7 @@
 <!--<link rel="stylesheet" type="text/css" href="unicons-master/unicons-master/css/thinline.css">-->
 <!--<link rel="stylesheet" type="text/css" href="line.css">-->
 <link rel="stylesheet" href="./style.css">
-<link rel="stylesheet" type="text/css" href="index.css">
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <style type="text/css">
@@ -34,6 +35,10 @@
     color: red;
   }
 
+  .fa-bars{
+    display: none;
+  }
+
 
 </style>
 </head>
@@ -43,7 +48,7 @@
   
 
   <div class="search position-relative text-center px-4 py-3 mt-2">
-    <span class="closenav" onclick="closenav()"></span>
+    <span class="closenav" onclick="closenav()">close</span>
     <p class="sidebarname">
       <img class="proimg" src="man-g24ba357cd_1280.jpg">
       <p id="userheadname"></p>
@@ -163,7 +168,7 @@
     </div>
 
 
-    <section class="charts mt-4">
+    <section class="charts mt-6 medistyle">
       <div class="row">
         <div class="col-lg-6 medico">
           <div class="chart-container medics p-3">
@@ -173,7 +178,7 @@
               </div>
             </h3>
             
-            <!--<div class="medicontent">
+            <div class="medicontent">
               <div class="firstcont">
                 <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">6 Month Prescription</p>
                 <p style="font-size: .700rem; font-weight: bold;width: fit-content;">Paxel</p>
@@ -188,21 +193,21 @@
                 <p style="color: blue;font-size: .700rem;margin-bottom: 0%;">3/6</p>
                 <p style="font-size: .555rem;">Months</p>
               </div>
-            </div>-->
+            </div>
 
             <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
           </div>
         </div>
 
 
-        <div class="col-lg-6 medico" style="margin-top: 50px;">
+        <div class="col-lg-6 medico MR" style="margin-top: 50px;">
           <div class="chart-container medics p-3">
             <h3 class="fs-6 mb-3">Medical Records 
               <div class="PIcross">
                 <i class="uil-edit-alt"></i>
               </div>
             </h3>
-            <!--<div class="medireccontent">
+            <div class="medireccontent">
               <div class="firstcont">
                 <p style="font-size: .555rem;width: fit-content;margin-bottom: 0%;">Vaccination</p>
                 <p style="font-size: .700rem; font-weight: bold;width: fit-content;">Pfizer (Seconde dose)</p>
@@ -216,7 +221,7 @@
               <div class="thirdcont">
                 <p class="MRcross">+</p>
               </div>
-            </div>-->
+            </div>
             <p style="color: #9CA3AF;text-align: center;margin-top: 20px; margin-bottom: 0px;">see all</p>
           </div>
         </div>
@@ -225,7 +230,7 @@
 
 
     <section class="charts appoint">
-      <div class="chart-container medics p-3">
+      <div class="chart-container medics p-3 addon">
         <h3 class="fs-6 mb-3">Previous Appointments <span class="upcoming">Upcoming appointments</span><div class="PIcross">+</div></h3>
         <div class="appoints">
           
@@ -296,7 +301,7 @@ if (booknum == null) {
  }
 
  function openav(){
-  document.querySelector(".sidebar").style.width = '100%';
+  document.querySelector(".sidebar").style.width = '40%';
   document.querySelector(".fa-bars").style.display = 'nones';
  }
 

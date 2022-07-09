@@ -1,6 +1,6 @@
-@media only screen and (max-width: 360px){
+@media only screen and (width: 360px){
 
-	.sidebar{
+	aside.sidebar{
 		width: 0%;
 	}
 
@@ -38,12 +38,12 @@
 	}
 
 
-	.contained{
-		width: 40rem;
+	div.contained{
+		width: auto;
 	}
 
 	.Personalinfo{
-		width: 31rem;
+		width: auto;
 		font-size: 55px;
 	}
 
@@ -63,7 +63,8 @@
 		font-size: 43px !important;
 	}
 
-	div.content{
+	div.content.rounded-2.p-3{
+		width: auto !important;
 		margin-left: 4rem;
 	}
 
@@ -71,4 +72,983 @@
 		margin-left: 13%;
 	}
 
+	section.charts.medistyle{
+		margin-top: 60%;
+	}
+
+	div.row{
+		margin-left: -156%;
+	}
+
+	section.charts.appoint{
+		margin-left: 5%;
+		margin-top: 15%;
+		width: 131vw !important;
+	}
+
+	div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.line{
+		margin-left: 32%;
+	}
+
+	div.titletime{
+		margin-left: 39%;
+        margin-top: -8%;
+	}
+
+	ul.action{
+		margin-top: auto;
+        margin-left: 56%;
+	}
+	div.col-lg-6.medico{
+		width: auto;
+	}
+
 }
+
+@media only screen and (width: 375px){
+
+	aside.sidebar{
+		width: 0%;
+	}
+
+	.proimg{
+		width: 150px !important;
+		height: 150px !important;
+		margin-left: 15rem;
+	}
+
+	#userheadname{
+		font-size: -webkit-xxx-large;
+		margin-left: 15rem;
+	}
+
+	.categories{
+    margin-top: 3rem;
+    margin-left: 18rem;
+    font-size: 35px;
+    color: black
+	}
+
+	.sidebar ul > li > i{
+		font-size: 3rem;
+	}
+
+	.closenav{
+	float: right;
+    font-size: 30px;
+	}
+
+	i.fa.fa-bars{
+	font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+	}
+
+
+	div.contained{
+		width: auto;
+	}
+
+	.Personalinfo{
+		width: auto;
+		font-size: 55px;
+	}
+
+	ul.Personalinfo >li > i {
+		font-size: 2.2rem !important;
+	}
+
+	ul.Personalinfo >li > span {
+		font-size: 1.725rem !important;
+	}
+
+	.fs-6{
+		font-size: 186% !important;
+	}
+
+	div.PIcross1{
+		font-size: 43px !important;
+	}
+
+	div.content.rounded-2.p-3{
+		width: auto !important;
+		margin-left: 4rem;
+	}
+
+	.medico{
+		margin-left: 13%;
+	}
+
+	section.charts.medistyle{
+		margin-top: 60%;
+	}
+
+	div.row{
+		margin-left: -156%;
+	}
+
+	section.charts.appoint{
+		margin-left: 5%;
+		margin-top: 15%;
+		width: 131vw !important;
+	}
+
+	div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.line{
+		margin-left: 32%;
+	}
+
+	div.titletime{
+		margin-left: 39%;
+        margin-top: -8%;
+	}
+
+	ul.action{
+		margin-top: auto;
+        margin-left: 56%;
+	}
+	div.col-lg-6.medico{
+		width: auto;
+	}
+
+}
+
+@media only screen and (width: 411px){
+
+	aside.sidebar{
+		width: 0%;
+	}
+
+	.proimg{
+		width: 150px !important;
+		height: 150px !important;
+		margin-left: 15rem;
+	}
+
+	#userheadname{
+		font-size: -webkit-xxx-large;
+		margin-left: 15rem;
+	}
+
+	.categories{
+    margin-top: 3rem;
+    margin-left: 18rem;
+    font-size: 35px;
+    color: black
+	}
+
+	.sidebar ul > li > i{
+		font-size: 3rem;
+	}
+
+	.closenav{
+	float: right;
+    font-size: 30px;
+	}
+
+	i.fa.fa-bars{
+	font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+	}
+
+
+	div.contained{
+		width: auto;
+	}
+
+	.Personalinfo{
+		width: auto;
+		font-size: 55px;
+	}
+
+	ul.Personalinfo >li > i {
+		font-size: 2.2rem !important;
+	}
+
+	ul.Personalinfo >li > span {
+		font-size: 1.725rem !important;
+	}
+
+	.fs-6{
+		font-size: 186% !important;
+	}
+
+	div.PIcross1{
+		font-size: 43px !important;
+	}
+
+	div.content.rounded-2.p-3{
+		width: auto !important;
+		margin-left: 4rem;
+	}
+
+	.medico{
+		margin-left: 13%;
+	}
+
+	section.charts.medistyle{
+		margin-top: 60%;
+	}
+
+	div.row{
+		margin-left: -156%;
+	}
+
+	section.charts.appoint{
+		margin-left: 5%;
+		margin-top: 15%;
+		width: 131vw !important;
+	}
+
+	div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.line{
+		margin-left: 32%;
+	}
+
+	div.titletime{
+		margin-left: 39%;
+        margin-top: -8%;
+	}
+
+	ul.action{
+		margin-top: auto;
+        margin-left: 56%;
+	}
+	div.col-lg-6.medico{
+		width: auto;
+	}
+
+}
+
+
+@media only screen and (width: 320px){
+
+	aside.sidebar{
+		width: 0%;
+	}
+
+	.proimg{
+		width: 150px !important;
+		height: 150px !important;
+		margin-left: 15rem;
+	}
+
+	#userheadname{
+		font-size: -webkit-xxx-large;
+		margin-left: 15rem;
+	}
+
+	.categories{
+    margin-top: 3rem;
+    margin-left: 18rem;
+    font-size: 35px;
+    color: black
+	}
+
+	.sidebar ul > li > i{
+		font-size: 3rem;
+	}
+
+	.closenav{
+	float: right;
+    font-size: 30px;
+	}
+
+	i.fa.fa-bars{
+	font-size: 30px;
+    margin-left: 20px;
+    margin-top: 20px;
+	}
+
+
+	div.contained{
+		width: auto;
+	}
+
+	.Personalinfo{
+		width: auto;
+		font-size: 55px;
+	}
+
+	ul.Personalinfo >li > i {
+		font-size: 2.2rem !important;
+	}
+
+	ul.Personalinfo >li > span {
+		font-size: 1.725rem !important;
+	}
+
+	.fs-6{
+		font-size: 186% !important;
+	}
+
+	div.PIcross1{
+		font-size: 43px !important;
+	}
+
+	div.content.rounded-2.p-3{
+		width: auto !important;
+		margin-left: 4rem;
+	}
+
+	.medico{
+		margin-left: 13%;
+	}
+
+	section.charts.medistyle{
+		margin-top: 60%;
+	}
+
+	div.row{
+		margin-left: -156%;
+	}
+
+	section.charts.appoint{
+		margin-left: 5%;
+		margin-top: 15%;
+		width: 131vw !important;
+	}
+
+	div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.line{
+		margin-left: 32%;
+	}
+
+	div.titletime{
+		margin-left: 39%;
+        margin-top: -8%;
+	}
+
+	ul.action{
+		margin-top: auto;
+        margin-left: 56%;
+	}
+
+}
+
+
+@media only screen and (width: 1024px){
+
+	div.content.rounded-2.p-3{
+			width: auto !important;
+		}
+
+	section.charts.appoint{
+		margin-top: 10%;
+	}
+
+	section.medistyle{
+		margin-top: 10% !important;
+        margin-right: 100%;
+	}
+
+	div.chart-container.medics.p-3{
+		width: 40rem !important;
+	}
+
+	div.col-lg-6.medico.MR{
+		margin-top: 100% !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	p.MRcross{
+		width: min-content;
+	}
+
+	aside.sidebar{
+		width: 22%;
+	}
+
+	p.userheadname{
+		font-size: 30px;
+	}
+
+	}
+
+	@media only screen and (width: 1366px){
+
+		div.welcome{
+			width: 65%;
+			margin-left: 4%
+		}
+
+		section.medistyle{
+			margin-left: -143%;
+            margin-top: 48% !important;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: -5% !important;
+		}
+
+		section.charts.appoint{
+			    margin-top: 7%;
+                margin-left: 4%;
+		}
+
+		div.chart-container.medics.p-3{
+		width: 40rem !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+	div.content.rounded-2.p-3{
+		width: auto !important;
+	}
+
+	}
+
+
+	@media only screen and (width: 1440px){
+
+		div.welcome{
+			margin-left: 4%;
+			width: 50vw;
+		}
+
+		div.content.rounded-2.p-3{
+			width: auto !important;
+		}
+
+		section.medistyle{
+			margin-left: -144%;
+			margin-top: 47% !important;
+		}
+		div.col-lg-6.medico{
+			width: 50vw;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: -6% !important;
+		}
+
+		section.charts.appoint{
+			    margin-top: 7%;
+                margin-left: 4%;
+                width: 68% !important;
+		}
+
+		div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	}
+
+
+	@media only screen and (width: 1600px){
+
+		div.welcome{
+			width: 50vw;
+			margin-left: 8%
+		}
+
+		div.content.rounded-2.p-3{
+			width: auto !important;
+		}
+
+		section.medistyle{
+			margin-left: -134%;
+			margin-top: 42% !important;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: -217px !important;
+		}
+
+		section.charts.appoint{
+			    margin-top: 7%;
+                margin-left: 8%;
+                width: 68% !important;
+		}
+
+		div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.col-lg-6.medico{
+		width: 27% !important;
+	}
+
+	}
+
+
+	@media only screen and (width: 1680px){
+
+		div.welcome{
+			width: 50vw;
+			margin-left: 8%
+		}
+
+		div.content.rounded-2.p-3{
+			width: auto !important;
+		}
+
+		section.medistyle{
+			margin-left: -134%;
+			margin-top: 42% !important;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: -217px !important;
+		}
+
+		section.charts.appoint{
+			    margin-top: 7%;
+                margin-left: 8%;
+                width: 68% !important;
+		}
+
+		div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.col-lg-6.medico{
+		width: 27% !important;
+	}
+
+	}
+
+
+
+	@media only screen and (width: 1920px){
+
+		div.welcome{
+			width: 50vw;
+			margin-left: 8%
+		}
+
+		div.content.rounded-2.p-3{
+			width: auto !important;
+		}
+
+		section.medistyle{
+			margin-left: -134%;
+			margin-top: 42% !important;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: -217px !important;
+		}
+
+		section.charts.appoint{
+			    margin-top: 7%;
+                margin-left: 8%;
+                width: 68% !important;
+		}
+
+		div.chart-container.medics.p-3{
+		width: auto !important;
+	}
+
+	div.medicontent{
+		width: auto;
+	}
+	div.medireccontent{
+		width: auto;
+	}
+	div.linemed{
+		margin-left: 18%;
+	}
+
+	div.secondcont{
+		margin-left: 25%;
+	}
+
+	div.thirdcont{
+		margin-left: 91%;
+	}
+
+	div.linemedrec{
+		margin-left: 25%;
+	}
+	div.secondcontrec{
+		margin-left: 30%;
+	}
+
+	div.appointmentcontent{
+		width: auto !important;
+	}
+
+	div.col-lg-6.medico{
+		width: 27% !important;
+	}
+
+	}
+
+
+	@media only screen and (width: 600px){
+
+		div.col-lg-6.medico{
+			min-width: -webkit-fill-available;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: 9px !important;
+		}
+
+		section.charts.appoint{
+			margin-top: 10%;
+			width: -webkit-fill-available !important;
+		}
+
+		div.linemed{
+			margin-left: 21%;
+		}
+		div.linemedrec{
+			margin-left: 27%;
+		}
+
+		div.line{
+			margin-left: 21%;
+		}
+
+		div.titletime{
+			margin-left: 27%;
+		}
+
+		aside.sidebar{
+			  margin-left: -4%;
+			  width: 50%;
+		}
+
+		div.content{
+			margin-left: 4%;
+		}
+
+		section.charts.medistyle{
+			width: 92%;
+			margin-left: -55%;
+            margin-top: 25%;
+		}
+		div.chart-container.medics.p-3{
+			width: auto !important;
+		}
+
+		div.medicontent{
+			width: auto;
+		}
+		div.thirdcont{
+			margin-left: 92%;
+		}
+		div.secondcont{
+			margin-left: 27%;
+		}
+		div.medireccontent{
+			width: auto;
+		}
+		div.appointmentcontent{
+			width: auto !important;
+		}
+
+	}
+
+	@media only screen and (width: 768px){
+
+		div.welcome{
+			margin-left: -36%;
+		}
+
+		div.col-lg-6.medico{
+			min-width: -webkit-fill-available;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: 9px !important;
+		}
+
+		section.charts.appoint{
+			margin-left: -45%;
+			margin-top: 10%;
+			width: -webkit-fill-available !important;
+		}
+
+		div.linemed{
+			margin-left: 21%;
+		}
+		div.linemedrec{
+			margin-left: 27%;
+		}
+
+		div.line{
+			margin-left: 21%;
+		}
+
+		div.titletime{
+			margin-left: 27%;
+		}
+
+		aside.sidebar{
+			  margin-left: -4%;
+			  width: 50%;
+		}
+
+		div.content{
+			margin-left: 4%;
+		}
+
+		section.charts.medistyle{
+			width: 110%;
+            margin-left: -100%;
+            margin-top: 25%;
+		}
+		div.chart-container.medics.p-3{
+			width: auto !important;
+		}
+
+		div.medicontent{
+			width: auto;
+		}
+		div.thirdcont{
+			margin-left: 92%;
+		}
+		div.secondcont{
+			margin-left: 27%;
+		}
+		div.medireccontent{
+			width: auto;
+		}
+		div.appointmentcontent{
+			width: auto !important;
+		}
+
+	}
+
+
+	@media only screen and (width: 800px){
+
+		div.welcome{
+			margin-left: -36%;
+		}
+
+		div.col-lg-6.medico{
+			min-width: -webkit-fill-available;
+		}
+
+		div.col-lg-6.medico.MR{
+			margin-top: 9px !important;
+		}
+
+		section.charts.appoint{
+			margin-left: -45%;
+			margin-top: 10%;
+			width: -webkit-fill-available !important;
+		}
+
+		div.linemed{
+			margin-left: 21%;
+		}
+		div.linemedrec{
+			margin-left: 27%;
+		}
+
+		div.line{
+			margin-left: 21%;
+		}
+
+		div.titletime{
+			margin-left: 27%;
+		}
+
+		aside.sidebar{
+			  margin-left: -4%;
+			  width: 50%;
+		}
+
+		div.content{
+			margin-left: 4%;
+		}
+
+		section.charts.medistyle{
+			width: 110%;
+            margin-left: -100%;
+            margin-top: 25%;
+		}
+		div.chart-container.medics.p-3{
+			width: auto !important;
+		}
+
+		div.medicontent{
+			width: auto;
+		}
+		div.thirdcont{
+			margin-left: 92%;
+		}
+		div.secondcont{
+			margin-left: 27%;
+		}
+		div.medireccontent{
+			width: auto;
+		}
+		div.appointmentcontent{
+			width: auto !important;
+		}
+
+	}

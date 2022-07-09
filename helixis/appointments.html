@@ -2,7 +2,9 @@
 <html lang="en" >
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title></title>
+  <link rel="stylesheet" type="text/css" href="appointments.css">
   <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css'>
   <!--<link rel="stylesheet" type="text/css" href="bootstrap-4.0.0/bootstrap-4.0.0/dist/css/bootstrap.min.css">-->
  <!-- <link rel="stylesheet" type="text/css" href="bootstrap.min.css">-->
@@ -106,7 +108,7 @@ a.nav-link:hover{
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">
-              <img class="proimg" src="man-g24ba357cd_1280.jpg">
+              <img class="proimg" src="man-g24ba357cd_1280.jpg" onclick="getmenu()">
             </a>
           </li>
         </ul>
@@ -189,7 +191,9 @@ const database = firebase.database()
     var Fname = docsnap.val().Name + " " + docsnap.val().Surname;
     var dated = docsnap.val().date;
 
-    document.querySelector(".appoint").innerHTML += `<div class="welcome doclist">
+    document.querySelector(".appoint").innerHTML += `
+
+    <div class="welcome doclist">
       <div style="background: rgba(255, 255, 255, .5) !important;" class="content doccontainer medics">
         <ul class="doctorp">
               <li style="font-size: 13px;">
@@ -334,6 +338,85 @@ firebase.database().ref("Appoiments/doctor/" + "/" + useruid + "/" + getval).rem
 window.location.reload();
 
 }
+
+
+
+
+
+function getmenu(argument) {
+
+  var w = window.innerWidth;
+
+  if (w == 414) {
+
+
+    
+
+    var p = document.querySelector("ul.navbar-nav.ms-auto");
+var style = p.currentStyle || window.getComputedStyle(p);
+
+console.log(style.marginTop);
+
+    if(style.marginTop  == "-161.266px"){
+
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '2%', 'important');
+
+    }else if(style.marginTop  == "7.32812px"){
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '-44%', 'important');
+    }
+
+    
+
+}else if (w == 384) {
+
+  var p = document.querySelector("ul.navbar-nav.ms-auto");
+var style = p.currentStyle || window.getComputedStyle(p);
+
+console.log(style.marginTop);
+
+    if(style.marginTop  == "-165.188px"){
+
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '2%', 'important');
+
+    }else if(style.marginTop  == "6.73438px"){
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '-49%', 'important');
+    }
+}else if (w == 375) {
+  var p = document.querySelector("ul.navbar-nav.ms-auto");
+var style = p.currentStyle || window.getComputedStyle(p);
+
+console.log(style.marginTop);
+
+    if(style.marginTop  == "-160.859px"){
+
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '2%', 'important');
+
+    }else if(style.marginTop  == "6.5625px"){
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '-49%', 'important');
+    }
+  }else if (w == 320) {
+
+    var p = document.querySelector("ul.navbar-nav.ms-auto");
+var style = p.currentStyle || window.getComputedStyle(p);
+
+console.log(style.marginTop);
+
+    if(style.marginTop  == "-164.641px"){
+
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '2%', 'important');
+
+    }else if(style.marginTop  == "5.48438px"){
+      document.querySelector("ul.navbar-nav.ms-auto").style.setProperty('margin-top', '-60%', 'important');
+    }
+
+  }
+}
+
+var p = document.querySelector("ul.navbar-nav.ms-auto");
+var style = p.currentStyle || window.getComputedStyle(p);
+
+console.log("Current marginTop: " + style.marginTop);
+
 </script>
 
 </body>

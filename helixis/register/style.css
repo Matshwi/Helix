@@ -314,3 +314,300 @@ form#formulaire{
 }
 
     }
+
+
+    @media only screen and (max-width: 600px){
+
+        h1.titleSection{
+            margin-left: 37%;
+        }
+
+        div.rightside{
+            margin-left: 8%;
+        }
+
+        form#formulaire{
+            height: 65rem !important;
+        }
+
+        button#bouton-valider{
+            margin-top: -118%;
+        }
+
+        div.txtdiv{
+            margin-left: 6rem;
+        }
+
+    }
+
+
+
+    @media only screen and (max-width: 768px){
+
+        .titleSection{
+            margin-left: 198px;
+        }
+
+        form#formulaire{
+            height: 62rem;
+        }
+
+        div.rightside{
+            margin-left: 57px;
+            margin-top: 24rem;
+        }
+
+        button#bouton-valider{
+            margin-top: -9rem;
+        }
+
+        div.txtdiv{
+            margin-top: 30rem;
+            margin-left: 18%;
+        }
+        form#formulaire{
+            width: 74vw;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 800px){
+
+        h1.titleSection{
+            margin-left: 14rem;
+        }
+
+        div.leftside{
+            margin-left: 6rem;
+        }
+
+        div.rightside{
+            margin-left: 15%;
+            margin-top: 23rem;
+        }
+
+        form#formulaire{
+            height: 60rem;
+            width: 80vw;
+        }
+
+        button#bouton-valider{
+            margin-top: -9rem;
+            margin-left: -2rem;
+        }
+
+        div.txtdiv{
+            margin-left: 10rem;
+            margin-top: 27rem;
+        }
+        section#section5{
+            height: 100%;
+        }
+
+    }
+
+    @media only screen and (max-width: 1024px){
+
+        section#section5{
+            height: 100% ;
+        }
+
+        form#formulaire{
+            height: 39rem;
+            width: 95vw;
+            margin-left: -12%;
+        }
+
+        button#bouton-valider{
+            margin-top: -56%;
+            margin-left: 3%;
+        }
+
+        div.leftside{
+            margin-left: 2rem;
+        }
+
+        div.rightside{
+            margin-left: 34rem;
+        }
+
+        div.txtdiv{
+            margin-left: 36%;
+        }
+
+    }
+
+    @media only screen and (max-width: 320px){
+
+        form#formulaire{
+            width: 135vw;
+        }
+
+        div.rightside{
+            margin-left: -24rem;
+        }
+
+        h1.titleSection{
+            margin-left: 3%;
+        }
+
+        button#bouton-valider{
+            margin-top: -11rem;
+            margin-left: 5rem;
+        }
+
+        div.txtdiv{
+            margin-top: 5rem;
+            margin-left: -5rem;
+            width: 30rem;
+        }
+
+        section#section5{
+            width: 145vw;
+        }
+
+    }    
+
+    @media only screen and (max-width: 360px){
+
+        div.rightside{
+            margin-left: 2rem;
+            margin-top: 1%;
+        }
+
+        input.form-control{
+            width: 108%;
+        }
+
+        h1.titleSection{
+            margin-left: 10%;
+        }
+
+        section#section5{
+            width: 115vw;
+        }
+
+        form#formulaire{
+            width: 115%;
+        }
+
+        button#bouton-valider{
+            margin-top: -203%;
+            margin-left: -27%;
+        }
+
+        div.txtdiv{
+            margin-top: 12%;
+            width: 130%;
+            margin-left: -34%;
+        }
+
+    }
+
+    @media only screen and (max-width: 375px){
+
+        div.rightside{
+            margin-left: 2rem;
+            margin-top: 1%;
+        }
+
+        input.form-control{
+            width: 108%;
+        }
+
+        h1.titleSection{
+            margin-left: 34%;
+        }
+
+        section#section5{
+            width: 115vw;
+        }
+
+        form#formulaire{
+            width: 115%;
+        }
+
+        button#bouton-valider{
+            margin-top: -203%;
+            margin-left: -27%;
+        }
+
+        div.txtdiv{
+            margin-top: 26%;
+            margin-left: 8%;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 384px){
+
+        div.rightside{
+            margin-left: 2rem;
+            margin-top: 1%;
+        }
+
+        input.form-control{
+            width: 108%;
+        }
+
+        h1.titleSection{
+            margin-left: 34%;
+        }
+
+        section#section5{
+            width: 115vw;
+        }
+
+        form#formulaire{
+            width: 115%;
+        }
+
+        button#bouton-valider{
+            margin-top: -203%;
+            margin-left: -27%;
+        }
+
+        div.txtdiv{
+            margin-top: 26%;
+            margin-left: 8%;
+        }
+
+    }
+
+
+    @media only screen and (max-width: 411px){
+
+        div.rightside{
+            margin-left: 2rem;
+            margin-top: 1%;
+        }
+
+        input.form-control{
+            width: 108%;
+        }
+
+        h1.titleSection{
+            margin-left: 34%;
+        }
+
+        section#section5{
+            width: 115vw;
+        }
+
+        form#formulaire{
+            width: 124%;
+        }
+
+        button#bouton-valider{
+            margin-top: -192%;
+            margin-left: -2%;
+        }
+
+        div.txtdiv{
+            margin-top: 26%;
+            margin-left: 16%;
+        }
+
+    }

@@ -1,0 +1,367 @@
+@media only screen and (width: 1920px){
+
+	div.imgcontainer{
+		margin-top: -6%;
+	}
+
+	div.fileinput{
+		margin-top: -6% !important;
+        margin-right: 73% !important;
+	}
+
+	div.firstinputs{
+		margin-bottom: 23%;
+        margin-top: 7%;
+	}
+
+	div.right{
+		margin-top: -26%;
+	}
+
+	div.p-4{
+		margin-left: -3%;
+	}
+
+}
+
+
+@media only screen and (width: 1680px){
+
+	div.imgcontainer{
+		margin-top: -6%;
+	}
+
+	div.fileinput{
+		margin-top: -6% !important;
+        margin-right: 68% !important;
+	}
+
+	div.firstinputs{
+		margin-bottom: 12%;
+        margin-top: 7%;
+	}
+
+	div.right{
+		margin-top: -26%;
+	}
+
+	div.p-4{
+		margin-left: -3%;
+	}
+
+	div#editsubmit{
+	    margin-bottom: 5%;
+	}
+
+}
+
+
+
+@media only screen and (width: 1600px){
+
+	div.imgcontainer{
+		margin-top: -6%;
+	}
+
+	div.fileinput{
+		margin-top: -6% !important;
+        margin-right: 68% !important;
+	}
+
+	div.firstinputs{
+		margin-bottom: 12%;
+        margin-top: 7%;
+	}
+
+	div.right{
+		margin-top: -31%;
+	}
+
+	div.p-4{
+		margin-left: -3%;
+	}
+
+	div#editsubmit{
+	    margin-bottom: 5%;
+	}
+
+}
+
+
+
+
+
+
+@media only screen and (width: 1440px){
+
+
+	div.fileinput{
+		margin-top: -12% !important;
+        margin-right: 61% !important;
+	}
+
+}
+
+
+@media only screen and (width: 1024px){
+
+
+	div.fileinput{
+		margin-top: -23% !important;
+        margin-right: 38% !important;
+	}
+
+	div.right{
+		margin-top: -61%;
+	}
+
+}
+
+
+@media only screen and (width: 800px){
+
+
+	div.imgcontainer{
+		margin-left: 18%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		    margin-top: 14%;
+    text-align: center;
+    margin-bottom: 10%;
+	}
+
+}
+
+@media only screen and (width: 768px){
+
+
+	div.imgcontainer{
+		margin-left: 18%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		    margin-top: 14%;
+    text-align: center;
+    margin-bottom: 10%;
+	}
+
+}
+
+@media only screen and (width: 600px){
+
+
+	div.imgcontainer{
+		margin-left: 18%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		    margin-top: 14%;
+    text-align: center;
+    margin-bottom: 10%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -37% !important;
+  }
+
+  aside.sidebar{
+  	margin-left: 44%;
+    width: 33%;
+  }
+
+}
+
+
+@media only screen and (width: 414px){
+
+
+	div.imgcontainer{
+		margin-left: 3%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		    margin-top: 14%;
+    text-align: center;
+    margin-bottom: 10%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -55% !important;
+  }
+
+  aside.sidebar{
+  	margin-left: 66%;
+    width: 33%;
+  }
+
+}
+
+
+@media only screen and (width: 411px){
+
+
+	div.imgcontainer{
+		margin-left: 3%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		    margin-top: 14%;
+    text-align: center;
+    margin-bottom: 10%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -55% !important;
+  }
+
+  aside.sidebar{
+  	margin-left: 66%;
+    width: 33%;
+  }
+
+}
+
+
+@media only screen and (width: 375px){
+
+
+	div.imgcontainer{
+		margin-left: 3%;
+	}
+
+	div.firstinputs{
+		margin-left: -8%;
+	}
+
+
+	div.fileinput{
+		margin-top: -21% !important;
+        margin-right: 75% !important;
+	}
+
+	div.right{
+		margin-left: 7%;
+    width: fit-content;
+    margin-top: 1%;
+	}
+
+	div#editsubmit{
+		margin-top: 14% !important;
+        margin-bottom: 10%;
+	}
+
+	nav.navbar.navbar-expand-md {
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+}
+
+
+div#toggle-navbar.collapse.navbar-collapse{
+  	display: flex !important;
+  }
+
+  ul.navbar-nav.ms-auto{
+  	    margin-left: auto !important;
+  	    margin-top: -67% !important;
+  }
+
+  aside.sidebar{
+  	margin-left: 66%;
+    width: 33%;
+  }
+
+}

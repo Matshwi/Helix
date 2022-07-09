@@ -1,0 +1,67 @@
+@media only screen and (width: 411px){
+
+	aside.sidebar{
+		 width: 52%;
+	}
+
+	ul.categories{
+		margin-top: auto;
+	}
+
+}    
+
+@media only screen and (width: 768px){
+
+	aside.sidebar{
+		 width: 27%;
+	}
+
+}     
+
+
+@media only screen and (width: 800px){
+
+	aside.sidebar{
+		 width: 26%;
+	}
+
+}    
+
+
+@media only screen and (width: 600px){
+
+	aside.sidebar{
+		 width: 39%;
+	}
+
+	ul.categories{
+		margin-top: auto;
+	}
+
+}
+
+
+
+@media only screen and (width: 360px){
+
+	aside.sidebar{
+		 width: 57%;
+	}
+
+	ul.categories{
+		margin-top: auto;
+	}
+
+}
+
+@media only screen and (width: 320px){
+
+	aside.sidebar{
+		 width: 64%;
+	}
+
+	ul.categories{
+		margin-top: auto;
+	}
+
+}

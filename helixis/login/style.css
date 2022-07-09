@@ -207,12 +207,21 @@ p{
 
   
 
-/*
+
 
 @media only screen and (max-width: 1024px){
 
-  .titleSection{
+  h1.titleSection{
+  margin-top: -43%;
   font-size: 3rem;
+}
+
+input#pass{
+    height: 10%;
+}
+
+input#email{
+    height: 10%;
 }
 
 #email{
@@ -221,6 +230,10 @@ p{
   height: 7%;
   margin-left: 25%;
   font-size: 30px;
+}
+
+div.regdiv{
+  text-align: center;
 }
 
   }
@@ -268,5 +281,84 @@ button{
   margin-top: 30rem;
   font-size: 30px;
 }
+
+  }
+
+  
+
+  @media only screen and (min-width: 768px){
+
+
+    input#email{
+      width: 68%;
+    }
+
+    input#pass{
+      width: 68%;
+    }
+
+    p{
+      width: 100%;
+      margin-left: 170px;
+    }
+
+  }
+
+
+   @media only screen and (min-width: 600px){
+
+
+    input#email{
+      width: 68%;
+    }
+
+    input#pass{
+      width: 68%;
+    }
+
+    p{
+      width: 100%;
+      margin-left: 170px;
+    }
+
+  }
+
+
+  @media only screen and (min-width: 320px){
+
+    div.foreground{
+      height: 28rem;
+      width: 79vw;
+    }
+
+
+    input#email{
+      margin-top: 15rem;
+      width: 98%;
+      margin-left: -2%;
+    }
+
+    input#pass{
+      margin-top: 8rem;
+      width: 98%;
+      margin-left: -2%;
+    }
+
+    button{
+      margin-top: 20rem !important;
+      font-size: 15px;
+    }
+
+    p{
+      margin-top: -7rem !important;
+      font-size: 15px;
+      margin-left: 6% !important;
+      display: contents;
+      position: absolute;
+    }
+
+    div.regdiv{
+      margin-top: 24rem;
+    }
 
   }
